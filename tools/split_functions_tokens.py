@@ -1,75 +1,79 @@
 import os
 
-def split_functions_with_limit(input_asm_file, output_folder, max_lines_per_file=4000):
+def split_functions_with_token_limit(input_asm_file, output_folder, max_tokens_per_file=8000):
     """
-    Lê um arquivo ASM e separa suas funções em arquivos menores, garantindo que:
-    1) Nenhuma função seja cortada entre arquivos.
-    2) Cada arquivo tenha pelo menos max_lines_per_file linhas antes de começar um novo.
+    Reads an ASM file and splits its functions into smaller files, ensuring that:
+    1) No function is split across files.
+    2) Each file contains up to max_tokens_per_file tokens before starting a new one.
     """
     try:
-        # Abrir e ler o arquivo ASM de entrada
+        # Open and read the input ASM file
         with open(input_asm_file, 'r') as f:
             lines = f.readlines()
 
-        # Garantir que a pasta de saída exista
+        # Ensure the output folder exists
         os.makedirs(output_folder, exist_ok=True)
 
-        current_file_index = 1
-        current_file_lines = 0
-        current_file_content = []
-        current_function_content = []
+        current_file_index = 1  # Index for naming output files
+        current_file_tokens = 0  # Token count for the current file
+        current_file_content = []  # Content of the current file
+        current_function_content = []  # Content of the current function
+        current_function_tokens = 0  # Token count for the current function
 
         for line in lines:
-            line = line.strip()
+            line = line.strip()  # Remove extra whitespace
+            token_count = len(line.split())  # Count tokens in the current line
 
-            # Detectar início de uma nova função
+            # Detect the start of a new function
             if line.startswith("loc_") and line.endswith(":"):
-                # Se o arquivo atual já ultrapassou o limite de linhas
-                if current_file_lines + len(current_function_content) > max_lines_per_file:
-                    # Salvar o arquivo atual
+                # Check if adding the current function would exceed the token limit
+                if current_file_tokens + current_function_tokens > max_tokens_per_file:
+                    # Save the current file to disk
                     output_file = os.path.join(output_folder, f"megaman{current_file_index}.asm")
                     with open(output_file, 'w') as f_out:
                         f_out.writelines(current_file_content)
-                    print(f"Arquivo salvo: {output_file} com {current_file_lines} linhas")
+                    print(f"File saved: {output_file} with {current_file_tokens} tokens")
 
-                    # Incrementar o índice do arquivo
+                    # Increment file index for the next output file
                     current_file_index += 1
 
-                    # Resetar o conteúdo do arquivo atual e contadores
+                    # Reset the current file content and token counter
                     current_file_content = []
-                    current_file_lines = 0
+                    current_file_tokens = 0
 
-                # Adicionar a função acumulada ao arquivo atual
+                # Add the current function's content to the current file
                 current_file_content.extend(current_function_content)
-                current_file_lines += len(current_function_content)
+                current_file_tokens += current_function_tokens
 
-                # Resetar o conteúdo da função
+                # Reset the current function content and token counter
                 current_function_content = []
+                current_function_tokens = 0
 
-            # Adicionar a linha atual à função corrente
+            # Add the current line to the current function
             current_function_content.append(line + "\n")
+            current_function_tokens += token_count
 
-        # Salvar o conteúdo restante
+        # Handle any remaining content after processing all lines
         if current_function_content:
             current_file_content.extend(current_function_content)
-            current_file_lines += len(current_function_content)
+            current_file_tokens += current_function_tokens
 
         if current_file_content:
             output_file = os.path.join(output_folder, f"megaman{current_file_index}.asm")
             with open(output_file, 'w') as f_out:
                 f_out.writelines(current_file_content)
-            print(f"Último arquivo salvo: {output_file} com {current_file_lines} linhas")
+            print(f"Last file saved: {output_file} with {current_file_tokens} tokens")
 
-        print(f"Funções separadas com sucesso! Arquivos salvos na pasta '{output_folder}'.")
+        print(f"Functions successfully split! Files saved in '{output_folder}'.")
     except FileNotFoundError:
-        print(f"Arquivo '{input_asm_file}' não encontrado.")
+        print(f"File '{input_asm_file}' not found.")
     except Exception as e:
-        print(f"Ocorreu um erro: {e}")
+        print(f"An error occurred: {e}")
 
-# Caminhos
-root_folder = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # Pasta raiz do projeto
-input_file = os.path.join(root_folder, "megaman.exe2.asm")  # Arquivo de entrada na pasta raiz
-output_folder = os.path.join(root_folder, "asm")  # Pasta de saída na pasta raiz
+# Paths
+root_folder = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # Root folder of the project
+input_file = os.path.join(root_folder, "megaman.exe2.asm")  # Input ASM file in the root folder
+output_folder = os.path.join(root_folder, "asm")  # Output folder in the root folder
 
-# Chamar a função
-split_functions_with_limit(input_file, output_folder, max_lines_per_file=4000)
+# Call the function
+split_functions_with_token_limit(input_file, output_folder, max_tokens_per_file=100000)
