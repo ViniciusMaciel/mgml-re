@@ -69,7 +69,7 @@ def split_functions_with_limit(input_asm_file, output_folder, max_lines_per_file
 # Caminhos
 root_folder = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # Pasta raiz do projeto
 input_file = os.path.join(root_folder, "megaman.exe2.asm")  # Arquivo de entrada na pasta raiz
-output_folder = os.path.join(root_folder, "src")  # Pasta de saída na pasta raiz
+output_folder = os.path.join(root_folder, "asm")  # Pasta de saída na pasta raiz
 
 # Chamar a função
 split_functions_with_limit(input_file, output_folder, max_lines_per_file=4000)
