@@ -3990,25 +3990,6 @@ sub_4F04FB endp
 ; [00000007 BYTES: COLLAPSED FUNCTION abs_]
 
 
-
-sub_4F0927 proc near
-
-var_60= byte ptr -60h
-
-push    ebx
-push    ecx
-push    esi
-push    edi
-sub     esp, 50h
-mov     esi, edx
-xor     edi, edi
-mov     edx, offset unk_50A5A0
-call    sub_4F93C1
-test    eax, eax
-jnz     short loc_4F0993
-xor     ebx, ebx
-jmp     short loc_4F094A
-
 loc_4F0944:
 inc     ebx
 cmp     ebx, 0Ah

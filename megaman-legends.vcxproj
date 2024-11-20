@@ -23,6 +23,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
+    <None Include="copy.bat" />
     <None Include="README.md" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

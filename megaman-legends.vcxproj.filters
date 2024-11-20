@@ -25,5 +25,8 @@
   <ItemGroup>
     <None Include=".gitignore" />
     <None Include="README.md" />
+    <None Include="copy.bat">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
