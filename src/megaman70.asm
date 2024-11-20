@@ -1,3 +1,4 @@
+loc_4AEAE4:
 pop     edx
 retn
 sub_4AEAD6 endp
@@ -3982,4 +3983,3 @@ mov     al, [ecx+1]
 push    eax
 push    4000h
 
-loc_4B1267:

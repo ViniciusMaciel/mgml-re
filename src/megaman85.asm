@@ -1,3 +1,4 @@
+loc_4D19B3:
 push    ebx
 push    ecx
 push    edx
@@ -3838,4 +3839,3 @@ push    edi
 push    eax
 xor     edx, edx
 
-loc_4D3F27:

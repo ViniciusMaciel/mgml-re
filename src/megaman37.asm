@@ -1,3 +1,4 @@
+loc_45A4F5:
 mov     ecx, 1000008h
 xor     ebx, ebx
 mov     edx, 1
@@ -3945,4 +3946,3 @@ mov     eax, esi
 call    sub_4DE96B
 mov     edx, 0B1h
 
-loc_45CB3C:

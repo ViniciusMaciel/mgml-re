@@ -1,3 +1,4 @@
+loc_42D597:
 mov     eax, ds:dword_564A5E
 sar     eax, 10h
 mov     edx, [esp+34h+var_30]
@@ -3988,4 +3989,3 @@ mov     dx, word ptr ds:dword_77E6C6+2
 add     [eax+6], dx
 jmp     short loc_430279
 
-loc_43023B:

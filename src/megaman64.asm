@@ -1,3 +1,4 @@
+loc_49F06F:
 mov     edx, esi
 shl     edx, 2
 sub     edx, esi
@@ -3979,4 +3980,3 @@ xor     ebx, ebx
 mov     edx, 1
 mov     eax, 82h
 
-loc_4A1A0D:

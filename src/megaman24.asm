@@ -1,3 +1,4 @@
+loc_43A7A2:
 mov     eax, edi
 pop     ebp
 pop     edi
@@ -3996,4 +3997,3 @@ mov     byte ptr [eax+0Bh], 0
 mov     byte ptr [eax+0Fh], 0
 xor     edx, edx
 
-loc_43CCE6:

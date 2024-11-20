@@ -1,3 +1,4 @@
+loc_441B94:
 mov     eax, 1
 add     esp, 8
 jmp     def_440601      ; jumptable 00440601 default case
@@ -3978,4 +3979,3 @@ mov     word ptr [ecx+0Ah], 0
 xor     ebx, ebx
 mov     edx, 21h ; '!'
 
-loc_444221:

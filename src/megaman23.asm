@@ -1,3 +1,4 @@
+loc_437E4A:
 mov     eax, 1
 call    sub_49E0D7
 inc     byte ptr [edx+1]
@@ -3945,4 +3946,3 @@ mov     [edx+30h], eax
 movsx   eax, cx
 mov     [edx+34h], eax
 
-loc_43A7A2:

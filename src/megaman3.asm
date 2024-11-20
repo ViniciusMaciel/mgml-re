@@ -1,3 +1,4 @@
+loc_4062F1:
 mov     edx, [esp+24h+var_24]
 mov     edx, [edx+3Ch]
 sar     edx, 10h
@@ -3960,4 +3961,3 @@ jge     short loc_408AA7
 mov     [esi+16h], bx
 jmp     short loc_408A37
 
-loc_408AA7:

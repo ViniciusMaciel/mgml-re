@@ -1,3 +1,4 @@
+loc_4F7B2A:
 add     esp, 68h
 jmp     loc_4F3508
 sub_4F7680 endp ; sp-analysis failed
@@ -3994,4 +3995,3 @@ push    ecx
 push    eax
 call    dword ptr [edx+24h]
 
-loc_4FA50C:

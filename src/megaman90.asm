@@ -1,3 +1,4 @@
+loc_4DEBBF:
 call    sub_4DFC52
 pop     edx
 pop     ecx
@@ -3984,4 +3985,3 @@ loc_4E1857:
 shl     edx, 2
 mov     [ecx+80h], edx
 
-loc_4E1860:

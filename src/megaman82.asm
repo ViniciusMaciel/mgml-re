@@ -1,3 +1,4 @@
+loc_4CA0B2:
 xor     ebx, ebx
 mov     bl, ds:byte_53868C[edx*2]
 movzx   edi, ds:byte_53868D[edx*2]
@@ -3995,4 +3996,3 @@ lea     edi, [eax+14h]
 lea     esi, [ebx+88h]
 rep movsd
 
-loc_4CC984:

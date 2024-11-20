@@ -1,3 +1,4 @@
+loc_43023B:
 mov     dx, word ptr ds:dword_77E6C6
 mov     bx, [eax]
 add     ebx, edx
@@ -3950,4 +3951,3 @@ sub_43270A endp ; sp-analysis failed
 
 ; START OF FUNCTION CHUNK FOR sub_432EAB
 
-loc_4329A4:

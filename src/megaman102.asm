@@ -1,3 +1,4 @@
+loc_50011D:
 cmp     ds:dwTlsIndex, 0FFFFFFFFh
 setnz   al
 and     eax, 0FFh
@@ -3993,4 +3994,3 @@ jl      short loc_5058E2
 cmp     esi, 24h ; '$'
 jle     short loc_5058F3
 
-loc_5058E2:

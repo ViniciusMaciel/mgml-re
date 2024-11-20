@@ -1,3 +1,4 @@
+loc_4329A4:
 pop     ebp
 pop     edi
 pop     esi
@@ -3865,4 +3866,3 @@ call    sub_4EFFF8
 add     ds:dword_77E6DC, 48h ; 'H'
 jmp     loc_43517F
 
-loc_4352FC:

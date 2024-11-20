@@ -1,3 +1,4 @@
+loc_41ADF2:
 mov     ebx, [esi+54h]
 sar     ebx, 10h
 lea     edx, [ecx+14h]
@@ -3980,4 +3981,3 @@ mov     edx, 0C000Bh
 mov     eax, edi
 call    sub_4EE044
 
-loc_41D873:

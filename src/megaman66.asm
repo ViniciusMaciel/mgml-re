@@ -1,3 +1,4 @@
+loc_4A438E:
 mov     al, bh
 jmp     short loc_4A437C
 
@@ -3970,4 +3971,3 @@ fld1
 fadd    ds:flt_55BDB4
 fstp    ds:flt_55BDB4
 
-loc_4A71D1:

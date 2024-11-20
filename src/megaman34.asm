@@ -1,3 +1,4 @@
+loc_452936:
 mov     edx, [esp+28h+var_28]
 imul    edx, edx
 mov     eax, [esp+28h+var_20]
@@ -3997,4 +3998,3 @@ inc     ebx
 cmp     bx, 3
 jge     short loc_455202
 
-loc_4551D1:

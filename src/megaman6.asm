@@ -1,3 +1,4 @@
+loc_40D389:
 inc     byte ptr [ecx+0Ah]
 pop     edx
 pop     ecx
@@ -3977,4 +3978,3 @@ mov     esi, [esi+88h]
 mov     ebx, eax
 mov     edx, 110010h
 
-loc_40F860:

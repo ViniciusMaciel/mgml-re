@@ -1,3 +1,4 @@
+loc_457B8C:
 inc     byte ptr [esi+9]
 mov     byte ptr [esi+0Ah], 0
 jmp     def_457A9C      ; jumptable 00457A9C default case
@@ -3976,4 +3977,3 @@ call    sub_45B09D
 mov     word ptr [esi+0Ah], 0
 and     byte ptr [edi+4], 0FEh
 
-loc_45A4F5:

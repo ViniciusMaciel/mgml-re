@@ -1,3 +1,4 @@
+loc_4BE465:
 mov     eax, 27Eh
 call    sub_4DC979
 or      byte ptr [ecx], 1
@@ -3993,4 +3994,3 @@ pop     ecx
 pop     ebx
 retn
 
-loc_4C0A6B:

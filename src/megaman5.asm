@@ -1,3 +1,4 @@
+loc_40AD3A:
 pop     edx
 pop     ecx
 pop     ebx
@@ -3962,4 +3963,3 @@ jnz     short def_40D2EA ; jumptable 0040D34E default case, cases 2,5
 ; jumptable 0040D3D2 default case, case 4
 ; jumptable 0040D46E default case, cases 2,4
 
-loc_40D389:

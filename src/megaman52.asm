@@ -1,3 +1,4 @@
+loc_47F14D:
 inc     byte ptr [ecx+5]
 jmp     def_47F039      ; jumptable 0047F039 default case
 
@@ -3968,4 +3969,3 @@ mov     edx, 120011h
 mov     eax, ecx
 call    sub_4EE044
 
-loc_481A7A:

@@ -1,3 +1,4 @@
+loc_4EF4FA:
 mov     ebx, ecx
 mov     edx, ecx
 mov     eax, esp
@@ -3979,4 +3980,3 @@ sub     edx, 7F0h
 add     eax, edx
 lea     ecx, [eax+244h]
 
-loc_4F1E98:

@@ -1,3 +1,4 @@
+loc_40F860:
 mov     eax, esi
 call    sub_4EE044
 pop     esi
@@ -3958,4 +3959,3 @@ sub     eax, 10h
 and     ah, 0Fh
 mov     [esi+56h], ax
 
-loc_411A51:

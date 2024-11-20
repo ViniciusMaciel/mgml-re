@@ -1,3 +1,4 @@
+loc_41FF5A:
 mov     edx, [eax+14h]
 sar     edx, 10h
 shl     edx, 10h
@@ -3996,4 +3997,3 @@ pop     esi
 pop     ecx
 retn
 
-loc_422543:

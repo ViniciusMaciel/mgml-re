@@ -1,3 +1,4 @@
+loc_49C50B:
 pop     edx
 retn
 sub_49C4E3 endp
@@ -3977,4 +3978,3 @@ jge     short loc_49F0CA
 loc_49F06D:
 xor     ecx, ecx
 
-loc_49F06F:

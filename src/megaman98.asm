@@ -1,3 +1,4 @@
+loc_4F496B:
 mov     eax, ds:dword_551D10
 mov     edx, [eax]
 push    0
@@ -3977,4 +3978,3 @@ push    offset dword_782BE4
 push    eax
 call    dword ptr [edx+14h]
 
-loc_4F7B2A:

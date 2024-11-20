@@ -1,3 +1,4 @@
+loc_4FD51E:
 rol     edx, 8
 mov     [edi], dx
 shr     edx, 8
@@ -3997,4 +3998,3 @@ call    cs:__imp_TlsAlloc
 mov     ds:dwTlsIndex, eax
 jmp     short loc_5000FF
 
-loc_50011D:

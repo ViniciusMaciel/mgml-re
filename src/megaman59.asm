@@ -1,3 +1,4 @@
+loc_491E1F:
 pop     edx
 retn
 sub_491DFC endp
@@ -3972,4 +3973,3 @@ mov     byte ptr [ecx+0Ah], 80h
 mov     eax, 90h
 call    sub_42BEB2
 
-loc_494911:

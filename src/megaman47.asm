@@ -1,3 +1,4 @@
+loc_4730ED:
 mov     word ptr [edi], 78h ; 'x'
 jmp     short loc_4730FA
 
@@ -3989,4 +3990,3 @@ or      ds:byte_5F8364, 2
 mov     eax, ecx
 call    sub_4DE2F6
 
-loc_47563D:

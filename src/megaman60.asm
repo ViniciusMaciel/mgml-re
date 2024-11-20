@@ -1,3 +1,4 @@
+loc_494911:
 inc     byte ptr [ecx+5]
 jmp     def_4948DA      ; jumptable 004948DA default case
 
@@ -3913,4 +3914,3 @@ jz      short loc_4970E4
 xor     eax, eax
 call    sub_49E0D7
 
-loc_4970E4:

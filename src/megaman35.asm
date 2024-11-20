@@ -1,3 +1,4 @@
+loc_4551D1:
 xor     esi, esi
 mov     si, [edx+3Ch]
 mov     eax, esi
@@ -3872,4 +3873,3 @@ mov     edx, 1
 mov     eax, esi
 call    sub_4DE96B
 
-loc_457B8C:

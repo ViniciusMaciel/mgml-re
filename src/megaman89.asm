@@ -1,3 +1,4 @@
+loc_4DC9FB:
 mov     edx, [esp+24h+var_24]
 mov     eax, ebx
 call    sub_4DCD52
@@ -3952,4 +3953,3 @@ mov     edx, [edx]
 loc_4DEBB9:
 mov     [eax+0A4h], edx
 
-loc_4DEBBF:

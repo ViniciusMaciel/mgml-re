@@ -1,3 +1,4 @@
+loc_484AF2:
 mov     dword ptr [esi+0Ch], 1Eh
 jmp     def_4848F9      ; jumptable 004848F9 default case
 
@@ -3994,4 +3995,3 @@ add     ecx, eax
 mov     eax, edx
 call    dword ptr [ecx]
 
-loc_4875BB:

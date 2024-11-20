@@ -1,3 +1,4 @@
+loc_481A7A:
 pop     esi
 pop     edx
 pop     ecx
@@ -3976,4 +3977,3 @@ mov     ch, 1
 mov     byte ptr ds:dword_77E954, ch
 add     [esi+6], ch
 
-loc_484AF2:

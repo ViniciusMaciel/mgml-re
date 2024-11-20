@@ -1,3 +1,4 @@
+loc_4C7ADE:
 xor     ebx, ebx
 mov     edx, 1
 mov     eax, 80010023h
@@ -3925,4 +3926,3 @@ push    edi
 push    eax
 xor     edx, edx
 
-loc_4CA0B2:

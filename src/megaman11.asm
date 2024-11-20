@@ -1,3 +1,4 @@
+loc_418987:
 cmp     dword ptr [edi+10h], 1Eh
 jnz     loc_418AFB
 mov     ebx, 0Ah
@@ -3977,4 +3978,3 @@ mov     ebx, edx
 add     ebx, 10h
 mov     [esi+44h], bx
 
-loc_41ADF2:

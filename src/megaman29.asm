@@ -1,3 +1,4 @@
+loc_446929:
 lea     edx, [ecx+14h]
 mov     eax, 0A3h
 call    sub_4D8BC3
@@ -3990,4 +3991,3 @@ mov     ecx, ebx
 dec     ecx
 mov     [edx+8], cx
 
-loc_4491F9:

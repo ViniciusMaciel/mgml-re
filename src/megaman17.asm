@@ -1,3 +1,4 @@
+loc_427F98:
 test    byte ptr ds:word_77EAB6, 1
 jz      short loc_427FC6
 call    sub_4DE043
@@ -3964,4 +3965,3 @@ jge     short loc_42ABAE
 xor     eax, eax
 retn
 
-loc_42ABAE:

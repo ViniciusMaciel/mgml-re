@@ -1,3 +1,4 @@
+loc_489E38:
 mov     byte ptr [edx+15h], 0
 mov     byte ptr [edx+19h], 9
 mov     byte ptr [edx+18h], 0FFh
@@ -3993,4 +3994,3 @@ call    sub_4D8EB1
 add     [esi+4], bl
 mov     byte ptr [esi+5], 0
 
-loc_48C9F9:

@@ -1,3 +1,4 @@
+loc_4491F9:
 cmp     word ptr [edx+8], 0
 jnz     short loc_449221
 cmp     byte ptr [eax+0A7h], 0
@@ -3957,4 +3958,3 @@ loc_44B62B:
 mov     eax, ecx
 call    sub_4DD107
 
-loc_44B632:

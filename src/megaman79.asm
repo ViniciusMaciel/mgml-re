@@ -1,3 +1,4 @@
+loc_4C3080:
 add     ebx, edi
 mov     [esp+20h+var_20], bx
 mov     eax, [eax+16h]
@@ -3992,4 +3993,3 @@ or      eax, esi
 mov     [ecx+14h], eax
 jmp     short loc_4C5463
 
-loc_4C542C:

@@ -1,3 +1,4 @@
+loc_4B62DC:
 pop     edx
 pop     ebx
 retn
@@ -3993,4 +3994,3 @@ mov     eax, 4
 call    sub_4874BB
 mov     eax, 6
 
-loc_4B82A2:

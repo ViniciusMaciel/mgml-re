@@ -1,3 +1,4 @@
+loc_4F1E98:
 mov     eax, ecx
 pop     ecx
 retn
@@ -3856,4 +3857,3 @@ push    1Bh
 push    eax
 call    dword ptr [edx+58h]
 
-loc_4F496B:

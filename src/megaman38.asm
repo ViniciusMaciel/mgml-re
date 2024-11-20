@@ -1,3 +1,4 @@
+loc_45CB3C:
 xor     eax, eax
 call    sub_4A0E24
 inc     byte ptr [esi+8]
@@ -3995,4 +3996,3 @@ mov     edx, 30h ; '0'
 mov     eax, esi
 call    sub_4ED88B
 
-loc_45F374:

@@ -1,3 +1,4 @@
+loc_47A54B:
 mov     edx, 9
 mov     eax, 4
 call    sub_4A0E24
@@ -3975,4 +3976,3 @@ loc_47CE1B:
 inc     cl
 jmp     short loc_47CDF9
 
-loc_47CE1F:

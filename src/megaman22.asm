@@ -1,3 +1,4 @@
+loc_4352FC:
 test    byte ptr [esp+48h+var_18+3], 10h
 jnz     loc_43517F
 xor     eax, eax
@@ -3961,4 +3962,3 @@ sar     eax, 18h
 call    sub_43864B
 jmp     def_437E24      ; jumptable 00437E24 default case
 
-loc_437E4A:

@@ -1,3 +1,4 @@
+loc_468F08:
 mov     eax, [esp+38h+var_1C]
 test    byte ptr [eax+6], 8
 jz      loc_469093
@@ -3986,4 +3987,3 @@ mov     [edx+16h], bx
 shl     eax, 10h
 mov     [edx+20h], eax
 
-loc_46B794:

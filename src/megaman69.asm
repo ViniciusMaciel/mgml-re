@@ -1,3 +1,4 @@
+loc_4AC639:
 pop     esi
 pop     edx
 pop     ecx
@@ -3976,4 +3977,3 @@ mov     [eax+0Bh], dl
 jnz     short loc_4AEAE4
 inc     byte ptr [eax+8]
 
-loc_4AEAE4:

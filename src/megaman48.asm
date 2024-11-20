@@ -1,3 +1,4 @@
+loc_47563D:
 pop     esi
 pop     edx
 pop     ecx
@@ -3991,4 +3992,3 @@ mov     dl, [eax+0ACh]
 xor     ebx, ebx
 call    sub_4DE96B
 
-loc_477ED3:

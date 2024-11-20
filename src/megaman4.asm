@@ -1,3 +1,4 @@
+loc_408AA7:
 mov     ax, [edi+3Eh]
 mov     [esi+16h], ax
 mov     eax, [esi+14h]
@@ -3991,4 +3992,3 @@ call    sub_4DE96B
 loc_40AD37:
 inc     byte ptr [ecx+0Ah]
 
-loc_40AD3A:

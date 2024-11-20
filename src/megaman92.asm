@@ -1,3 +1,4 @@
+loc_4E4097:
 inc     ecx
 jmp     short loc_4E4051
 sub_4E4037 endp
@@ -3994,4 +3995,3 @@ jmp     def_4E5914      ; jumptable 004E5914 default case
 ; jumptable 004E6D28 default case
 ; jumptable 004E6F79 default case, case 0
 
-loc_4E6F0A:

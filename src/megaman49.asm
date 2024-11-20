@@ -1,3 +1,4 @@
+loc_477ED3:
 pop     edx
 pop     ecx
 pop     ebx
@@ -3987,4 +3988,3 @@ mov     eax, 4
 call    sub_4A0E75
 call    sub_4D8EB1
 
-loc_47A54B:

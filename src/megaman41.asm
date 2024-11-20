@@ -1,3 +1,4 @@
+loc_463ECC:
 test    ah, 20h
 jz      short loc_463EF7
 mov     dx, [ecx+56h]
@@ -3960,4 +3961,3 @@ pop     ecx
 pop     ebx
 retn
 
-loc_466609:

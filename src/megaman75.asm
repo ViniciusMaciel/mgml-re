@@ -1,3 +1,4 @@
+loc_4BA3C1:
 mov     eax, offset unk_53414C
 call    sub_47EC19
 mov     byte ptr [edx+4], 0FFh
@@ -3950,4 +3951,3 @@ call    sub_49DBA5
 inc     dl
 jmp     short loc_4BC116
 
-loc_4BC13C:

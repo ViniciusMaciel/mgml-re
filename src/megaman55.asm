@@ -1,3 +1,4 @@
+loc_4875BB:
 movsx   ecx, bl
 mov     eax, 80000000h
 shr     eax, cl
@@ -3989,4 +3990,3 @@ jmp     short loc_489E38
 loc_489E32:
 mov     ds:byte_77EA5F, bh
 
-loc_489E38:

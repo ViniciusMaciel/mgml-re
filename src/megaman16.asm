@@ -1,3 +1,4 @@
+loc_42524B:
 movsx   ecx, dl
 mov     eax, ecx
 shl     eax, 3
@@ -3997,4 +3998,3 @@ cmp     byte ptr [eax+0Fh], 0DCh
 jb      short loc_427F98
 mov     byte ptr [eax+0Fh], 0DCh
 
-loc_427F98:

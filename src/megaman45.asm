@@ -1,3 +1,4 @@
+loc_46E109:
 add     esp, 4
 jmp     loc_46E4AA
 sub_46DF8D endp
@@ -3979,4 +3980,3 @@ lea     edx, [ebp+160h]
 mov     eax, ebp
 call    sub_4DF87F
 
-loc_470A13:

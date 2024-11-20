@@ -1,3 +1,4 @@
+loc_4A1A0D:
 call    sub_4D89E4
 xor     dl, dl
 mov     byte ptr ds:dword_55BD7C, dl
@@ -3995,4 +3996,3 @@ or      eax, 40000000h
 or      ds:dword_55BD7C, eax
 jmp     short loc_4A43E9
 
-loc_4A438E:

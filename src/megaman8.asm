@@ -1,3 +1,4 @@
+loc_411A51:
 xor     ecx, ecx
 xor     ebx, ebx
 mov     edx, 166h
@@ -3975,4 +3976,3 @@ mov     edx, esi
 mov     eax, ecx
 call    sub_414377
 
-loc_413FF7:

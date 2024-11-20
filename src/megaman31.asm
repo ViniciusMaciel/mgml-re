@@ -1,3 +1,4 @@
+loc_44B632:
 mov     dword ptr [ecx+158h], 2000200h
 mov     dword ptr [ecx+15Ch], 200h
 mov     word ptr [ecx+15Eh], 4210h
@@ -3980,4 +3981,3 @@ loc_44DED4:
 mov     eax, ebp
 call    sub_4DEADD
 
-loc_44DEDB:

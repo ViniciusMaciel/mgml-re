@@ -21,11 +21,10 @@ def split_functions_with_limit(input_asm_file, output_folder, max_lines_per_file
 
         for line in lines:
             line = line.strip()
-            current_function_content.append(line + "\n")
 
             # Detectar início de uma nova função
             if line.startswith("loc_") and line.endswith(":"):
-                # Se adicionar a função atual exceder o limite de linhas no arquivo atual
+                # Se o arquivo atual já ultrapassou o limite de linhas
                 if current_file_lines + len(current_function_content) > max_lines_per_file:
                     # Salvar o arquivo atual
                     output_file = os.path.join(output_folder, f"megaman{current_file_index}.asm")
@@ -40,12 +39,21 @@ def split_functions_with_limit(input_asm_file, output_folder, max_lines_per_file
                     current_file_content = []
                     current_file_lines = 0
 
-                # Adicionar a função ao conteúdo do arquivo atual
+                # Adicionar a função acumulada ao arquivo atual
                 current_file_content.extend(current_function_content)
                 current_file_lines += len(current_function_content)
+
+                # Resetar o conteúdo da função
                 current_function_content = []
 
-        # Salvar o último arquivo se houver conteúdo restante
+            # Adicionar a linha atual à função corrente
+            current_function_content.append(line + "\n")
+
+        # Salvar o conteúdo restante
+        if current_function_content:
+            current_file_content.extend(current_function_content)
+            current_file_lines += len(current_function_content)
+
         if current_file_content:
             output_file = os.path.join(output_folder, f"megaman{current_file_index}.asm")
             with open(output_file, 'w') as f_out:

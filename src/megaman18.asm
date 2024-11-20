@@ -1,3 +1,4 @@
+loc_42ABAE:
 mov     eax, 1
 retn
 sub_42ABA2 endp
@@ -3922,4 +3923,3 @@ cmp     edx, eax
 jge     short loc_42D597
 mov     ecx, 2
 
-loc_42D597:

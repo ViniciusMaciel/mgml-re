@@ -1,3 +1,4 @@
+loc_4CC984:
 lea     eax, [ebx+44h]
 mov     edx, ebp
 call    sub_42D90F
@@ -3963,4 +3964,3 @@ mov     eax, 611h
 call    sub_47E8B8
 inc     byte ptr [edx+0Ah]
 
-loc_4CF14E:

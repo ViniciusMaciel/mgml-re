@@ -1,3 +1,4 @@
+loc_4B39B0:
 add     esp, 10h
 jmp     loc_4B338F
 sub_4B390B endp
@@ -3969,4 +3970,3 @@ loc_4B62D7:
 add     edx, 4
 jmp     short loc_4B62B3
 
-loc_4B62DC:

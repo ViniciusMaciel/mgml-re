@@ -1,3 +1,4 @@
+loc_48C9F9:
 add     esp, 14h
 pop     ebp
 pop     edi
@@ -3995,4 +3996,3 @@ mov     eax, [eax+2Ch]
 mov     byte ptr [eax+9], 4
 mov     byte ptr [eax+0Ah], 0
 
-loc_48F656:

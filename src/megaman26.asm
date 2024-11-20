@@ -1,3 +1,4 @@
+loc_43F306:
 mov     edx, eax
 or      edx, 2000000h
 mov     ebx, eax
@@ -3982,4 +3983,3 @@ mov     word ptr [ecx+0Ah], 0
 loc_441B8B:
 mov     word ptr [ecx+15Eh], 7FFFh
 
-loc_441B94:

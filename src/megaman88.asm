@@ -1,3 +1,4 @@
+loc_4D9096:
 mov     edx, ecx
 shl     edx, 4
 xor     ebx, ebx
@@ -3996,4 +3997,3 @@ xor     eax, eax
 mov     [esp+24h+var_1C], eax
 jmp     short loc_4DCA19
 
-loc_4DC9FB:

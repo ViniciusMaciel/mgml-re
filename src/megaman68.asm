@@ -1,3 +1,4 @@
+loc_4A9BA7:
 pop     edi
 pop     esi
 pop     edx
@@ -3987,4 +3988,3 @@ loc_4AC62F:
 mov     byte ptr [ecx+9], 0
 mov     word ptr [ecx+0Ah], 0
 
-loc_4AC639:

@@ -1,3 +1,4 @@
+loc_44DEDB:
 xor     ecx, ecx
 mov     ebx, 0FFFFFFFFh
 mov     edx, 1
@@ -3973,4 +3974,3 @@ mov     eax, [ecx+eax*4+50h]
 call    sub_4DE3EA
 jmp     short loc_45030B
 
-loc_45031F:

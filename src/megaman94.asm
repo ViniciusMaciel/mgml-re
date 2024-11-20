@@ -1,3 +1,4 @@
+loc_4E9EFC:
 add     esp, 34h
 jmp     loc_4E8111
 sub_4E9693 endp
@@ -3971,4 +3972,3 @@ mov     [esp+44h+var_14], eax
 lea     eax, [esp+44h+var_3C]
 call    sub_4EFC91
 
-loc_4ECDAE:

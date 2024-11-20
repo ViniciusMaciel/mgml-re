@@ -3932,4 +3932,3 @@ mov     [esp+1Ch+var_18], ebx
 cmp     ebx, 6
 jge     loc_403AE0
 
-loc_403989:

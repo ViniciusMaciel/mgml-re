@@ -1,3 +1,4 @@
+loc_48F656:
 pop     edx
 retn
 sub_48F623 endp
@@ -3973,4 +3974,3 @@ mov     byte ptr [edx+9], 5
 mov     eax, [eax+24h]
 mov     byte ptr [eax+0Ah], 0
 
-loc_491E1F:

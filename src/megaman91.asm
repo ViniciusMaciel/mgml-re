@@ -1,3 +1,4 @@
+loc_4E1860:
 cmp     eax, 20h ; ' '
 jl      short loc_4E17EC
 inc     ebx
@@ -3978,4 +3979,3 @@ mov     edx, ecx
 mov     eax, esi
 call    sub_4E4160
 
-loc_4E4097:

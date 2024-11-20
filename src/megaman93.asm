@@ -1,3 +1,4 @@
+loc_4E6F0A:
 mov     ebx, 84h
 mov     edx, offset unk_75354C
 mov     eax, 1
@@ -3984,4 +3985,3 @@ xor     eax, eax
 mov     [esp+4Ch+var_48], eax
 jmp     loc_4E9D15
 
-loc_4E9EFC:

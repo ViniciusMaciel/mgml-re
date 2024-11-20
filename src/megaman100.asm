@@ -1,3 +1,4 @@
+loc_4FA50C:
 cmp     dword ptr [ebx], 0FFFFFFFFh
 jz      short loc_4FA525
 mov     ecx, [ebx+0Ch]
@@ -3985,4 +3986,3 @@ sub     dh, ah
 jnb     short loc_4FD51E
 and     edx, 0FF0000FFh
 
-loc_4FD51E:

@@ -1,3 +1,4 @@
+loc_403989:
 lea     edi, [ebp+0Ch]
 mov     esi, [esp+1Ch+var_1C]
 lea     esi, [esi+14h]
@@ -3966,4 +3967,3 @@ jmp     short loc_4062F1
 loc_4062EA:
 mov     dword ptr [eax+40h], offset unk_50B3A0
 
-loc_4062F1:

@@ -1,3 +1,4 @@
+loc_4B82A2:
 call    sub_4874BB
 mov     eax, 6Fh ; 'o'
 call    sub_47E8B8
@@ -3994,4 +3995,3 @@ jbe     short loc_4BA3C1
 cmp     al, 1
 jnz     short loc_4BA3CF
 
-loc_4BA3C1:

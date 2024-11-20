@@ -1,3 +1,4 @@
+loc_45F374:
 xor     edx, edx
 mov     dl, [esi+3]
 mov     eax, esi
@@ -3986,4 +3987,3 @@ jmp     short loc_461991
 loc_46198F:
 xor     eax, eax
 
-loc_461991:

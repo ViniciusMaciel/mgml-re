@@ -1,3 +1,4 @@
+loc_4162F4:
 mov     al, [esi+0Fh]
 mov     [esi+10h], al
 pop     edi
@@ -3981,4 +3982,3 @@ mov     eax, ecx
 call    sub_418DAC
 inc     byte ptr [ecx+0Ah]
 
-loc_418987:

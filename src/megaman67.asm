@@ -1,3 +1,4 @@
+loc_4A71D1:
 xor     ebx, ebx
 mov     bl, ds:byte_77EAC6
 mov     eax, ebx
@@ -3982,4 +3983,3 @@ call    sub_4326CA
 loc_4A9BA6:
 pop     ebp
 
-loc_4A9BA7:

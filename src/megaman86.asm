@@ -1,3 +1,4 @@
+loc_4D3F27:
 xor     ebx, ebx
 mov     bl, ds:byte_53965A[edx*2]
 movzx   edi, ds:byte_53965B[edx*2]
@@ -3995,4 +3996,3 @@ jmp     short loc_4D68F4
 loc_4D68F0:
 mov     byte ptr [edx+0Fh], 40h ; '@'
 
-loc_4D68F4:

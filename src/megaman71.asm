@@ -1,3 +1,4 @@
+loc_4B1267:
 push    200h
 mov     ecx, 20h ; ' '
 mov     edx, ecx
@@ -3783,4 +3784,3 @@ mov     ecx, edi
 sar     ecx, 10h
 mov     [eax+94h], cx
 
-loc_4B39B0:

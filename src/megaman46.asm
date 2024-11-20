@@ -1,3 +1,4 @@
+loc_470A13:
 add     esp, 0Ch
 jmp     loc_470478
 sub_47047F endp
@@ -3996,4 +3997,3 @@ xor     ebx, ebx
 mov     eax, esi
 call    sub_4DE96B
 
-loc_4730ED:

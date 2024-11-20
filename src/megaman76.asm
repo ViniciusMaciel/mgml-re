@@ -1,3 +1,4 @@
+loc_4BC13C:
 pop     edi
 pop     edx
 pop     ecx
@@ -3996,4 +3997,3 @@ call    sub_47E8B8
 and     ds:byte_5F8421, 0BFh
 mov     edx, 2
 
-loc_4BE465:

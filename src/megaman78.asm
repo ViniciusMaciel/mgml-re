@@ -1,3 +1,4 @@
+loc_4C0A6B:
 mov     eax, [ecx+48h]
 sar     eax, 10h
 cmp     eax, [edx]
@@ -3995,4 +3996,3 @@ jmp     short loc_4C3080
 loc_4C307E:
 xor     ebx, ebx
 
-loc_4C3080:

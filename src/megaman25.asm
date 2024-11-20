@@ -1,3 +1,4 @@
+loc_43CCE6:
 mov     eax, edx
 mov     byte ptr [ecx+eax*2], 0
 mov     byte ptr [ecx+eax*2+1], 0
@@ -3976,4 +3977,3 @@ test    eax, eax
 jge     short loc_43F306
 xor     eax, eax
 
-loc_43F306:

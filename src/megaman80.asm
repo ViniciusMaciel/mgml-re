@@ -1,3 +1,4 @@
+loc_4C542C:
 xor     edx, edx
 mov     dl, ds:byte_537855[eax]
 mov     ebx, edx
@@ -3992,4 +3993,3 @@ mov     edx, 11h
 xor     eax, eax
 call    sub_4A0E24
 
-loc_4C7ADE:

@@ -1,3 +1,4 @@
+loc_45031F:
 mov     eax, [ecx+58h]
 mov     al, [eax+1]
 mov     [ebp+0Dh], al
@@ -3997,4 +3998,3 @@ mov     [edx+1Eh], ax
 mov     ax, ds:word_559E8C
 mov     [edx+20h], ax
 
-loc_452936:

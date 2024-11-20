@@ -1,3 +1,4 @@
+loc_41D873:
 mov     al, [esi+0Ch]
 mov     [esi+0Dh], al
 pop     edi
@@ -3981,4 +3982,3 @@ sar     edx, 10h
 shl     edx, 10h
 mov     [eax+1Ch], edx
 
-loc_41FF5A:

@@ -1,3 +1,4 @@
+loc_47CE1F:
 mov     edx, [ebx+9]
 sar     edx, 18h
 cmp     edx, 0FFFFFFFFh
@@ -3927,4 +3928,3 @@ jnz     def_47F039      ; jumptable 0047F039 default case
 inc     byte ptr ds:dword_5F836C+1
 mov     byte ptr [ecx+0Ah], 0
 
-loc_47F14D:

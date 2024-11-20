@@ -1,3 +1,4 @@
+loc_46B794:
 or      byte ptr [ecx+14h], 2
 jmp     loc_46B502
 sub_46B72D endp
@@ -3978,4 +3979,3 @@ mov     bh, bl
 dec     bh
 mov     [esi+7Ch], bh
 
-loc_46E109:

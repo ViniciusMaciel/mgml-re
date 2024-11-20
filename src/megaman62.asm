@@ -1,3 +1,4 @@
+loc_4999CB:
 mov     eax, 0Ah
 call    sub_49E0D7
 inc     byte ptr [ecx+4]
@@ -3983,4 +3984,3 @@ call    sub_49E0D7
 mov     byte ptr [edx+0Ah], 0
 call    sub_49DF64
 
-loc_49C50B:

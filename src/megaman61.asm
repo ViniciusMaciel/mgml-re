@@ -1,3 +1,4 @@
+loc_4970E4:
 mov     byte ptr [edx+14h], 0FFh
 mov     byte ptr [edx+18h], 0FFh
 mov     byte ptr [edx+16h], 1Ah
@@ -3943,4 +3944,3 @@ call    sub_47EBCB
 test    eax, eax
 jz      short loc_4999D8 ; jumptable 00499900 case 5
 
-loc_4999CB:

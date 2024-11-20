@@ -1,3 +1,4 @@
+loc_4CF14E:
 pop     edx
 retn
 sub_4CF130 endp
@@ -3985,4 +3986,3 @@ pop     edx
 pop     ebx
 retn
 
-loc_4D19B3:

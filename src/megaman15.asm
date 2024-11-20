@@ -1,3 +1,4 @@
+loc_422543:
 cmp     bh, 14h
 jnz     def_422165      ; jumptable 00422165 default case
 mov     ebp, [eax+10h]
@@ -3996,4 +3997,3 @@ inc     dl
 cmp     dl, 10h
 jge     short loc_425290
 
-loc_42524B:
