@@ -27,7 +27,7 @@ def asm_to_c_conversion(input_folder, ignore_file, output_folder):
                 asm_code = asm_file.read()
 
             try:
-                response = openai.chat.completions.create(
+                completions = openai.chat.completions.create(
                     model="gpt-4o",
                     messages=[
                         {"role": "system", "content": "You are an assistant that converts Assembly code to C."},
@@ -35,8 +35,8 @@ def asm_to_c_conversion(input_folder, ignore_file, output_folder):
                     ],
                     temperature=0.7
                 )
-                c_code = response['choices'][0]['message']['content']
-                tokens_used = response['usage']['total_tokens']
+                c_code = completions.choices[0].message.content
+                tokens_used = completions.usage.total_tokens
 
                 with open(output_path, 'w') as c_file:
                     c_file.write(c_code)
@@ -51,6 +51,6 @@ if __name__ == "__main__":
     project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # Root folder
     input_folder = os.path.join(project_root, "asm")  # ASM folder
     output_folder = os.path.join(project_root, "src")  # SRC folder
-    ignore_file = "megaman104.asm"  # File to ignore
+    ignore_file = "megaman107.asm"  # File to ignore
 
     asm_to_c_conversion(input_folder, ignore_file, output_folder)

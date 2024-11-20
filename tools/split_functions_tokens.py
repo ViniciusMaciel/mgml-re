@@ -76,4 +76,4 @@ input_file = os.path.join(root_folder, "megaman.exe2.asm")  # Input ASM file in 
 output_folder = os.path.join(root_folder, "asm")  # Output folder in the root folder
 
 # Call the function
-split_functions_with_token_limit(input_file, output_folder, max_tokens_per_file=100000)
+split_functions_with_token_limit(input_file, output_folder, max_tokens_per_file=10000)
