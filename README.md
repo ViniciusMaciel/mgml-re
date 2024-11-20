@@ -24,6 +24,9 @@ To compile this project, follow these steps:
    - Set the build configuration to `Release` or `Debug`, as needed.
    - Build the solution by selecting **Build → Build Solution** or pressing `Ctrl + Shift + B`.
 
+3. **Copy the depedencies **
+   - copy the depedencies to Debug folder using the copy.bat
+
 ---
 
 ## Objective
