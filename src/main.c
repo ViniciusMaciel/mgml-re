@@ -329,10 +329,17 @@ loc_4F9275:
 
 loc_4F928C:
     return ecx;
+
+    // Mock versions of missing labels
 loc_4F921A:
-    return;
+    // Handle loc_4F921A
+    return 0;
+
 loc_4F9239:
-    return;
+    // Handle loc_4F9239
+    return 0;
+
 loc_4F9216:
-    return;
+    // Handle loc_4F9216
+    return 0;
 }
