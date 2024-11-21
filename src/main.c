@@ -115,7 +115,6 @@ loc_4F91A4:
     // This jump target does nothing but allows for further extensions if needed.
 
 loc_4F91A6:
-    exec here!!!
     // Return 1 to simulate success
     return 1;
 }
