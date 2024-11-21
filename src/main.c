@@ -115,9 +115,51 @@ loc_4F91A4:
     // This jump target does nothing but allows for further extensions if needed.
 
 loc_4F91A6:
-    // Return 1 to simulate success
+    loc_4F91A6()
     return 1;
 }
+
+#include <stdint.h> // Incluído para tipos como uint8_t
+
+// Função hipotética representando o trecho de código
+void loc_4F91A6(uint8_t* ebx) {
+    uint8_t al = *ebx; // Obtém o valor apontado por ebx
+
+    // Verifica se o valor é menor que 'r' (72h)
+    if (al < 0x72) {
+        goto loc_4F91B4;
+    }
+
+    // Verifica se o valor é menor ou igual a 'r' (72h)
+    if (al <= 0x72) {
+        goto loc_4F91BA;
+    }
+
+    // Verifica se o valor é igual a 'w' (77h)
+    if (al == 0x77) {
+        goto loc_4F91C0;
+    }
+
+    // Caso nenhuma condição acima seja satisfeita, salta para loc_4F91CC
+    goto loc_4F91CC;
+
+loc_4F91B4:
+    // Código correspondente a loc_4F91B4
+    return;
+
+loc_4F91BA:
+    // Código correspondente a loc_4F91BA
+    return;
+
+loc_4F91C0:
+    // Código correspondente a loc_4F91C0
+    return;
+
+loc_4F91CC:
+    // Código correspondente a loc_4F91CC
+    return;
+}
+
 
 // Function to simulate sub_4F937D
 int sub_4F937D(uint32_t* address) {
