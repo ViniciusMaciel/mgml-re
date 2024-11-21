@@ -13,7 +13,7 @@ def convert_c_to_asm(function_name, c_code, asm_code):
     try:
         messages=[
                     {"role": "system", "content": "You are an assistant that converts Assembly code to C.Please return just the code and anymore. If this code call another function please return a mock function with needed parameters. I need a complete code with has a loc_ function please add a fake goto"},
-                    {"role": "user", "content": f"Convert the following Assembly code to C:\n\n{asm_code}\n\nusing this base function in C and using the same parameters\n\n{c_code}"}
+                    {"role": "user", "content": f"Convert the following Assembly code to C:\n\n{asm_code}\n\nusing this base function in C and using the same parameters\n\n{c_code}\n\nDont change the type of return of original C function too, i have a incomplete program but build"}
                 ]
         completions = openai.chat.completions.create(
             model="gpt-4o",

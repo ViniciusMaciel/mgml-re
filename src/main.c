@@ -96,7 +96,7 @@ int sub_4F917C(uint32_t* address, uint32_t param1, uint32_t param2, uint32_t* te
     // Set Value to ebp (initialized as 0)
     Value = ebp;
 
-    // Check if edx (param1) is zero
+    // Check if param1 (edx) is zero
     if (param1 == 0) {
         goto loc_4F91A6; // Equivalent to `jz short loc_4F91A6`
     }
@@ -109,14 +109,43 @@ int sub_4F917C(uint32_t* address, uint32_t param1, uint32_t param2, uint32_t* te
 
     // If equal, set the value at the address pointed by param1 to ecx
     *address = ecx; // Equivalent to `mov [edx], ecx`
+    goto loc_4F91A6;
 
 loc_4F91A4:
-    // Simulated placeholder for future logic
-    // This jump target does nothing but allows for further extensions if needed.
+    // Set the value at the address pointed by param1 to ebp
+    *address = ebp; // Equivalent to `mov [edx], ebp`
 
 loc_4F91A6:
-    // Return 1 to simulate success
+    // Retrieve the first byte from the address pointed by ebx
+    uint8_t al = *((uint8_t*)ebx); // Equivalent to `mov al, [ebx]`
+
+    // Compare al with 'r' (0x72)
+    if (al < 0x72) {
+        goto loc_4F91B4; // Equivalent to `jb short loc_4F91B4`
+    }
+    if (al <= 0x72) {
+        goto loc_4F91BA; // Equivalent to `jbe short loc_4F91BA`
+    }
+    if (al == 0x77) {
+        goto loc_4F91C0; // Equivalent to `jz short loc_4F91C0`
+    }
+    goto loc_4F91CC; // Equivalent to `jmp short loc_4F91CC`
+
+loc_4F91B4:
+    // Placeholder for code to execute if al < 'r'
+    return 0;
+
+loc_4F91BA:
+    // Placeholder for code to execute if al == 'r'
     return 1;
+
+loc_4F91C0:
+    // Placeholder for code to execute if al == 'w'
+    return 2;
+
+loc_4F91CC:
+    // Placeholder for code to execute if al > 'w'
+    return 3;
 }
 
 #include <stdint.h> // Incluído para tipos como uint8_t
