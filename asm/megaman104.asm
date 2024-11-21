@@ -120,28 +120,6 @@ align 2
 
 
 
-sub_4F917C proc near
-
-Value= dword ptr -18h
-
-push    ebx
-push    ecx
-push    esi
-push    edi
-push    ebp
-sub     esp, 4
-mov     ebx, eax
-mov     ecx, 1
-xor     ebp, ebp
-xor     esi, esi
-xor     edi, edi
-mov     [esp+18h+Value], ebp ; Value
-test    edx, edx
-jz      short loc_4F91A6
-cmp     ecx, ds:dword_557C68
-jnz     short loc_4F91A4
-mov     [edx], ecx
-jmp     short loc_4F91A6
 
 loc_4F91A4:
 mov     [edx], ebp
@@ -386,36 +364,7 @@ sub_4F9297 endp
 
 
 
-sub_4F937D proc near
 
-var_10= dword ptr -10h
-
-push    ecx
-push    esi
-push    edi
-sub     esp, 4
-mov     esi, eax
-mov     ecx, edx
-mov     edi, ebx
-mov     edx, esp
-mov     eax, ecx
-call    sub_4F917C
-mov     ebx, eax
-test    eax, eax
-jz      short loc_4F93BA
-xor     eax, eax
-call    __allocfp_
-mov     edx, eax
-test    eax, eax
-jz      short loc_4F93B8
-push    eax
-xor     edx, eax
-push    edi
-mov     eax, esi
-mov     dl, [ecx]
-mov     ecx, [esp+18h+var_10]
-call    sub_4F9297
-mov     edx, eax
 
 loc_4F93B8:
 mov     eax, edx
@@ -431,13 +380,7 @@ sub_4F937D endp
 
 
 
-sub_4F93C1 proc near
-push    ebx
-xor     ebx, ebx
-call    sub_4F937D
-pop     ebx
-retn
-sub_4F93C1 endp
+
 
 
 
