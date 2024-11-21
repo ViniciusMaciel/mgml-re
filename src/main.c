@@ -111,58 +111,55 @@ int sub_4F917C(uint32_t* address, uint32_t param1, uint32_t param2, uint32_t* te
     *address = ecx; // Equivalent to `mov [edx], ecx`
 
 loc_4F91A4:
-    return;
     // Simulated placeholder for future logic
     // This jump target does nothing but allows for further extensions if needed.
 
 loc_4F91A6:
-    loc_4F91A6_func((uint8_t*)ebx); // Adjusted call with proper function signature
+    exec here!!!
+    // Return 1 to simulate success
     return 1;
 }
 
-// Adjusted loc_4F91A6 function
-void loc_4F91A6_func(uint8_t* ebx) {
-    uint8_t al = *ebx; // Obtain the value pointed to by ebx
+#include <stdint.h> // Incluído para tipos como uint8_t
 
-    // Check if the value is less than 'r' (72h)
+// Função hipotética representando o trecho de código
+void loc_4F91A6(uint8_t* ebx) {
+    uint8_t al = *ebx; // Obtém o valor apontado por ebx
+
+    // Verifica se o valor é menor que 'r' (72h)
     if (al < 0x72) {
         goto loc_4F91B4;
     }
 
-    // Check if the value is less than or equal to 'r' (72h)
+    // Verifica se o valor é menor ou igual a 'r' (72h)
     if (al <= 0x72) {
         goto loc_4F91BA;
     }
 
-    // Check if the value is equal to 'w' (77h)
+    // Verifica se o valor é igual a 'w' (77h)
     if (al == 0x77) {
         goto loc_4F91C0;
     }
 
-    // Default case: corresponds to loc_4F91CC
+    // Caso nenhuma condição acima seja satisfeita, salta para loc_4F91CC
     goto loc_4F91CC;
 
 loc_4F91B4:
-    // Behavior for loc_4F91B4
-    // Add your specific logic here
+    // Código correspondente a loc_4F91B4
     return;
 
 loc_4F91BA:
-    // Behavior for loc_4F91BA
-    // Add your specific logic here
+    // Código correspondente a loc_4F91BA
     return;
 
 loc_4F91C0:
-    // Behavior for loc_4F91C0
-    // Add your specific logic here
+    // Código correspondente a loc_4F91C0
     return;
 
 loc_4F91CC:
-    // Behavior for loc_4F91CC
-    // Add your specific logic here
+    // Código correspondente a loc_4F91CC
     return;
 }
-
 
 
 // Function to simulate sub_4F937D
