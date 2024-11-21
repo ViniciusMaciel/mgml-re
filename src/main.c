@@ -12,9 +12,32 @@ void* __allocfp_() {
 
 // Fake function for sub_4F9297
 // Likely processes parameters involving strings or memory regions.
-int sub_4F9297(uint32_t param1, uint32_t param2, uint8_t byteValue, uint32_t param4) {
-    // Placeholder logic
-    return 0; // Default success
+#include <ctype.h>
+
+int tolower_(int c) {
+    // Mock function for tolower_
+    return tolower(c);
+}
+
+int sub_4F9297(uint32_t param1, uint32_t param2, uint8_t byteValue, uint32_t* param4) {
+    uint8_t al = byteValue; // equivalent to mov al, dl
+    uint32_t edx = param2; // equivalent to mov edx, ecx
+    uint32_t* ecx = param4; // equivalent to mov ecx, [esp+0Ch+arg_4]
+
+    ecx[3] &= 0xFC; // equivalent to and byte ptr [ecx+0Ch], 0FCh
+    ecx[3] |= param1; // equivalent to or [ecx+0Ch], ebx
+
+    al = tolower_(al); // equivalent to call tolower_
+
+    if (al != 0x72) { // 'r' is 0x72
+        return 0;
+    }
+
+    if ((param1 & 2) == 0) { // equivalent to test bl, 2
+        return 0;
+    }
+
+    return 2; // equivalent to mov eax, 2
 }
 
 // Main entry point for the application
