@@ -82,110 +82,42 @@ int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdL
     // Placeholder for additional logic to create a window or handle GUI events
     return 0; // Exit successfully
 }
-
-// Fake function for sub_4F917C
-// Likely performs some operation based on parameters (eax, edx, ebx, and esp).
-int sub_4F917C(uint32_t* address, uint32_t param1, uint32_t param2, uint32_t* temp) {
-    uint32_t Value = 0;    // Simulated variable for stack usage
-    uint32_t ebx = (uint32_t)address; // Equivalent to `mov ebx, eax`
-    uint32_t ecx = 1;      // Equivalent to `mov ecx, 1`
-    uint32_t ebp = 0;      // Equivalent to `xor ebp, ebp`
-    uint32_t esi = 0;      // Equivalent to `xor esi, esi`
-    uint32_t edi = 0;      // Equivalent to `xor edi, edi`
-
-    // Set Value to ebp (initialized as 0)
-    Value = ebp;
-
-    // Check if param1 (edx) is zero
-    if (param1 == 0) {
-        goto loc_4F91A6; // Equivalent to `jz short loc_4F91A6`
-    }
-
-    // Compare ecx (1) with some global value (simulated as dword_557C68)
-    uint32_t dword_557C68 = 1; // Placeholder for the global variable
-    if (ecx != dword_557C68) {
-        goto loc_4F91A4; // Equivalent to `jnz short loc_4F91A4`
-    }
-
-    // If equal, set the value at the address pointed by param1 to ecx
-    *address = ecx; // Equivalent to `mov [edx], ecx`
-    goto loc_4F91A6;
-
-loc_4F91A4:
-    // Set the value at the address pointed by param1 to ebp
-    *address = ebp; // Equivalent to `mov [edx], ebp`
-
-loc_4F91A6:
-    // Retrieve the first byte from the address pointed by ebx
-    uint8_t al = *((uint8_t*)ebx); // Equivalent to `mov al, [ebx]`
-
-    // Compare al with 'r' (0x72)
-    if (al < 0x72) {
-        goto loc_4F91B4; // Equivalent to `jb short loc_4F91B4`
-    }
-    if (al <= 0x72) {
-        goto loc_4F91BA; // Equivalent to `jbe short loc_4F91BA`
-    }
-    if (al == 0x77) {
-        goto loc_4F91C0; // Equivalent to `jz short loc_4F91C0`
-    }
-    goto loc_4F91CC; // Equivalent to `jmp short loc_4F91CC`
-
-loc_4F91B4:
-    // Placeholder for code to execute if al < 'r'
-    return 0;
-
-loc_4F91BA:
-    // Placeholder for code to execute if al == 'r'
-    return 1;
-
-loc_4F91C0:
-    // Placeholder for code to execute if al == 'w'
-    return 2;
-
-loc_4F91CC:
-    // Placeholder for code to execute if al > 'w'
-    return 3;
-}
-
-#include <stdint.h> // Incluído para tipos como uint8_t
-
-// Função hipotética representando o trecho de código
+// Funï¿½ï¿½o hipotï¿½tica representando o trecho de cï¿½digo
 void loc_4F91A6(uint8_t* ebx) {
-    uint8_t al = *ebx; // Obtém o valor apontado por ebx
+    uint8_t al = *ebx; // Obtï¿½m o valor apontado por ebx
 
-    // Verifica se o valor é menor que 'r' (72h)
+    // Verifica se o valor ï¿½ menor que 'r' (72h)
     if (al < 0x72) {
         goto loc_4F91B4;
     }
 
-    // Verifica se o valor é menor ou igual a 'r' (72h)
+    // Verifica se o valor ï¿½ menor ou igual a 'r' (72h)
     if (al <= 0x72) {
         goto loc_4F91BA;
     }
 
-    // Verifica se o valor é igual a 'w' (77h)
+    // Verifica se o valor ï¿½ igual a 'w' (77h)
     if (al == 0x77) {
         goto loc_4F91C0;
     }
 
-    // Caso nenhuma condição acima seja satisfeita, salta para loc_4F91CC
+    // Caso nenhuma condiï¿½ï¿½o acima seja satisfeita, salta para loc_4F91CC
     goto loc_4F91CC;
 
 loc_4F91B4:
-    // Código correspondente a loc_4F91B4
+    // Cï¿½digo correspondente a loc_4F91B4
     return;
 
 loc_4F91BA:
-    // Código correspondente a loc_4F91BA
+    // Cï¿½digo correspondente a loc_4F91BA
     return;
 
 loc_4F91C0:
-    // Código correspondente a loc_4F91C0
+    // Cï¿½digo correspondente a loc_4F91C0
     return;
 
 loc_4F91CC:
-    // Código correspondente a loc_4F91CC
+    // Cï¿½digo correspondente a loc_4F91CC
     return;
 }
 
@@ -259,4 +191,148 @@ int sub_4F0927(const char* file1, const char* file2) {
     // Failure case
     ebx = 0; // Ensure EBX is zeroed out
     return ebx; // Return failure
+}
+//new code
+#include <stdint.h>
+
+// Assume these are external functions and global variables used in the assembly code
+void __set_errno_() {
+
+}
+void __freefp_();
+void __chktty_();
+void sub_4FE251();
+void sub_4FB1EB();
+uint32_t dword_557C68 = 1;
+uint32_t dword_557E75 = 0x200;
+
+uint32_t sub_4F917C(uint32_t* address, uint32_t param1, uint32_t param2, uint32_t* temp) {
+    uint32_t Value = 0;
+    uint32_t ebx = (uint32_t)address;
+    uint32_t ecx = 1;
+    uint32_t ebp = 0;
+    uint32_t esi = 0;
+    uint32_t edi = 0;
+
+    Value = ebp;
+
+    if (param1 == 0) {
+        goto loc_4F91A6;
+    }
+
+    if (ecx != dword_557C68) {
+        goto loc_4F91A4;
+    }
+
+    *address = ecx;
+    goto loc_4F91A6;
+
+loc_4F91A4:
+    *address = ebp;
+
+loc_4F91A6:
+    uint8_t al = *((uint8_t*)ebx);
+
+    if (al < 0x72) {
+        goto loc_4F91B4;
+    }
+    if (al <= 0x72) {
+        goto loc_4F91BA;
+    }
+    if (al == 0x77) {
+        goto loc_4F91C0;
+    }
+    goto loc_4F91CC;
+
+loc_4F91B4:
+    if (al == 0x61) {
+        goto loc_4F91C6;
+    }
+    goto loc_4F91CC;
+
+loc_4F91BA:
+    Value |= 1;
+    goto loc_4F91DD;
+
+loc_4F91C0:
+    Value |= 2;
+    goto loc_4F91DD;
+
+loc_4F91CC:
+    uint32_t eax = 9;
+    __set_errno_();
+    ecx = 0;
+    goto loc_4F928C;
+
+loc_4F91C6:
+    Value |= 0x82;
+    goto loc_4F91DD;
+
+loc_4F91DD:
+    ebx++;
+    al = *((uint8_t*)ebx);
+    if (al == 0 || ecx == 0) {
+        goto loc_4F9275;
+    }
+    if (al < 0x63) {
+        goto loc_4F920A;
+    }
+    if (al <= 0x63) {
+        goto loc_4F924C;
+    }
+    if (al < 0x6E) {
+        goto loc_4F91DD;
+    }
+    if (al <= 0x6E) {
+        goto loc_4F9261;
+    }
+    if (al == 0x74) {
+        goto loc_4F922E;
+    }
+    goto loc_4F91DD;
+
+loc_4F920A:
+    if (al < 0x2B) {
+        goto loc_4F91DD;
+    }
+    if (al <= 0x2B) {
+        goto loc_4F9216;
+    }
+    if (al == 0x62) {
+        goto loc_4F9239;
+    }
+    goto loc_4F91DD;
+
+loc_4F922E:
+    if (esi != 0) {
+        goto loc_4F921A;
+    }
+    esi = 1;
+    goto loc_4F91DD;
+
+loc_4F924C:
+    if (edi != 0) {
+        goto loc_4F921A;
+    }
+    edi = 1;
+    goto loc_4F91DD;
+
+loc_4F9261:
+    if (edi != 0) {
+        goto loc_4F921A;
+    }
+    edi = 1;
+    goto loc_4F91DD;
+
+loc_4F9275:
+    return Value;
+
+loc_4F928C:
+    return ecx;
+loc_4F921A:
+    return;
+loc_4F9239:
+    return;
+loc_4F9216:
+    return;
 }

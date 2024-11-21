@@ -2,6 +2,7 @@ import os
 from find import extract_function_content
 from analyse import count_jumps_and_locs
 from find_locs import find_locs_in_file
+from verify_locs import verify_all_locs_present
 from decompiler import convert_c_to_asm
 
 def main():
@@ -35,29 +36,43 @@ def main():
         print("\nCódigo Assembly encontrado:\n")
         print(asm_code)
 
-        # Analisar os jumps e locs_
-        print("\nAnalisando instruções de jump no código Assembly...")
-        jump_count, locs = count_jumps_and_locs(asm_code)
-        print(f"Número de instruções de jump encontradas: {jump_count}")
-        print(f"LOCs encontrados: {locs}")
-
-        # Adicionar LOCs que faltam
+        # Caminho do arquivo ASM para buscar locs ausentes
         asm_path = os.path.join(os.path.dirname(script_dir), "megaman.exe.asm")
-        locs_content = find_locs_in_file(asm_path, locs)
 
-        if locs_content:
-            print("\nConteúdo completo dos LOCs encontrados:")
-            for loc, content in locs_content.items():
-                print(f"\n{loc}:\n{content}")
-                asm_code += f"\n\n{content}"  # Adiciona o conteúdo ao Assembly original
+        # Limite de duas análises para adicionar locs ausentes
+        max_iterations = 50
+        for iteration in range(max_iterations):
+            print(f"\nIniciando análise {iteration + 1}/"+str(max_iterations)+"...")
+            
+            # Analisar jumps e locs no código Assembly atual
+            jump_count, locs = count_jumps_and_locs(asm_code)
+            print(f"Número de instruções de jump encontradas: {jump_count}")
+            print(f"LOCs encontrados: {locs}")
 
-        # Código Assembly atualizado
-        print("\nCódigo Assembly atualizado com LOCs adicionados:\n")
-        print(asm_code)
+            # Verificar locs ausentes
+            missing_count, missing_locs = verify_all_locs_present(asm_code, locs)
+            if missing_count == 0:
+                print("\nTodos os LOCs estão presentes no código Assembly.")
+                break  # Se todos os locs foram resolvidos, sai do loop
 
+            print(f"\nNúmero de LOCs faltantes: {missing_count}")
+            print(f"LOCs faltantes: {missing_locs}")
+
+            # Buscar os locs ausentes no arquivo .asm
+            locs_content = find_locs_in_file(asm_path, missing_locs)
+            if locs_content:
+                print("\nConteúdo dos LOCs adicionados ao código Assembly:")
+                for loc, content in locs_content.items():
+                    print(f"\n{loc}:\n{content}")
+                    asm_code += f"\n\n{content}"  # Adiciona o conteúdo ao Assembly original
+            else:
+                print("Erro: Não foi possível encontrar todos os LOCs necessários no arquivo de Assembly.")
+                return
+
+        # Todos os locs foram resolvidos (ou máximo de duas análises atingido)
+        print("\nChamando o decompiler com o código Assembly completo...")
         c_code = convert_c_to_asm(first_function, c_code, asm_code)
         print(c_code)
-
 
     except Exception as e:
         print(f"Ocorreu um erro ao processar os arquivos: {e}")
