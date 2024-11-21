@@ -206,6 +206,7 @@ void sub_4FB1EB();
 uint32_t dword_557C68 = 1;
 uint32_t dword_557E75 = 0x200;
 
+
 uint32_t sub_4F917C(uint32_t* address, uint32_t param1, uint32_t param2, uint32_t* temp) {
     uint32_t Value = 0;
     uint32_t ebx = (uint32_t)address;
@@ -330,16 +331,29 @@ loc_4F9275:
 loc_4F928C:
     return ecx;
 
-    // Mock versions of missing labels
 loc_4F921A:
-    // Handle loc_4F921A
-    return 0;
+    ecx = 0;
+
+    goto loc_4F91DD;
 
 loc_4F9239:
-    // Handle loc_4F9239
-    return 0;
+    if (esi) {
+        goto loc_4F921A;
+    }
+    Value |= 0x40;
+    esi = 1;
+    Value = (unsigned char)Value;
+    goto loc_4F91DD;
 
 loc_4F9216:
-    // Handle loc_4F9216
-    return 0;
+    if (!ebp) {
+        goto loc_4F921E;
+    }
+
+loc_4F921E:
+    uint8_t ah = *(uint8_t*)(ebp + 0x18 + Value);
+    ah |= 3;
+    ebp = 1;
+    *(uint8_t*)(ebp + 0x18 + Value) = ah;
+    goto loc_4F91DD;
 }
