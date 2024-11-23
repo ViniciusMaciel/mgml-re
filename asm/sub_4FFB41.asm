@@ -66,6 +66,21 @@ pop     ecx
 pop     ebx
 retn
 sub_4FFB41      endp
+sub_502330      proc near               ; CODE XREF: sub_4FFB41+9E↑p
+push    ebx
+push    edx
+mov     ebx, eax
+call    ds:off_5581C0
+cmp     byte ptr ds:dword_897BB8, 0
+jnz     short loc_502352
+mov     edx, 0FFh
+mov     eax, 10h
+call    __FiniRtns
+
+loc_502352:                             ; CODE XREF: sub_502330+11↑j
+mov     eax, ebx
+call    sub_50235C
+sub_502330      endp
 sub_4FABD3      proc near               ; CODE XREF: sub_4FFB41+40↓p
 push    ebx
 push    ecx
@@ -115,21 +130,35 @@ pop     ebx
 pop     eax
 retn    4
 sub_5022FA      endp
-sub_502330      proc near               ; CODE XREF: sub_4FFB41+9E↑p
-push    ebx
-push    edx
-mov     ebx, eax
-call    ds:off_5581C0
-cmp     byte ptr ds:dword_897BB8, 0
-jnz     short loc_502352
-mov     edx, 0FFh
-mov     eax, 10h
-call    __FiniRtns
+sub_5022CB      proc near               ; CODE XREF: AUTO:005022BF↑p
+push    eax
+cmp     eax, esp
+jnb     short loc_5022EA ; __STKOVERFLOW_
+; doubtful name
+sub     eax, esp
+neg     eax
+push    esi
+push    eax
+call    ds:off_551FC4
+mov     esi, eax
+pop     eax
+cmp     eax, [esi]
+pop     esi
+jbe     short loc_5022EA ; __STKOVERFLOW_
+; doubtful name
+call    sub_5022FA      ; __GRO
+; doubtful name
+retn
+; ---------------------------------------------------------------------------
 
-loc_502352:                             ; CODE XREF: sub_502330+11↑j
-mov     eax, ebx
-call    sub_50235C
-sub_502330      endp
+loc_5022EA:                             ; CODE XREF: sub_5022CB+3↑j
+; sub_5022CB+17↑j
+pop     eax             ; __STKOVERFLOW_
+; doubtful name
+mov     eax, offset aStackOverflow ; "Stack Overflow!\r\n"
+mov     edx, 1
+call    __fatal_runtime_error_
+sub_5022CB      endp
 sub_500909      proc near               ; CODE XREF: sub_4FABD3+2E↑p
 ; StartAddress+86↓p
 push    ecx
@@ -370,35 +399,6 @@ pop     esi
 pop     ecx
 retn
 sub_4FA9A8      endp
-sub_5022CB      proc near               ; CODE XREF: AUTO:005022BF↑p
-push    eax
-cmp     eax, esp
-jnb     short loc_5022EA ; __STKOVERFLOW_
-; doubtful name
-sub     eax, esp
-neg     eax
-push    esi
-push    eax
-call    ds:off_551FC4
-mov     esi, eax
-pop     eax
-cmp     eax, [esi]
-pop     esi
-jbe     short loc_5022EA ; __STKOVERFLOW_
-; doubtful name
-call    sub_5022FA      ; __GRO
-; doubtful name
-retn
-; ---------------------------------------------------------------------------
-
-loc_5022EA:                             ; CODE XREF: sub_5022CB+3↑j
-; sub_5022CB+17↑j
-pop     eax             ; __STKOVERFLOW_
-; doubtful name
-mov     eax, offset aStackOverflow ; "Stack Overflow!\r\n"
-mov     edx, 1
-call    __fatal_runtime_error_
-sub_5022CB      endp
 sub_5000A0      proc near               ; CODE XREF: sub_4FA9A8+15↑p
 ; sub_50012F:loc_500141↓p
 push    ebx

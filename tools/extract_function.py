@@ -57,6 +57,7 @@ def find_and_extract_functions(asm_lines, called_functions, processed_functions)
     Extracts all called functions not already processed.
     """
     all_functions_content = []
+    new_functions_found = False
 
     for func_name in called_functions:
         if func_name in processed_functions:
@@ -66,8 +67,9 @@ def find_and_extract_functions(asm_lines, called_functions, processed_functions)
         if content:
             all_functions_content.append("\n".join(content))
             processed_functions.add(func_name)
+            new_functions_found = True
 
-    return all_functions_content
+    return all_functions_content, new_functions_found
 
 
 def find_additional_missing_functions(asm_code):
@@ -125,9 +127,16 @@ def update_missing_functions_detection(asm_lines, main_function_name, output_dir
     asm_code = main_function_content[:]
     processed_functions = {main_function_name}
 
-    for _ in range(5):  # Iterate to include additional dependencies
+    for iteration in range(7):  # Up to 5 iterations
+        print(f"Iteration {iteration + 1}")
         called_functions = find_called_functions(asm_code)
-        additional_functions = find_and_extract_functions(asm_lines, called_functions, processed_functions)
+        additional_functions, new_functions_found = find_and_extract_functions(
+            asm_lines, called_functions, processed_functions
+        )
+
+        if not new_functions_found:  # Stop if no new functions are found
+            print("No new functions found. Stopping iteration.")
+            break
 
         for function_code in additional_functions:
             asm_code.extend(function_code.splitlines())
