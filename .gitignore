@@ -400,4 +400,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
-*.asm
+MEGAMAN.EXE.asm
