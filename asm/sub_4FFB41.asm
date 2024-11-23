@@ -66,9 +66,21 @@ pop     ecx
 pop     ebx
 retn
 sub_4FFB41      endp
+sub_502330      proc near               ; CODE XREF: sub_4FFB41+9E↑p
+push    ebx
+push    edx
+mov     ebx, eax
+call    ds:off_5581C0
+cmp     byte ptr ds:dword_897BB8, 0
+jnz     short loc_502352
+mov     edx, 0FFh
+mov     eax, 10h
+call    __FiniRtns
 
-; Called Functions
-
+loc_502352:                             ; CODE XREF: sub_502330+11↑j
+mov     eax, ebx
+call    sub_50235C
+sub_502330      endp
 sub_5022FA      proc near               ; CODE XREF: sub_4FFB41+5B↑p
 ; sub_5022CB+19↑p ...
 
@@ -89,7 +101,6 @@ pop     ebx
 pop     eax
 retn    4
 sub_5022FA      endp
-
 sub_4FABD3      proc near               ; CODE XREF: sub_4FFB41+40↓p
 push    ebx
 push    ecx
@@ -119,19 +130,3 @@ pop     ecx
 pop     ebx
 retn
 sub_4FABD3      endp
-
-sub_502330      proc near               ; CODE XREF: sub_4FFB41+9E↑p
-push    ebx
-push    edx
-mov     ebx, eax
-call    ds:off_5581C0
-cmp     byte ptr ds:dword_897BB8, 0
-jnz     short loc_502352
-mov     edx, 0FFh
-mov     eax, 10h
-call    __FiniRtns
-
-loc_502352:                             ; CODE XREF: sub_502330+11↑j
-mov     eax, ebx
-call    sub_50235C
-sub_502330      endp
