@@ -51,7 +51,7 @@ def find_called_functions(function_content):
 
 def find_and_extract_functions(asm_path, called_functions, processed_functions):
     """
-    Extracts all called functions not already processed. Creates stubs if missing.
+    Extracts all called functions not already processed.
     """
     all_functions_content = []
 
@@ -63,20 +63,49 @@ def find_and_extract_functions(asm_path, called_functions, processed_functions):
         if content:
             all_functions_content.append("\n".join(content))
             processed_functions.add(func_name)
-        else:
-            stub = f"{func_name}      proc near\n    ; Stub for missing function\n    retn\n{func_name}      endp\n"
-            all_functions_content.append(stub)
-            processed_functions.add(func_name)
 
     return all_functions_content
 
-def save_asm_code(output_dir, function_name, asm_code):
+def find_additional_missing_functions(asm_code):
+    """
+    Identifies any additional missing loc_ or sub_ functions within the final asm_code.
+    """
+    call_pattern = re.compile(r"\b(sub_[0-9A-F]+|loc_[0-9A-F]+)\b")
+    defined_pattern = re.compile(r"^(sub_[0-9A-F]+|loc_[0-9A-F]+)\s+proc\s+near")
+    
+    defined_functions = set()
+    missing_functions = set()
+    
+    # Identify already defined functions
+    for line in asm_code:
+        match = defined_pattern.match(line)
+        if match:
+            defined_functions.add(match.group(1))
+    
+    # Identify missing functions
+    for line in asm_code:
+        matches = call_pattern.findall(line)
+        for func in matches:
+            if func not in defined_functions:
+                missing_functions.add(func)
+    
+    return missing_functions
+
+def save_asm_code(output_dir, function_name, asm_code, asm_path):
     """
     Saves the asm_code to a file named <function_name>.asm.
+    Reanalyzes the final asm_code for missing functions before saving.
     """
     os.makedirs(output_dir, exist_ok=True)
     output_path = os.path.join(output_dir, f"{function_name}.asm")
     
+    # Reanalyze and add missing functions found in the ASM file
+    missing_functions = find_additional_missing_functions(asm_code)
+    if missing_functions:
+        print(f"Missing functions detected: {', '.join(missing_functions)}")
+        additional_content = find_and_extract_functions(asm_path, missing_functions, set())
+        asm_code.extend(additional_content)
+
     with open(output_path, 'w', encoding='utf-8') as output_file:
         output_file.write("\n".join(asm_code))
     
@@ -116,7 +145,7 @@ def main():
         asm_code.extend(additional_functions_content)
 
     # Save asm_code to a file named <function_name>.asm
-    save_asm_code(output_dir, function_name, asm_code)
+    save_asm_code(output_dir, function_name, asm_code, asm_path)
 
 if __name__ == "__main__":
     main()
