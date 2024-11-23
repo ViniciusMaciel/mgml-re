@@ -89,7 +89,7 @@
       <AdditionalOptions>/SECTION:.text,ER %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <BaseAddress>0x400000</BaseAddress>
       <SectionAlignment>4096</SectionAlignment>
