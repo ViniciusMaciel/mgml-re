@@ -73,8 +73,12 @@ void __GRO(void) {
     // Mock para função relacionada a gerenciamento de pilha
 }
 
-// Endereços globais simulados
-int* global_5581A8 = (int*)0x5581A8;
+// Define a variável global
+int global_dword_5581A8 = 0xF4;
+
+// Declare um ponteiro que aponta para a variável
+int* global_5581A8 = &global_dword_5581A8;
+
 int* global_557C30 = (int*)0x557C30;
 
 // Função principal para teste

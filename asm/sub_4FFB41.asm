@@ -66,21 +66,26 @@ pop     ecx
 pop     ebx
 retn
 sub_4FFB41      endp
-sub_502330      proc near               ; CODE XREF: sub_4FFB41+9E↑p
-push    ebx
-push    edx
-mov     ebx, eax
-call    ds:off_5581C0
-cmp     byte ptr ds:dword_897BB8, 0
-jnz     short loc_502352
-mov     edx, 0FFh
-mov     eax, 10h
-call    __FiniRtns
+sub_5022FA      proc near               ; CODE XREF: sub_4FFB41+5B↑p
+; sub_5022CB+19↑p ...
 
-loc_502352:                             ; CODE XREF: sub_502330+11↑j
-mov     eax, ebx
-call    sub_50235C
-sub_502330      endp
+var_8           = dword ptr -8
+arg_0           = dword ptr  4
+
+push    eax
+push    ebx
+mov     eax, [esp+8+arg_0]
+mov     ebx, 0FFFFFFFCh
+
+loc_502305:                             ; CODE XREF: sub_5022FA+19↓j
+mov     [esp+ebx+8+var_8], ebx
+sub     ebx, 1000h
+sub     eax, 1000h
+jg      short loc_502305
+pop     ebx
+pop     eax
+retn    4
+sub_5022FA      endp
 sub_4FABD3      proc near               ; CODE XREF: sub_4FFB41+40↓p
 push    ebx
 push    ecx
@@ -110,55 +115,21 @@ pop     ecx
 pop     ebx
 retn
 sub_4FABD3      endp
-sub_5022FA      proc near               ; CODE XREF: sub_4FFB41+5B↑p
-; sub_5022CB+19↑p ...
-
-var_8           = dword ptr -8
-arg_0           = dword ptr  4
-
-push    eax
+sub_502330      proc near               ; CODE XREF: sub_4FFB41+9E↑p
 push    ebx
-mov     eax, [esp+8+arg_0]
-mov     ebx, 0FFFFFFFCh
+push    edx
+mov     ebx, eax
+call    ds:off_5581C0
+cmp     byte ptr ds:dword_897BB8, 0
+jnz     short loc_502352
+mov     edx, 0FFh
+mov     eax, 10h
+call    __FiniRtns
 
-loc_502305:                             ; CODE XREF: sub_5022FA+19↓j
-mov     [esp+ebx+8+var_8], ebx
-sub     ebx, 1000h
-sub     eax, 1000h
-jg      short loc_502305
-pop     ebx
-pop     eax
-retn    4
-sub_5022FA      endp
-sub_5022CB      proc near               ; CODE XREF: AUTO:005022BF↑p
-push    eax
-cmp     eax, esp
-jnb     short loc_5022EA ; __STKOVERFLOW_
-; doubtful name
-sub     eax, esp
-neg     eax
-push    esi
-push    eax
-call    ds:off_551FC4
-mov     esi, eax
-pop     eax
-cmp     eax, [esi]
-pop     esi
-jbe     short loc_5022EA ; __STKOVERFLOW_
-; doubtful name
-call    sub_5022FA      ; __GRO
-; doubtful name
-retn
-; ---------------------------------------------------------------------------
-
-loc_5022EA:                             ; CODE XREF: sub_5022CB+3↑j
-; sub_5022CB+17↑j
-pop     eax             ; __STKOVERFLOW_
-; doubtful name
-mov     eax, offset aStackOverflow ; "Stack Overflow!\r\n"
-mov     edx, 1
-call    __fatal_runtime_error_
-sub_5022CB      endp
+loc_502352:                             ; CODE XREF: sub_502330+11↑j
+mov     eax, ebx
+call    sub_50235C
+sub_502330      endp
 sub_500909      proc near               ; CODE XREF: sub_4FABD3+2E↑p
 ; StartAddress+86↓p
 push    ecx
@@ -201,6 +172,35 @@ loc_50237A:                             ; CODE XREF: sub_50235C+16↑j
 mov     eax, edx
 jmp     loc_4FAC25
 sub_50235C      endp
+sub_5022CB      proc near               ; CODE XREF: AUTO:005022BF↑p
+push    eax
+cmp     eax, esp
+jnb     short loc_5022EA ; __STKOVERFLOW_
+; doubtful name
+sub     eax, esp
+neg     eax
+push    esi
+push    eax
+call    ds:off_551FC4
+mov     esi, eax
+pop     eax
+cmp     eax, [esi]
+pop     esi
+jbe     short loc_5022EA ; __STKOVERFLOW_
+; doubtful name
+call    sub_5022FA      ; __GRO
+; doubtful name
+retn
+; ---------------------------------------------------------------------------
+
+loc_5022EA:                             ; CODE XREF: sub_5022CB+3↑j
+; sub_5022CB+17↑j
+pop     eax             ; __STKOVERFLOW_
+; doubtful name
+mov     eax, offset aStackOverflow ; "Stack Overflow!\r\n"
+mov     edx, 1
+call    __fatal_runtime_error_
+sub_5022CB      endp
 sub_4FA9A8      proc near               ; CODE XREF: sub_4FABD3+17↓p
 
 var_41C         = byte ptr -41Ch
@@ -399,32 +399,29 @@ pop     esi
 pop     ecx
 retn
 sub_4FA9A8      endp
-sub_5000A0      proc near               ; CODE XREF: sub_4FA9A8+15↑p
-; sub_50012F:loc_500141↓p
+sub_50045B      proc near               ; CODE XREF: sub_4FA9A8+EB↑p
+; sub_4FA9A8+160↑p ...
 push    ebx
+push    ecx
 push    edx
 mov     edx, eax
+call    wcslen_
+lea     ebx, [eax+1]
+add     ebx, ebx
+mov     eax, ebx
+call    _nmalloc_
+mov     ecx, eax
 test    eax, eax
-jnz     short loc_5000CE
-mov     eax, 1
-mov     edx, ds:dword_5581A8
-call    calloc_
-mov     edx, eax
-test    eax, eax
-jz      short loc_5000CE
-mov     ebx, ds:dword_5581A8
-mov     byte ptr [eax+52h], 1
-mov     [eax+0F0h], ebx
+jz      short loc_50047C
+call    memcpy_
 
-loc_5000CE:                             ; CODE XREF: sub_5000A0+6↑j
-; sub_5000A0+1C↑j
-mov     eax, edx
-call    __InitThreadData_
-mov     eax, edx
+loc_50047C:                             ; CODE XREF: sub_50045B+1A↑j
+mov     eax, ecx
 pop     edx
+pop     ecx
 pop     ebx
 retn
-sub_5000A0      endp
+sub_50045B      endp
 sub_500745      proc near               ; DATA XREF: sub_500909+2A↓o
 
 var_14          = dword ptr -14h
@@ -633,73 +630,32 @@ pop     esi
 pop     ebx
 retn
 sub_500745      endp
-sub_50045B      proc near               ; CODE XREF: sub_4FA9A8+EB↑p
-; sub_4FA9A8+160↑p ...
+sub_5000A0      proc near               ; CODE XREF: sub_4FA9A8+15↑p
+; sub_50012F:loc_500141↓p
 push    ebx
-push    ecx
 push    edx
 mov     edx, eax
-call    wcslen_
-lea     ebx, [eax+1]
-add     ebx, ebx
-mov     eax, ebx
-call    _nmalloc_
-mov     ecx, eax
 test    eax, eax
-jz      short loc_50047C
-call    memcpy_
+jnz     short loc_5000CE
+mov     eax, 1
+mov     edx, ds:dword_5581A8
+call    calloc_
+mov     edx, eax
+test    eax, eax
+jz      short loc_5000CE
+mov     ebx, ds:dword_5581A8
+mov     byte ptr [eax+52h], 1
+mov     [eax+0F0h], ebx
 
-loc_50047C:                             ; CODE XREF: sub_50045B+1A↑j
-mov     eax, ecx
-pop     edx
-pop     ecx
-pop     ebx
-retn
-sub_50045B      endp
-sub_50293A      proc near               ; CODE XREF: sub_500745+115↑p
-fnclex
-retn
-sub_50293A      endp
-sub_502B07      proc near               ; CODE XREF: sub_500745+11C↑p
-; raise_+FF↓p
-push    ebx
-push    ecx
-push    edx
-mov     ebx, eax
-
-__sigfpe_handler_:
-mov     eax, 2
-call    __GetSignalFunc_
-mov     ecx, eax
-cmp     eax, 1
-jz      short loc_502B42
-cmp     eax, 2
-jz      short loc_502B42
-cmp     eax, 3
-jz      short loc_502B42
-mov     edx, 2
+loc_5000CE:                             ; CODE XREF: sub_5000A0+6↑j
+; sub_5000A0+1C↑j
 mov     eax, edx
-call    __SetSignalFunc_
-mov     eax, 2
-mov     edx, ebx
-call    ecx
-xor     eax, eax
+call    __InitThreadData_
+mov     eax, edx
 pop     edx
-pop     ecx
 pop     ebx
 retn
-; ---------------------------------------------------------------------------
-
-loc_502B42:                             ; CODE XREF: sub_502B07+14↑j
-; sub_502B07+19↑j ...
-mov     eax, 0FFFFFFFFh
-pop     edx
-pop     ecx
-
-signal_:
-pop     ebx
-retn
-sub_502B07      endp
+sub_5000A0      endp
 sub_50012F      proc near               ; CODE XREF: __GetThreadData_+5↓p
 ; StartAddress+53↓p
 push    ebx
@@ -744,3 +700,47 @@ pop     ecx
 pop     ebx
 retn
 sub_50012F      endp
+sub_50293A      proc near               ; CODE XREF: sub_500745+115↑p
+fnclex
+retn
+sub_50293A      endp
+sub_502B07      proc near               ; CODE XREF: sub_500745+11C↑p
+; raise_+FF↓p
+push    ebx
+push    ecx
+push    edx
+mov     ebx, eax
+
+__sigfpe_handler_:
+mov     eax, 2
+call    __GetSignalFunc_
+mov     ecx, eax
+cmp     eax, 1
+jz      short loc_502B42
+cmp     eax, 2
+jz      short loc_502B42
+cmp     eax, 3
+jz      short loc_502B42
+mov     edx, 2
+mov     eax, edx
+call    __SetSignalFunc_
+mov     eax, 2
+mov     edx, ebx
+call    ecx
+xor     eax, eax
+pop     edx
+pop     ecx
+pop     ebx
+retn
+; ---------------------------------------------------------------------------
+
+loc_502B42:                             ; CODE XREF: sub_502B07+14↑j
+; sub_502B07+19↑j ...
+mov     eax, 0FFFFFFFFh
+pop     edx
+pop     ecx
+
+signal_:
+pop     ebx
+retn
+sub_502B07      endp
