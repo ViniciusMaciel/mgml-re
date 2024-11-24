@@ -20,7 +20,7 @@ def update_asm_file(asm_path, asm_file_path, function_name):
     processed_functions = {function_name}
     iteration = 0
 
-    while iteration < 1:  # Limit iterations to prevent infinite loops
+    while iteration < 8:  # Limit iterations to prevent infinite loops
         print(f"Iteration {iteration + 1}")
         called_functions = find_called_functions(asm_code)
 
@@ -31,7 +31,9 @@ def update_asm_file(asm_path, asm_file_path, function_name):
 
             content = extract_function_content(asm_lines, func_name)
             if content:
-                asm_code.extend(content)
+                # Remove linhas totalmente em branco antes de adicionar o conteúdo
+                filtered_content = [line for line in content if line.strip()]
+                asm_code.extend(filtered_content)
                 processed_functions.add(func_name)
                 new_functions_found = True
 
