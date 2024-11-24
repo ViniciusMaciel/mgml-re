@@ -19,13 +19,11 @@ def create_initial_asm_file(asm_path, function_name, output_dir):
 
 
 if __name__ == "__main__":
-    # Paths
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
     asm_path = os.path.join(project_root, "megaman.exe.asm")
     functions_path = os.path.join(os.path.dirname(__file__), "functions.txt")
     output_dir = os.path.join(project_root, "asm")
 
-    # Read the target function name
     with open(functions_path, 'r', encoding='utf-8') as functions_file:
         function_name = functions_file.readline().strip()
 

@@ -1,6 +1,14 @@
 import os
 import re
 
+# Define all patterns
+loc_call_pattern = re.compile(r"\b(?:call|jmp|jnz|jz|je|jne|jb|ja|jl|jg|jle|jge|loop|loope|loopne|short)\s+loc_[0-9A-F]+")
+sub_call_pattern = re.compile(r"\b(?:call|jmp|jnz|jz|je|jne|jb|ja|jl|jg|jle|jge|loop|loope|loopne|short)\s+sub_[0-9A-F]+")
+sub_start_pattern = re.compile(r"^sub_[0-9A-F]+\s+proc\s+near")
+sub_end_pattern = re.compile(r"^sub_[0-9A-F]+\s+endp")
+loc_start_pattern = re.compile(r"^loc_[0-9A-F]+:")
+loc_end_pattern = re.compile(r"(^loc_[0-9A-F]+:|^;\s*-{10,})")
+
 
 def extract_function_content(asm_lines, function_name):
     """
@@ -26,56 +34,73 @@ def extract_function_content(asm_lines, function_name):
     return function_content
 
 
+def extract_called_functions(function_content):
+    """
+    Extracts all called sub_ and loc_ functions from the given content,
+    separating sub_ and loc_ into two distinct sets.
+    """
+    loc_called = set(
+        match.group().split()[-1]
+        for line in function_content
+        for match in loc_call_pattern.finditer(line)
+    )
+    sub_called = set(
+        match.group().split()[-1]
+        for line in function_content
+        for match in sub_call_pattern.finditer(line)
+    )
+    return loc_called, sub_called
+
+
 def find_called_functions(function_content):
     """
-    Identifies any called functions within the function content.
+    Combines all called sub_ and loc_ functions into a single list.
     """
-    called_functions = set()
-    define_pattern = re.compile(r"^(sub_[0-9A-F]+|loc_[0-9A-F]+)\s+proc\s+near")
-    label_pattern = re.compile(r"^(loc_[0-9A-F]+):")
-
-    defined_functions = set()
-
-    for line in function_content:
-        match = define_pattern.match(line) or label_pattern.match(line)
-        if match:
-            defined_functions.add(match.group(1))
-
-    call_pattern = re.compile(r"\b(sub_[0-9A-F]+|loc_[0-9A-F]+)\b")
-    for line in function_content:
-        matches = call_pattern.findall(line)
-        for func in matches:
-            if func not in defined_functions:
-                called_functions.add(func)
-
-    return list(called_functions)
+    loc_called, sub_called = extract_called_functions(function_content)
+    return list(loc_called | sub_called)
 
 
 def find_additional_missing_functions(asm_code):
     """
     Identifies any additional missing loc_ or sub_ functions within the final asm_code.
     """
-    call_pattern = re.compile(r"\b(sub_[0-9A-F]+|loc_[0-9A-F]+)\b")
-    define_pattern = re.compile(r"^(sub_[0-9A-F]+|loc_[0-9A-F]+)(\s+proc\s+near|:.*)")
-
     defined_functions = set()
     missing_functions = set()
 
     # Identify already defined functions and labels
     for line in asm_code:
-        match = define_pattern.match(line)
-        if match:
-            defined_functions.add(match.group(1))
+        if sub_start_pattern.match(line) or loc_start_pattern.match(line):
+            defined_functions.add(line.split()[0])
 
     # Identify missing functions
     for line in asm_code:
-        matches = call_pattern.findall(line)
-        for func in matches:
-            # Only add to missing if not in defined functions
+        for match in sub_call_pattern.finditer(line):
+            func = match.group().split()[-1]
+            if func not in defined_functions:
+                missing_functions.add(func)
+        for match in loc_call_pattern.finditer(line):
+            func = match.group().split()[-1]
             if func not in defined_functions:
                 missing_functions.add(func)
 
     return missing_functions
+
+def verify_missing_functions(asm_code, locs, subs):
+    """
+    Verifies if all loc_ and sub_ functions are present in the asm_code.
+    Returns a list of missing functions.
+    """
+    # Identify all defined loc_ and sub_ functions in asm_code
+    defined_locs = {line.split(":")[0] for line in asm_code if loc_start_pattern.match(line)}
+    defined_subs = {line.split()[0] for line in asm_code if sub_start_pattern.match(line)}
+
+    # Check if called loc_ and sub_ functions exist in defined sets
+    missing_locs = [loc for loc in locs if loc not in defined_locs]
+    missing_subs = [sub for sub in subs if sub not in defined_subs]
+
+    return missing_locs, missing_subs
+
+
 
 
 def save_asm_code(output_dir, function_name, asm_code):
@@ -84,9 +109,9 @@ def save_asm_code(output_dir, function_name, asm_code):
     """
     os.makedirs(output_dir, exist_ok=True)
     output_path = os.path.join(output_dir, f"{function_name}.asm")
-    
+
     with open(output_path, 'w', encoding='utf-8') as output_file:
         output_file.write("\n".join(asm_code))
-    
+
     print(f"ASM code saved to: {output_path}")
     return output_path
