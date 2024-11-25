@@ -25,7 +25,7 @@ def update_asm_file(asm_path, asm_file_path, function_name, max_iterations=8):
     iteration = 0
 
     while iteration < max_iterations:
-        print(f"Iteration {iteration + 1}")
+        print(f"\nIteration {iteration + 1}")
 
         loc_called, sub_called = extract_called_functions(asm_code)
 
@@ -35,9 +35,12 @@ def update_asm_file(asm_path, asm_file_path, function_name, max_iterations=8):
             print("No new functions found. Stopping iteration.")
             break
 
+        print(f"Functions to process in this iteration: {', '.join(sorted(functions_to_process))}")
+
         new_functions_found = False
 
         for func_name in functions_to_process:
+            print(f"Fetching function: {func_name}")  # Show each function being fetched
             content = extract_function_content(asm_lines, func_name)
             if content:
                 asm_code.extend(content)
@@ -48,6 +51,9 @@ def update_asm_file(asm_path, asm_file_path, function_name, max_iterations=8):
             print("No new functions found. Stopping iteration.")
             break
 
+        # Mostrar a quantidade de linhas do asm_code no final da iteração
+        print(f"ASM code line count after iteration {iteration + 1}: {len(asm_code)}")
+
         iteration += 1
 
     # Final verification of missing functions
@@ -56,7 +62,7 @@ def update_asm_file(asm_path, asm_file_path, function_name, max_iterations=8):
 
     # Report missing functions accurately
     all_missing = missing_locs + missing_subs
-    print(f"Number of missing functions: {len(all_missing)}")
+    print(f"\nNumber of missing functions: {len(all_missing)}")
     if all_missing:
         print(f"Missing functions: {', '.join(sorted(all_missing))}")
 
@@ -65,7 +71,8 @@ def update_asm_file(asm_path, asm_file_path, function_name, max_iterations=8):
     save_asm_code(os.path.dirname(asm_file_path), function_name, asm_code)
 
     elapsed_time = time.time() - start_time
-    print(f"Execution time: {elapsed_time:.2f} seconds")
+    print(f"\nExecution time: {elapsed_time:.2f} seconds")
+
 
 if __name__ == "__main__":
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))

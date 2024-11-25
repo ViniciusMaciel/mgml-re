@@ -3,9 +3,9 @@ import re
 
 # Define all patterns
 loc_call_pattern = re.compile(r"\b(?:call|jmp|jnz|jz|je|jne|jb|ja|jl|jg|jle|jge|loop|loope|loopne|short)\s+loc_[0-9A-F]+")
-sub_call_pattern = re.compile(r"\b(?:call|jmp|jnz|jz|je|jne|jb|ja|jl|jg|jle|jge|loop|loope|loopne|short)\s+sub_[0-9A-F]+")
-sub_start_pattern = re.compile(r"^sub_[0-9A-F]+\s+proc\s+near")
-sub_end_pattern = re.compile(r"^sub_[0-9A-F]+\s+endp")
+sub_call_pattern = re.compile(r"\b(?:call|jmp|jnz|jz|je|jne|jb|ja|jl|jg|jle|jge|loop|loope|loopne|short)\s+\S+")
+sub_start_pattern = re.compile(r"^\S+\s+proc\s+near")
+sub_end_pattern = re.compile(r"^\S+\s+endp")
 loc_start_pattern = re.compile(r"^loc_[0-9A-F]+:")
 loc_end_pattern = re.compile(r"(^loc_[0-9A-F]+:|^;\s*-{10,})")
 
