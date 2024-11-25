@@ -10,16 +10,40 @@ loc_start_pattern = re.compile(r"^loc_[0-9A-F]+:")
 loc_end_pattern = re.compile(r"(^loc_[0-9A-F]+:|^;\s*-{10,})")
 
 
-def extract_function_content(asm_lines, function_name):
+def extract_function_content_for_sub(asm_lines, function_name):
     """
-    Extracts the full content of the given function or loc_ from the ASM file lines.
+    Extracts the full content of the given sub_ function from the ASM file lines.
     """
     function_content = []
     inside_function = False
 
-    # Patterns for functions (sub_) and local labels (loc_)
+    # Patterns for functions (sub_)
     function_start_pattern = re.compile(rf"^{re.escape(function_name)}\s+proc\s+near")
     function_end_pattern = re.compile(rf"^{re.escape(function_name)}\s+endp")
+
+    for line in asm_lines:
+        # Remove AUTO or similar prefixes
+        cleaned_line = re.sub(r"^\s*AUTO:[0-9A-F]+", "", line).strip()
+
+        if function_start_pattern.match(cleaned_line):
+            inside_function = True
+
+        if inside_function:
+            function_content.append(cleaned_line)
+            if function_end_pattern.match(cleaned_line):
+                break
+
+    return function_content
+
+
+def extract_function_content_for_loc(asm_lines, function_name):
+    """
+    Extracts the full content of the given loc_ label from the ASM file lines.
+    """
+    function_content = []
+    inside_loc = False
+
+    # Patterns for loc_ blocks
     loc_start_pattern = re.compile(rf"^{re.escape(function_name)}:")
     loc_end_pattern = re.compile(r"(^loc_[0-9A-F]+:|^;\s*-{10,})")
 
@@ -27,18 +51,29 @@ def extract_function_content(asm_lines, function_name):
         # Remove AUTO or similar prefixes
         cleaned_line = re.sub(r"^\s*AUTO:[0-9A-F]+", "", line).strip()
 
-        # Check if it's the start of the desired function or loc_
-        if function_start_pattern.match(cleaned_line) or loc_start_pattern.match(cleaned_line):
-            inside_function = True
+        if loc_start_pattern.match(cleaned_line):
+            inside_loc = True
 
-        # If inside the desired function or loc_, collect lines
-        if inside_function:
+        if inside_loc:
+            if loc_end_pattern.match(cleaned_line) and not loc_start_pattern.match(cleaned_line):
+                break  # Stop at the next loc_ or a trace of dashes
             function_content.append(cleaned_line)
-            # Break on function end (for sub_) or loc_ end conditions (for loc_)
-            if function_end_pattern.match(cleaned_line) or loc_end_pattern.match(cleaned_line):
-                break
 
     return function_content
+
+
+def extract_function_content(asm_lines, function_name):
+    """
+    Determines whether the function_name is a sub_ or loc_ and extracts its content accordingly.
+    """
+    if function_name.startswith("sub_"):
+        return extract_function_content_for_sub(asm_lines, function_name)
+    elif function_name.startswith("loc_"):
+        return extract_function_content_for_loc(asm_lines, function_name)
+    else:
+        print(f"Unknown function type: {function_name}")
+        return []
+
 
 def extract_called_functions(function_content):
     """
@@ -58,39 +93,6 @@ def extract_called_functions(function_content):
     return loc_called, sub_called
 
 
-def find_called_functions(function_content):
-    """
-    Combines all called sub_ and loc_ functions into a single list.
-    """
-    loc_called, sub_called = extract_called_functions(function_content)
-    return list(loc_called | sub_called)
-
-
-def find_additional_missing_functions(asm_code):
-    """
-    Identifies any additional missing loc_ or sub_ functions within the final asm_code.
-    """
-    defined_functions = set()
-    missing_functions = set()
-
-    # Identify already defined functions and labels
-    for line in asm_code:
-        if sub_start_pattern.match(line) or loc_start_pattern.match(line):
-            defined_functions.add(line.split()[0])
-
-    # Identify missing functions
-    for line in asm_code:
-        for match in sub_call_pattern.finditer(line):
-            func = match.group().split()[-1]
-            if func not in defined_functions:
-                missing_functions.add(func)
-        for match in loc_call_pattern.finditer(line):
-            func = match.group().split()[-1]
-            if func not in defined_functions:
-                missing_functions.add(func)
-
-    return missing_functions
-
 def verify_missing_functions(asm_code, locs, subs):
     """
     Verifies if all loc_ and sub_ functions are present in the asm_code.
@@ -105,8 +107,6 @@ def verify_missing_functions(asm_code, locs, subs):
     missing_subs = [sub for sub in subs if sub not in defined_subs]
 
     return missing_locs, missing_subs
-
-
 
 
 def save_asm_code(output_dir, function_name, asm_code):

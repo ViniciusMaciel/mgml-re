@@ -1,12 +1,19 @@
 import os
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from common_functions import (
     extract_function_content,
     extract_called_functions,
-    find_additional_missing_functions,
-    save_asm_code,
-    verify_missing_functions
+    verify_missing_functions,
+    save_asm_code
 )
+
+
+def fetch_function_content(asm_lines, func_name):
+    """
+    Helper function to fetch function content, to be executed in parallel.
+    """
+    return func_name, extract_function_content(asm_lines, func_name)
 
 
 def update_asm_file(asm_path, asm_file_path, function_name, max_iterations=8, line_limit=55000):
@@ -26,7 +33,6 @@ def update_asm_file(asm_path, asm_file_path, function_name, max_iterations=8, li
 
     processed_functions = {function_name}
     iteration = 0
-    missing_functions = []
 
     while iteration < max_iterations:
         print(f"\nIteration {iteration + 1}")
@@ -44,24 +50,41 @@ def update_asm_file(asm_path, asm_file_path, function_name, max_iterations=8, li
         print(f"Functions to process in this iteration: {len(functions_to_process)}")
 
         new_functions_found = False
+        not_found_functions = []
 
-        for func_name in functions_to_process:
-            print(f"Fetching function: {func_name}")  # Show each function being fetched
-            content = extract_function_content(asm_lines, func_name)
-            if content:
-                asm_code.extend(content)
-                print(f"Total lines in asm_code: {len(asm_code)}")  # Show line count after each addition
-                processed_functions.add(func_name)
-                new_functions_found = True
-            else:
-                print(f"Function not found: {func_name}")
-                missing_functions.append(func_name)
+        # Process functions in parallel using ThreadPoolExecutor
+        with ThreadPoolExecutor(max_workers=64) as executor:
+            future_to_function = {
+                executor.submit(fetch_function_content, asm_lines, func_name): func_name
+                for func_name in functions_to_process
+            }
+
+            for future in as_completed(future_to_function):
+                func_name = future_to_function[future]
+                try:
+                    func_name, content = future.result()
+                    if content:
+                        print(f"Function found: {func_name}")
+                        asm_code.extend(content)
+                        print(f"Total lines in asm_code: {len(asm_code)}")
+                        processed_functions.add(func_name)
+                        new_functions_found = True
+                    else:
+                        print(f"Function not found: {func_name}")
+                        not_found_functions.append(func_name)
+                except Exception as e:
+                    print(f"Error processing function {func_name}: {e}")
+
+        # Update ignored functions with not found functions
+        if not_found_functions:
+            ignored_functions.extend(not_found_functions)
+            print(f"Adding {len(not_found_functions)} functions to ignored list: {', '.join(not_found_functions)}")
 
         # Stop if line limit is reached
         if len(asm_code) > line_limit:
             print(f"Line limit of {line_limit} reached. Writing missing functions to 'missing.txt'.")
             with open("missing.txt", "w", encoding="utf-8") as missing_file:
-                missing_file.write("\n".join(sorted(missing_functions)))
+                missing_file.write("\n".join(sorted(not_found_functions)))
             break
 
         if not new_functions_found:
