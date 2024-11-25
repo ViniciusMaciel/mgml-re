@@ -71,7 +71,12 @@ def update_asm_file(asm_path, asm_file_path, function_name, max_iterations=8, li
                         new_functions_found = True
                     else:
                         print(f"Function not found: {func_name}")
-                        not_found_functions.append(func_name)
+                        # Automatically ignore functions with the "cs:" or "ds:" prefix
+                        if func_name.startswith("cs:") or func_name.startswith("ds:"):
+                            ignored_functions.append(func_name)
+                            print(f"Adding {func_name} to ignored list due to prefix 'cs:' or 'ds:'")
+                        else:
+                            not_found_functions.append(func_name)
                 except Exception as e:
                     print(f"Error processing function {func_name}: {e}")
 

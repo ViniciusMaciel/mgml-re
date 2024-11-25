@@ -12,12 +12,12 @@ loc_end_pattern = re.compile(r"(^loc_[0-9A-F]+:|^;\s*-{10,})")
 
 def extract_function_content_for_sub(asm_lines, function_name):
     """
-    Extracts the full content of the given sub_ function from the ASM file lines.
+    Extracts the full content of the given function (e.g., sub_, memcpy_) from the ASM file lines.
     """
     function_content = []
     inside_function = False
 
-    # Patterns for functions (sub_)
+    # Patterns for generic functions
     function_start_pattern = re.compile(rf"^{re.escape(function_name)}\s+proc\s+near")
     function_end_pattern = re.compile(rf"^{re.escape(function_name)}\s+endp")
 
@@ -25,15 +25,19 @@ def extract_function_content_for_sub(asm_lines, function_name):
         # Remove AUTO or similar prefixes
         cleaned_line = re.sub(r"^\s*AUTO:[0-9A-F]+", "", line).strip()
 
+        # Detect the start of the function
         if function_start_pattern.match(cleaned_line):
             inside_function = True
 
+        # Collect lines inside the function
         if inside_function:
             function_content.append(cleaned_line)
+            # Detect the end of the function
             if function_end_pattern.match(cleaned_line):
                 break
 
     return function_content
+
 
 
 def extract_function_content_for_loc(asm_lines, function_name):
