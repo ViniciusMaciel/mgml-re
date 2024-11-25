@@ -1,9 +1,9 @@
 import os
-from find import extract_function_content
-from analyse import count_jumps_and_locs
-from find_locs import find_locs_in_file
-from verify_locs import verify_all_locs_present
-from decompiler import convert_c_to_asm
+from tools.olds.find import extract_function_content
+from tools.olds.analyse import count_jumps_and_locs
+from tools.olds.find_locs import find_locs_in_file
+from tools.olds.verify_locs import verify_all_locs_present
+from tools.olds.decompiler import convert_c_to_asm
 
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
