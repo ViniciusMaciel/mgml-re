@@ -1,0 +1,1 @@
+Por favor, converta o seguinte código C para Assembly detalhado e bem comentado:

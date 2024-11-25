@@ -1478,3 +1478,19 @@ mov     esi, eax
 test    eax, eax
 jz      short loc_4FE524
 lea     ecx, [eax+1Dh]
+loc_4FE524:                             ; CODE XREF: __allocfp_+49↑j
+                                        ; __allocfp_+70↑j
+                mov     eax, 5
+                call    __set_errno_
+                call    ds:off_551FDC
+                xor     eax, eax
+loc_4FE4B6:                             ; CODE XREF: __allocfp_+5B↓j
+                test    byte ptr [ecx+0Ch], 3
+                jnz     short loc_4FE4D3
+                mov     eax, 1Dh
+                call    _nmalloc_
+                mov     esi, eax
+                test    eax, eax
+                jz      short loc_4FE524
+                mov     edi, 3
+                jmp     short loc_4FE4F6
