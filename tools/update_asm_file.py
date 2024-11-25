@@ -88,7 +88,7 @@ def update_asm_file(asm_path, asm_file_path, function_name, max_iterations=8, li
         # Stop if line limit is reached
         if len(asm_code) > line_limit:
             print(f"Line limit of {line_limit} reached. Writing missing functions to 'missing.txt'.")
-            with open("missing.txt", "w", encoding="utf-8") as missing_file:
+            with open("missing_"+function_name+".txt", "w", encoding="utf-8") as missing_file:
                 missing_file.write("\n".join(sorted(not_found_functions)))
             break
 
