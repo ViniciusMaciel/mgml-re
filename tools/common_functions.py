@@ -12,12 +12,12 @@ loc_end_pattern = re.compile(r"(^loc_[0-9A-F]+:|^;\s*-{10,})")
 
 def extract_function_content_for_sub(asm_lines, function_name):
     """
-    Extracts the full content of the given function (e.g., sub_, memcpy_) from the ASM file lines.
+    Extracts the full content of the given sub_ or named function from the ASM file lines.
     """
     function_content = []
     inside_function = False
 
-    # Patterns for generic functions
+    # Pattern for sub_ or named function start and end
     function_start_pattern = re.compile(rf"^{re.escape(function_name)}\s+proc\s+near")
     function_end_pattern = re.compile(rf"^{re.escape(function_name)}\s+endp")
 
@@ -25,14 +25,11 @@ def extract_function_content_for_sub(asm_lines, function_name):
         # Remove AUTO or similar prefixes
         cleaned_line = re.sub(r"^\s*AUTO:[0-9A-F]+", "", line).strip()
 
-        # Detect the start of the function
         if function_start_pattern.match(cleaned_line):
             inside_function = True
 
-        # Collect lines inside the function
         if inside_function:
             function_content.append(cleaned_line)
-            # Detect the end of the function
             if function_end_pattern.match(cleaned_line):
                 break
 
@@ -40,15 +37,16 @@ def extract_function_content_for_sub(asm_lines, function_name):
 
 
 
-def extract_function_content_for_loc(asm_lines, function_name):
+
+def extract_function_content_for_loc(asm_lines, loc_name):
     """
-    Extracts the full content of the given loc_ label from the ASM file lines.
+    Extracts the full content of the given loc_ from the ASM file lines.
     """
     function_content = []
-    inside_loc = False
+    inside_function = False
 
-    # Patterns for loc_ blocks
-    loc_start_pattern = re.compile(rf"^{re.escape(function_name)}:")
+    # Pattern for loc_ start and end
+    loc_start_pattern = re.compile(rf"^{re.escape(loc_name)}:")
     loc_end_pattern = re.compile(r"(^loc_[0-9A-F]+:|^;\s*-{10,})")
 
     for line in asm_lines:
@@ -56,14 +54,16 @@ def extract_function_content_for_loc(asm_lines, function_name):
         cleaned_line = re.sub(r"^\s*AUTO:[0-9A-F]+", "", line).strip()
 
         if loc_start_pattern.match(cleaned_line):
-            inside_loc = True
+            inside_function = True
 
-        if inside_loc:
+        if inside_function:
+            # Stop if we hit another loc_ or dashed comments
             if loc_end_pattern.match(cleaned_line) and not loc_start_pattern.match(cleaned_line):
-                break  # Stop at the next loc_ or a trace of dashes
+                break
             function_content.append(cleaned_line)
 
     return function_content
+
 
 
 def extract_function_content(asm_lines, function_name):
