@@ -9,11 +9,14 @@ from common_functions import (
 )
 
 
-def update_asm_file(asm_path, asm_file_path, function_name, max_iterations=8):
+def update_asm_file(asm_path, asm_file_path, function_name, max_iterations=8, line_limit=55000):
     """
     Reads the existing ASM file and updates it with missing loc_ and sub_ functions.
     """
     start_time = time.time()
+
+    # List of functions to ignore
+    ignored_functions = ["_WinMain@16"]
 
     with open(asm_path, 'r', encoding='utf-8') as asm_file:
         asm_lines = asm_file.readlines()
@@ -23,19 +26,22 @@ def update_asm_file(asm_path, asm_file_path, function_name, max_iterations=8):
 
     processed_functions = {function_name}
     iteration = 0
+    missing_functions = []
 
     while iteration < max_iterations:
         print(f"\nIteration {iteration + 1}")
 
         loc_called, sub_called = extract_called_functions(asm_code)
 
+        # Filter out ignored functions
         functions_to_process = (loc_called | sub_called) - processed_functions
+        functions_to_process = {func for func in functions_to_process if func not in ignored_functions}
 
         if not functions_to_process:
             print("No new functions found. Stopping iteration.")
             break
 
-        print(f"Functions to process in this iteration: {', '.join(sorted(functions_to_process))}")
+        print(f"Functions to process in this iteration: {len(functions_to_process)}")
 
         new_functions_found = False
 
@@ -44,27 +50,35 @@ def update_asm_file(asm_path, asm_file_path, function_name, max_iterations=8):
             content = extract_function_content(asm_lines, func_name)
             if content:
                 asm_code.extend(content)
+                print(f"Total lines in asm_code: {len(asm_code)}")  # Show line count after each addition
                 processed_functions.add(func_name)
                 new_functions_found = True
+            else:
+                print(f"Function not found: {func_name}")
+                missing_functions.append(func_name)
+
+        # Stop if line limit is reached
+        if len(asm_code) > line_limit:
+            print(f"Line limit of {line_limit} reached. Writing missing functions to 'missing.txt'.")
+            with open("missing.txt", "w", encoding="utf-8") as missing_file:
+                missing_file.write("\n".join(sorted(missing_functions)))
+            break
 
         if not new_functions_found:
             print("No new functions found. Stopping iteration.")
             break
 
-        # Mostrar a quantidade de linhas do asm_code no final da iteração
-        print(f"ASM code line count after iteration {iteration + 1}: {len(asm_code)}")
-
         iteration += 1
 
-    # Final verification of missing functions
-    locs_called, subs_called = extract_called_functions(asm_code)
-    missing_locs, missing_subs = verify_missing_functions(asm_code, locs_called, subs_called)
-
-    # Report missing functions accurately
-    all_missing = missing_locs + missing_subs
-    print(f"\nNumber of missing functions: {len(all_missing)}")
-    if all_missing:
-        print(f"Missing functions: {', '.join(sorted(all_missing))}")
+    # Final verification of missing functions if line limit not reached
+    if len(asm_code) <= line_limit:
+        locs_called, subs_called = extract_called_functions(asm_code)
+        missing_locs, missing_subs = verify_missing_functions(asm_code, locs_called, subs_called)
+        all_missing = missing_locs + missing_subs
+        if all_missing:
+            print(f"\nWriting {len(all_missing)} missing functions to 'missing.txt'.")
+            with open("missing.txt", "w", encoding="utf-8") as missing_file:
+                missing_file.write("\n".join(sorted(all_missing)))
 
     # Clean and save the updated ASM file
     asm_code = [line for line in asm_code if line.strip() and not line.strip().startswith(';')]
