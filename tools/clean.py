@@ -1,41 +1,41 @@
 import os
 
-def clean_asm_code(asm_code):
+def clean_file(file_name, start_line):
     """
-    Removes empty lines and comments from the ASM code.
+    Remove linhas em branco de um arquivo .asm a partir de uma linha inicial.
+    
+    Args:
+        file_name (str): Nome do arquivo .asm (localizado na pasta new_asm).
+        start_line (int): Número da linha inicial para começar o processamento.
     """
-    cleaned_code = [
-        line.strip()  # Remove unnecessary spaces around the line
-        for line in asm_code
-        if line.strip() and not line.strip().startswith(';')  # Ignore empty lines and comments
+    # Caminho completo do arquivo .asm
+    asm_file_path = os.path.join("..", "new_asm", file_name)
+    
+    # Verifica se o arquivo existe
+    if not os.path.isfile(asm_file_path):
+        print(f"Arquivo '{asm_file_path}' não encontrado.")
+        return
+    
+    # Lê o conteúdo do arquivo
+    with open(asm_file_path, "r") as file:
+        lines = file.readlines()
+    
+    # Processa o arquivo, removendo linhas em branco a partir da linha inicial
+    cleaned_lines = [
+        line for i, line in enumerate(lines, start=1)
+        if i < start_line or line.strip()  # Mantém linhas antes da inicial e não vazias
     ]
-    return cleaned_code
+    
+    # Salva o conteúdo limpo de volta no arquivo
+    with open(asm_file_path, "w") as file:
+        file.writelines(cleaned_lines)
+    
+    print(f"Linhas em branco removidas de '{file_name}' a partir da linha {start_line}.")
 
 if __name__ == "__main__":
-    # Paths
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    functions_path = os.path.join(script_dir, "functions.txt")
-    asm_dir = os.path.join(script_dir, "..", "asm")  # Assuming asm folder is one level up
-
-    # Read the target function name from functions.txt
-    with open(functions_path, 'r', encoding='utf-8') as functions_file:
-        function_name = functions_file.readline().strip()
-
-    if not function_name:
-        print("No function name provided in functions.txt.")
-    else:
-        input_path = os.path.join(asm_dir, f"{function_name}.asm")
-
-        if not os.path.exists(input_path):
-            print(f"Input file not found: {input_path}")
-        else:
-            # Read, clean, and overwrite the cleaned ASM code
-            with open(input_path, 'r', encoding='utf-8') as input_file:
-                asm_code = input_file.readlines()
-
-            cleaned_code = clean_asm_code(asm_code)
-
-            with open(input_path, 'w', encoding='utf-8') as output_file:
-                output_file.write("\n".join(cleaned_code))
-
-            print(f"Cleaned ASM code saved to: {input_path}")
+    # Variáveis de entrada
+    file_name = input("Digite o nome do arquivo (.asm): ")  # Exemplo: s3.asm
+    start_line = int(input("Digite o número da linha inicial: "))  # Exemplo: 10
+    
+    # Chama a função para limpar o arquivo
+    clean_file(file_name, start_line)
