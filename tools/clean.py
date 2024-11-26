@@ -2,7 +2,8 @@ import os
 
 def clean_file(file_name, start_line):
     """
-    Remove linhas em branco de um arquivo .asm a partir de uma linha inicial.
+    Remove linhas em branco ou linhas cujo primeiro caractere significativo é ';'
+    de um arquivo .asm a partir de uma linha inicial.
     
     Args:
         file_name (str): Nome do arquivo .asm (localizado na pasta new_asm).
@@ -20,17 +21,23 @@ def clean_file(file_name, start_line):
     with open(asm_file_path, "r") as file:
         lines = file.readlines()
     
-    # Processa o arquivo, removendo linhas em branco a partir da linha inicial
-    cleaned_lines = [
-        line for i, line in enumerate(lines, start=1)
-        if i < start_line or line.strip()  # Mantém linhas antes da inicial e não vazias
-    ]
+    # Processa o arquivo, removendo linhas indesejadas a partir da linha inicial
+    cleaned_lines = []
+    for i, line in enumerate(lines, start=1):
+        if i < start_line:
+            # Mantém as linhas antes da linha inicial
+            cleaned_lines.append(line)
+        else:
+            # Remove linhas em branco ou começando com ';'
+            stripped_line = line.strip()  # Remove espaços no início e no final
+            if stripped_line and not stripped_line.startswith(";"):
+                cleaned_lines.append(line)
     
     # Salva o conteúdo limpo de volta no arquivo
     with open(asm_file_path, "w") as file:
         file.writelines(cleaned_lines)
     
-    print(f"Linhas em branco removidas de '{file_name}' a partir da linha {start_line}.")
+    print(f"Linhas indesejadas removidas de '{file_name}' a partir da linha {start_line}.")
 
 if __name__ == "__main__":
     # Variáveis de entrada
