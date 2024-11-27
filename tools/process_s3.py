@@ -2,7 +2,7 @@ import os
 
 # Função para processar strings (db + valor com aspas simples)
 def process_string(name, value):
-    value = value[:-2]  # Remover ,0
+    value = value.replace(",0", "")  # Remover ,0
     value = value.replace("'", '"')  # Trocar aspas simples por duplas
     value = value.replace("\\", "\\\\")  # Escapar barras invertidas
     return f"char {name}[] = {value};\n"
@@ -11,9 +11,10 @@ def process_string(name, value):
 def process_double(name, value):
     return f"double {name} = {value};\n"
 
-# Função para processar valores hexadecimais (db)
+# Função para processar valores hexadecimais (db ou db com valores hexadecimais explícitos)
 def process_unsigned_char(name, value):
-    value = f"0x{value[:-1]}"  # Remover o 'h' e adicionar o prefixo 0x
+    if value.endswith("h"):
+        value = f"0x{value[:-1]}"  # Remover o 'h' e adicionar o prefixo 0x
     return f"unsigned char {name} = {value};\n"
 
 # Função para identificar o tipo de dado e delegar para a função correspondente
@@ -23,20 +24,29 @@ def process_line(fields):
     value = fields[2]  # Valor
 
     # Strings
-    if directive == "db" and value.startswith("'") and value.endswith(",0"):
+    if directive == "db" and value.startswith("'") and ",0" in value:
         return process_string(name, value)
 
     # Double
-    elif directive == "dq" and value.replace('.', '', 1).lstrip('-').isdigit():
+    elif directive == "dq":
         return process_double(name, value)
 
     # Unsigned char (valores hexadecimais)
-    elif directive == "db" and value.endswith("h"):
+    elif directive == "db":
         return process_unsigned_char(name, value)
 
     # Demais casos
     else:
         return f"{directive} {name} = {value}; // Unknown\n"
+
+# Função para garantir sempre três valores no split
+def split_line_parts(line):
+    parts = line.split(';', 1)  # Dividir no ponto e vírgula
+    main_part = parts[0].split(maxsplit=2)  # Dividir apenas nos dois primeiros espaços
+    if len(main_part) > 3:
+        main_part[2] = ' '.join(main_part[2:])  # Juntar valores adicionais no terceiro campo
+        main_part = main_part[:3]  # Garantir exatamente três campos
+    return main_part
 
 # Definir caminhos relativos ao projeto
 root_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -62,13 +72,11 @@ try:
             
             # Processar linhas válidas
             if "db" in line or "dq" in line:
-                # Dividir a linha pelo primeiro ponto e vírgula
-                parts = line.split(';', 1)
-                # Dividir a parte antes do ponto e vírgula por espaços
-                fields = parts[0].split()
+                # Garantir três partes no split
+                fields = split_line_parts(line)
 
-                # Garantir que temos ao menos 3 campos
-                if len(fields) >= 3:
+                # Garantir que temos exatamente 3 campos
+                if len(fields) == 3:
                     formatted_line = process_line(fields)
                     outfile.write(formatted_line)
 
