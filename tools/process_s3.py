@@ -24,6 +24,7 @@ def process_asm_file():
 
     # Lista para armazenar linhas válidas
     valid_lines = []
+    processing_db = False  # Controle de agrupamento de linhas
 
     # Abrir arquivos de saída para gravação
     with open(input_file, "r") as asm_file, \
@@ -40,12 +41,17 @@ def process_asm_file():
             # Converter a linha em um array de tokens
             tokens = split_line_to_array(code_part)
             
-            # Verificar se o segundo elemento é 'db'
+            # Lógica de processamento
             if len(tokens) > 1 and tokens[1] == "db":
-                # Adicionar a linha válida ao array
+                # Linha válida com db, iniciar processamento
+                valid_lines.append(code_part)
+                processing_db = True
+            elif processing_db and len(tokens) == 2:
+                # Linha com 2 posições enquanto processando db
                 valid_lines.append(code_part)
             else:
-                # Salvar a linha original no arquivo de inválidos
+                # Linha inválida, desativar processamento
+                processing_db = False
                 invalid_output.write(line)
     
     # Processar as linhas válidas e salvar no arquivo de saída
