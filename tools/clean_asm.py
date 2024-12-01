@@ -15,7 +15,7 @@ if __name__ == "__main__":
     # Paths
     script_dir = os.path.dirname(os.path.abspath(__file__))
     functions_path = os.path.join(script_dir, "functions.txt")
-    asm_dir = os.path.join(script_dir, "..", "asm")  # Assuming asm folder is one level up
+    asm_dir = os.path.join(script_dir, "..", "new_asm")  # Assuming asm folder is one level up
 
     # Read the target function name from functions.txt
     with open(functions_path, 'r', encoding='utf-8') as functions_file:

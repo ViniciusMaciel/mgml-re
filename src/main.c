@@ -6602,8 +6602,130 @@ void* dword_557C30; // Variável global desconhecida
 void* dword_557C34; // Variável global desconhecida
 char* lpCmdLine;    // Variável global representando o comando da linha de execução
 
+
+// Funções mockadas para as chamadas externas
+void sub_5000A0() {
+    // Mock: Simula a lógica da função sub_5000A0
+}
+
+void __NTInitFileHandles_() {
+    // Mock: Simula a lógica da função __NTInitFileHandles_
+}
+
+void sub_50045B() {
+    // Mock: Simula a lógica da função sub_50045B
+}
+
+void __lib_GetModuleFileNameW_() {
+    // Mock: Simula a lógica da função __lib_GetModuleFileNameW_
+}
+
+void strdup_() {
+    // Mock: Simula a lógica da função strdup_
+}
+
+// Função convertida
 void sub_4FA9A8() {
-    printf("Mock: sub_4FA9A8 called.\n");
+    // Prologue: mov dword_897BB8, edi
+    __asm {
+        mov dword ptr dword_897BB8, edi
+    }
+
+    // Chamada de sub_5000A0
+    sub_5000A0();
+
+    // Captura o retorno da função
+    __asm {
+        mov lpTlsValue, eax
+    }
+
+    // Verificação e possível saída do programa
+    __asm {
+        mov eax, lpTlsValue       // Carrega o valor de lpTlsValue em eax
+        test eax, eax             // Testa o valor de eax
+        jnz skip_exit             // Salta se lpTlsValue não for nulo
+        test edi, edi             // Testa o valor de edi
+        jnz skip_exit             // Salta se edi não for nulo
+        push 1                    // Prepara o argumento para ExitProcess
+        call ExitProcess          // Chama ExitProcess com uExitCode = 1
+        skip_exit :
+    }
+
+
+    // Inicializa os manipuladores de arquivo
+    __NTInitFileHandles_();
+
+    // Captura as strings do ambiente
+    __asm {
+        call cs : __imp_GetEnvironmentStrings
+        mov dword ptr dword_557C49, eax
+    }
+
+    // Captura a versão do sistema
+    DWORD version;
+    __asm {
+        call cs : __imp_GetVersion
+        mov version, eax
+    }
+
+    // Processa os valores obtidos
+    byte_557C4F = (unsigned char)version;
+    word_557C51 = (unsigned short)((version >> 16) & 0xFFFF);
+    dword_557C53 = word_557C51;
+    dword_557C57 = (version & 0xFF) | ((version >> 8) & 0xFF) << 8;
+    byte_557C50 = (unsigned char)((version >> 8) & 0xFF);
+    dword_557C5B = byte_557C50;
+    dword_557C5F = dword_557C57 << 8 | dword_557C5B;
+
+    // Obtém o nome do módulo e duplica a string
+    __asm {
+        push 104h
+        lea eax, [esp + 0x628]
+        push eax
+        push 0
+        call cs : __imp_GetModuleFileNameA
+    }
+    __asm {
+        call strdup_
+        mov dword ptr dword_557C10, eax
+    }
+
+    // Mock para WideChar filename
+    __lib_GetModuleFileNameW_();
+    __asm {
+        call sub_50045B
+        mov dword ptr dword_557C1C, eax
+    }
+
+    // Obtém a linha de comando
+    lpCmdLine = GetCommandLineA();
+
+    // Processa o nome do módulo, se necessário
+    __asm {
+        test edi, edi
+        jz skip_module
+        push 104h
+        lea eax, [esp + 0x624]
+        push eax
+        push ebx
+        call cs : __imp_GetModuleFileNameA
+    }
+    __asm {
+        call strdup_
+        mov dword ptr dword_557C14, eax
+    }
+
+    __lib_GetModuleFileNameW_();
+    __asm {
+        call sub_50045B
+        mov dword ptr dword_557C20, eax
+    }
+
+skip_module:
+    // Epilogue
+    __asm {
+        mov eax, 1
+    }
 }
 
 void sub_500909() {
