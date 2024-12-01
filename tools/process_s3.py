@@ -1,7 +1,7 @@
 import os
 import re
 
-def split_line_to_array(line):
+def split_line_to_array(line, remove=True):
     """Divide uma linha por espaços múltiplos, considerando strings entre aspas como um único token."""
     # Remove ",0" do final da linha
     line = line.replace(",0", "").strip()
@@ -15,17 +15,25 @@ def split_line_to_array(line):
         combined = ' '.join(tokens[2:])
         tokens = tokens[:2] + [combined]
     
-    if(len(tokens)==3):
+    if(len(tokens)==3 and remove):
         tokens[2] = tokens[2].replace("Ah","").replace("Dh", "")#ajustar
-    if(len(tokens) ==2):
+    if(len(tokens) ==2 and remove):
         tokens[1] = tokens[1].replace("Ah","").replace("Dh", "")#ajustar tb
     
     return tokens
 
 def adjustValue(value):
+    """Ajusta o valor de acordo com os formatos ASM para C."""
+    # Verificar se o valor termina com 'h' (hexadecimal)
     if value.endswith("h") and not value.startswith("'"):
         value = f"0x{value[:-1]}"
+    
+    # Remover zeros extras no início do valor, se necessário
+    if value.startswith("0x0"):
+        value = f"0x{value[3:]}"  # Remove o prefixo "0x0" e mantém o restante
+
     return value
+
 
 def generate_array_declaration(tokens):
     
@@ -39,10 +47,8 @@ def generate_char_declaration(tokens):
     """Gera a declaração em C para uma linha válida."""
     variable_name = tokens[0]
     value = tokens[2]
-    # Verificar se o valor termina com 'h'r
-    if value.endswith("h") and not value.startswith("'"):
-        value = f"0x{value[:-1]}"
-    # Aplicar substituições no valor
+    value = adjustValue(value)
+
     value = value.replace(",0", "").replace("'", "\"").replace("\\", "\\\\")
     value = value.replace('""','').replace('" "',' ')
        # Retornar a declaração adequada
@@ -58,10 +64,10 @@ def process_valid_lines(valid_lines):
     i = 0
 
     while i < len(valid_lines):
-        tokens = split_line_to_array(valid_lines[i])
+        tokens = split_line_to_array(valid_lines[i],True)
 
         if len(tokens) == 3:
-            # Verificar o próximo item
+
             if i + 1 < len(valid_lines):
                 next_tokens = split_line_to_array(valid_lines[i + 1])
                 if len(next_tokens) == 3:
@@ -71,40 +77,41 @@ def process_valid_lines(valid_lines):
                     i += 1
                     continue            
 
-                if next_tokens[0].startswith("align"):
-                    # Adiciona o alinhamento
+                if next_tokens[0].startswith("align"):                    
                     align_value = next_tokens[1]
                     if align_value.endswith("h"):
                         align_value = str(int(align_value[:-1], 16))
-                    c_line = f'__declspec(align({align_value})) {generate_char_declaration(tokens)}'
-                    output.append(c_line)
-                    i += 1  # Pular o próximo item (o alinhamento)
-                elif next_tokens[1].startswith("'"):
-                    # Concatenação de strings consecutivas
-                    concatenated_value = tokens[2] # Remove o ,0 inicial
+
+                    concatenated_value = tokens[2]
+                    concatenated_value = adjustValue(concatenated_value)
                     items = []
 
-
                     while i + 1 < len(valid_lines):
-                        next_tokens = split_line_to_array(valid_lines[i + 1])
-                        if len(next_tokens) == 2 and next_tokens[1].startswith("'"):
-                            # Concatena o valor e remove ,0
+                        next_tokens = split_line_to_array(valid_lines[i + 2])                        
+                        if len(next_tokens) == 2 and next_tokens[0] == 'db':                            
+                            next_tokens[1]= adjustValue(next_tokens[1])
                             items.append(next_tokens)
-                            i += 1  # Pular para a próxima linha
+                            i += 1
                         else:
-                            break  # Parar ao encontrar uma linha que não é string
-                    concatenated_value = concatenated_value + ''.join(item[1] for item in items)
+                            break
 
-                    tokens[2] = concatenated_value  # Atualiza o valor concatenado no token original
-                    c_line = generate_char_declaration(tokens)
-                    output.append(c_line)
+                    if(len(items) > 0):
+                        concatenated_value = concatenated_value+',' + ','.join(item[1] for item in items)
+
+                        tokens[2] = concatenated_value
+
+                        c_line = generate_array_declaration(tokens)
+                    else:
+                        c_line = f'__declspec(align({align_value})) {generate_char_declaration(tokens)}'
+                        output.append(c_line)
+                    i += 1
                 elif next_tokens[0].startswith("db"):
                     concatenated_value = tokens[2]
 
                     concatenated_value = adjustValue(concatenated_value)
                     items = []
                     while i + 1 < len(valid_lines):
-                        next_tokens = split_line_to_array(valid_lines[i + 1])
+                        next_tokens = split_line_to_array(valid_lines[i + 1],False)
                         if len(next_tokens) == 2 and next_tokens[0] == 'db':
                             next_tokens[1]= adjustValue(next_tokens[1])
                             items.append(next_tokens)
@@ -117,6 +124,25 @@ def process_valid_lines(valid_lines):
                     tokens[2] = concatenated_value
 
                     c_line = generate_array_declaration(tokens)
+                    output.append(c_line)
+                elif next_tokens[1].startswith("'"):
+                    # Concatenação de strings consecutivas
+                    concatenated_value = tokens[2] # Remove o ,0 inicial
+                    items = []
+
+
+                    while i + 1 < len(valid_lines):
+                        next_tokens = split_line_to_array(valid_lines[i + 1],True)
+                        if len(next_tokens) == 2 and next_tokens[1].startswith("'"):
+                            # Concatena o valor e remove ,0
+                            items.append(next_tokens)
+                            i += 1  # Pular para a próxima linha
+                        else:
+                            break  # Parar ao encontrar uma linha que não é string
+                    concatenated_value = concatenated_value + ''.join(item[1] for item in items)
+
+                    tokens[2] = concatenated_value  # Atualiza o valor concatenado no token original
+                    c_line = generate_char_declaration(tokens)
                     output.append(c_line)
                 else:
                     # Processa o item normalmente

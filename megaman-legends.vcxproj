@@ -93,6 +93,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <BaseAddress>0x400000</BaseAddress>
       <SectionAlignment>4096</SectionAlignment>
+      <AdditionalDependencies>gdi32.lib;user32.lib;kernel32.lib;winmm.lib;dsound.lib;dinput8.lib;ddraw.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
