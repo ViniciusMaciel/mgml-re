@@ -1,14 +1,186 @@
+dbl_50A264      dq -9830.4              ; DATA XREF: sub_43B629+33↑r
+dbl_50A26C      dq 6553.6               ; DATA XREF: sub_43B629+44↑r
+dbl_50A274      dq 128.0                ; DATA XREF: sub_43B629+55↑r
+dbl_50A27C      dq -2621440.0           ; DATA XREF: sub_43B820+E2↑r
+dbl_50A284      dq 128.0                ; DATA XREF: sub_43B820+31↑r
+dbl_50A28C      dq 0.000244140625       ; DATA XREF: sub_43BE6F+84↑r
+dbl_50A294      dq 0.000244140625       ; DATA XREF: sub_43BF2C+9F↑r
+dbl_50A29C      dq 0.000244140625       ; DATA XREF: sub_43C033+A4↑r
+dbl_50A2A4      dq 0.000244140625       ; DATA XREF: sub_43C0FA+3F↑r
+dbl_50A2AC      dq 0.000244140625       ; DATA XREF: sub_43F25B+1E6↑r
+dbl_50A2B4      dq -233016.888918016    ; DATA XREF: sub_44E4B1+4↑r
+dbl_50A2BC      dq 36408.88918016       ; DATA XREF: sub_44E4B1+15↑r
+dbl_50A2C4      dq 279620.26622976      ; DATA XREF: sub_44E4B1+26↑r
+dbl_50A2CC      dq -93206.755540992     ; DATA XREF: sub_44E4B1+37↑r
+dbl_50A2D4      dq 880640.0             ; DATA XREF: sub_48C3F6+43B↑r
+dbl_50A2DC      dq -802816.0            ; DATA XREF: sub_48C3F6+452↑r
+dbl_50A2E4      dq 3223552.0            ; DATA XREF: sub_48C3F6+469↑r
+dbl_50A2EC      dq -43690.88512         ; DATA XREF: sub_496923+79↑r
+dbl_50A2F4      dq 16.66                ; DATA XREF: sub_49E306+66↑r
+dbl_50A2FC      dq 16.66                ; DATA XREF: sub_49F20F+B7↑r
+flt_50A304      dd 15.0                 ; DATA XREF: sub_49F20F+D1↑r
+dbl_50A390      dq 16.67                ; DATA XREF: WinMain(x,x,x,x)+2B8↑r
+dbl_50A398      dq 16.667               ; DATA XREF: WinMain(x,x,x,x)+431↑r
+dbl_50A3A0      dq 0.000244140625       ; DATA XREF: sub_4A742C+24↑r
+dbl_50A3A8      dq 0.000244140625       ; DATA XREF: sub_4A764C+24↑r
+dbl_50A3B0      dq 0.000244140625       ; DATA XREF: sub_4ADFEE+2AF↑r
+dbl_50A3B8      dq 0.000244140625       ; DATA XREF: sub_4AE99D+EC↑r
+dbl_50A3C0      dq 0.000244140625       ; DATA XREF: sub_4AEAFB+3A↑r
+dbl_50A3C8      dq 0.000244140625       ; DATA XREF: sub_4AF088+112↑r
+dbl_50A3D0      dq 0.000244140625       ; DATA XREF: sub_4AF2F6+3A↑r
+dbl_50A3D8      dq 0.000244140625       ; DATA XREF: sub_4AF452+2C↑r
+dbl_50A3E0      dq 0.000244140625       ; DATA XREF: sub_4AF57D+1B4↑r
+dbl_50A3E8      dq 0.000244140625       ; DATA XREF: sub_4AFDCC+22F↑r
+flt_50A3F0      dd 0.0625               ; DATA XREF: sub_4BCD52+1D↑r
+flt_50A3F4      dd 0.0625               ; DATA XREF: sub_4BCE8D+24↑r
+flt_50A3F8      dd 100.0                ; DATA XREF: sub_4BCFDA+26↑r
+flt_50A3FC      dd 0.125                ; DATA XREF: sub_4BE99A+3D↑r
+flt_50A400      dd 0.015625             ; DATA XREF: sub_4BEA17+48↑r
+flt_50A404      dd 0.0625               ; DATA XREF: sub_4BEADE+1E↑r
+flt_50A408      dd 24.0                 ; DATA XREF: sub_4BF4EF+27↑r
+flt_50A40C      dd 24.0                 ; DATA XREF: sub_4BF5AD+27↑r
+flt_50A410      dd 0.0625               ; DATA XREF: sub_4C3EA7+1D↑r
+flt_50A414      dd 0.0625               ; DATA XREF: sub_4C3FE2+49↑r
+flt_50A418      dd 0.0625               ; DATA XREF: sub_4C62AD+1D↑r
+flt_50A41C      dd 0.0625               ; DATA XREF: sub_4C63E8+49↑r
+flt_50A420      dd 0.0625               ; DATA XREF: sub_4C8207+1C↑r
+dbl_50A424      dq 0.0078125            ; DATA XREF: sub_4D89E4+13E↑r
+dbl_50A42C      dq 127.0                ; DATA XREF: sub_4D89E4+144↑r
+dbl_50A434      dq 10000.0              ; DATA XREF: sub_4D89E4+169↑r
+dbl_50A43C      dq -10000.0             ; DATA XREF: sub_4D89E4+163↑r
+dbl_50A444      dq 0.0078125            ; DATA XREF: sub_4D8BC3+198↑r
+dbl_50A44C      dq 127.0                ; DATA XREF: sub_4D8BC3+19E↑r
+dbl_50A454      dq -10000.0             ; DATA XREF: sub_4D8BC3+1C5↑r
+dbl_50A45C      dq 10000.0              ; DATA XREF: sub_4D8BC3+1BF↑r
+dbl_50A464      dq 3000.0               ; DATA XREF: sub_4D8BC3+22B↑r
+dbl_50A46C      dq 64.0                 ; DATA XREF: sub_4D8BC3+231↑r
+dbl_50A474      dq 63.0                 ; DATA XREF: sub_4D8BC3+237↑r
+dbl_50A47C      dq 0.000244140625       ; DATA XREF: sub_4DFFB5+66↑r
+flt_50A484      dd 160.0                ; DATA XREF: sub_4E0AF0+1B8↑r
+flt_50A488      dd 3.0                  ; DATA XREF: sub_4E8234+63↑r
+flt_50A48C      dd 0.5                  ; DATA XREF: sub_4E8234+6B↑r
+flt_50A490      dd -16.0                ; DATA XREF: sub_4E8234+4F↑r
+flt_50A494      dd 0.25                 ; DATA XREF: sub_4E82C1+68↑r
+flt_50A498      dd 0.5                  ; DATA XREF: sub_4E82C1+70↑r
+flt_50A49C      dd -16.0                ; DATA XREF: sub_4E82C1+50↑r
+flt_50A4A0      dd 0.000061035156       ; DATA XREF: sub_4E8521+154↑r
+flt_50A4A4      dd 0.000061035156       ; DATA XREF: sub_4E8D3B+276↑r
+flt_50A4A8      dd 0.000061035156       ; DATA XREF: sub_4E9693+2B7↑r
+flt_50A4AC      dd 0.000061035156       ; DATA XREF: sub_4EA008+154↑r
+flt_50A4B0      dd 352.0                ; DATA XREF: sub_4EAF76+8C↑r
+flt_50A4B4      dd 136.0                ; DATA XREF: sub_4EAF76+AD↑r
+flt_50A4B8      dd 352.0                ; DATA XREF: sub_4EB5D4+99↑r
+flt_50A4BC      dd 136.0                ; DATA XREF: sub_4EB5D4+DD↑r
+dbl_50A4C0      dq 2.0                  ; DATA XREF: sub_4EBC9C+2CC↑r
+flt_50A4C8      dd 352.0                ; DATA XREF: sub_4EC000+83↑r
+flt_50A4CC      dd 136.0                ; DATA XREF: sub_4EC000+A4↑r
+flt_50A4D0      dd 0.000061035156       ; DATA XREF: sub_4EC261+110↑r
+flt_50A4D4      dd 0.0625               ; DATA XREF: sub_4EC261+253↑r
+flt_50A4D8      dd 12.0                 ; DATA XREF: sub_4EC261+186↑r
+flt_50A4DC      dd 352.0                ; DATA XREF: sub_4EE1A3+AD↑r
+flt_50A4E0      dd 136.0                ; DATA XREF: sub_4EE1A3+CE↑r
+flt_50A4E4      dd 0.000061035156       ; DATA XREF: sub_4EE1A3+223↑r
 flt_50A4E8      dd 4096.0               ; DATA XREF: sub_4EEE7D+3C↑r
                 align 10h
+dbl_50A4F0      dq 0.000244140625       ; DATA XREF: sub_4EF016+F↑r
+dbl_50A4F8      dq 2048.0               ; DATA XREF: sub_4EF016+1A↑r
+dbl_50A500      dq 3.14                 ; DATA XREF: sub_4EF016+20↑r
+dbl_50A508      dq 2048.0               ; DATA XREF: sub_4EF04B+1C↑r
+dbl_50A510      dq 3.14                 ; DATA XREF: sub_4EF04B+22↑r
+flt_50A518      dd 0.5                  ; DATA XREF: sub_4EF0D2+F↑r
+flt_50A51C      dd 1000.0               ; DATA XREF: sub_4EF0D2+27↑r
 flt_50A520      dd 1000.0               ; DATA XREF: sub_4EF12B+14↑r
                 align 8
+dbl_50A528      dq 0.000244140625       ; DATA XREF: sub_4EF486+16↑r
+dbl_50A530      dq 0.000244140625       ; DATA XREF: sub_4EF50D+16↑r
+dbl_50A538      dq 0.000244140625       ; DATA XREF: sub_4EF57E+16↑r
+dbl_50A540      dq 0.000244140625       ; DATA XREF: sub_4EF689+4↑r
+flt_50A548      dd 0.00024414062        ; DATA XREF: sub_4EF784+5↑r
+flt_50A54C      dd 4096.0               ; DATA XREF: sub_4EF784+92↑r
+dbl_50A550      dq 4096.0               ; DATA XREF: sub_4EF886+53↑r
+dbl_50A558      dq 4096.0               ; DATA XREF: sub_4EF932+53↑r
+dbl_50A560      dq 0.000244140625       ; DATA XREF: sub_4EF9ED+7A↑r
+dbl_50A568      dq 0.000244140625       ; DATA XREF: sub_4EFBAD+9↑r
+flt_50A570      dd 0.000061035156       ; DATA XREF: sub_4F0165+37↑r
+flt_50A574      dd 0.000061035156       ; DATA XREF: AUTO:004F020B↑r
+flt_50A578      dd 0.000061035156       ; DATA XREF: sub_4F0242+47↑r
+flt_50A57C      dd 0.000061035156       ; DATA XREF: AUTO:004F02C7↑r
+flt_50A580      dd 0.000061035156       ; DATA XREF: sub_4F02E1+37↑r
+flt_50A584      dd 0.000061035156       ; DATA XREF: sub_4F0340+47↑r
+flt_50A588      dd 0.000061035156       ; DATA XREF: sub_4F03BE+37↑r
+flt_50A58C      dd 0.000061035156       ; DATA XREF: sub_4F041D+47↑r
 flt_50A590      dd 0.000061035156       ; DATA XREF: sub_4F049B+27↑r
                 align 8
+dbl_50A598      dq 2.0                  ; DATA XREF: sub_4F04FB+299↑r
+flt_50A86C      dd 10.0                 ; DATA XREF: sub_4F16F3+98↑r
+flt_50A870      dd 255.0                ; DATA XREF: sub_4F16F3+53↑r
+dbl_50A874      dq 3.0                  ; DATA XREF: sub_4F2BEA+15↑r
+flt_50A87C      dd 0.0020000001         ; DATA XREF: sub_4F2BEA+60↑r
+flt_50A880      dd -0.0020000001        ; DATA XREF: sub_4F2BEA+52↑r
+dbl_50A884      dq 0.25                 ; DATA XREF: sub_4F2D57+1B↑r
+flt_50A88C      dd 0.0020000001         ; DATA XREF: sub_4F2D57+6C↑r
+flt_50A890      dd -0.0020000001        ; DATA XREF: sub_4F2D57+5E↑r
+flt_50A894      dd 0.0078125            ; DATA XREF: sub_4F2FDE+6C↑r
+flt_50A898      dd 0.0078125            ; DATA XREF: sub_4F310F+21E↑r
+flt_50A89C      dd 10.0                 ; DATA XREF: sub_4F387C+C0↑r
+flt_50A8A0      dd 2.0                  ; DATA XREF: sub_4F39C4+36↑r
+flt_50A8A4      dd 0.1                  ; DATA XREF: sub_4F39C4+5C↑r
+flt_50A8A8      dd 0.00390625           ; DATA XREF: sub_4F39C4+86↑r
+dbl_50A8AC      dq 2.0                  ; DATA XREF: sub_4F3BDD+5D↑r
+flt_50A8B4      dd 0.1                  ; DATA XREF: sub_4F3BDD+83↑r
+flt_50A8B8      dd 0.00390625           ; DATA XREF: sub_4F3BDD+149↑r
+flt_50A8BC      dd 2.0                  ; DATA XREF: sub_4F3E53+3D↑r
+flt_50A8C0      dd 0.1                  ; DATA XREF: sub_4F3E53+63↑r
+dbl_50A8C4      dq 2.0                  ; DATA XREF: sub_4F4025+3D↑r
+flt_50A8CC      dd 0.1                  ; DATA XREF: sub_4F4025+63↑r
+flt_50A8D0      dd 0.1                  ; DATA XREF: sub_4F41BA+13B↑r
 flt_50A8D4      dd 0.00390625           ; DATA XREF: sub_4F41BA+165↑r
                 db    0
                 db    0
                 db    0
                 db    0
+dbl_50A8DC      dq 2.0                  ; DATA XREF: sub_4F44C7+B3↑r
+flt_50A8E4      dd 0.1                  ; DATA XREF: sub_4F44C7+D9↑r
+flt_50A8E8      dd 0.00390625           ; DATA XREF: sub_4F44C7+1DD↑r
+dbl_50A8EC      dq 0.001                ; DATA XREF: sub_4F44C7+2D0↑r
+dbl_50A8F4      dq 0.003                ; DATA XREF: sub_4F44C7+2E2↑r
+flt_50A8FC      dd 2.0                  ; DATA XREF: sub_4F498E+9D↑r
+flt_50A900      dd 0.1                  ; DATA XREF: sub_4F498E+C3↑r
+dbl_50A904      dq 2.0                  ; DATA XREF: sub_4F4BB5+9D↑r
+flt_50A90C      dd 0.1                  ; DATA XREF: sub_4F4BB5+C3↑r
+flt_50A910      dd 2.0                  ; DATA XREF: sub_4F4D7C+88↑r
+flt_50A914      dd 0.1                  ; DATA XREF: sub_4F4D7C+AE↑r
+flt_50A918      dd 0.00390625           ; DATA XREF: sub_4F4D7C+D8↑r
+dbl_50A91C      dq 2.0                  ; DATA XREF: sub_4F500F+88↑r
+flt_50A924      dd 0.1                  ; DATA XREF: sub_4F500F+AE↑r
+flt_50A928      dd 0.00390625           ; DATA XREF: sub_4F500F+D8↑r
+flt_50A92C      dd 2.0                  ; DATA XREF: sub_4F524B+CE↑r
+flt_50A930      dd 0.1                  ; DATA XREF: sub_4F524B+F4↑r
+dbl_50A934      dq 2.0                  ; DATA XREF: sub_4F54E3+CE↑r
+flt_50A93C      dd 0.1                  ; DATA XREF: sub_4F54E3+F4↑r
+flt_50A940      dd 2.0                  ; DATA XREF: sub_4F5720+B2↑r
+flt_50A944      dd 0.1                  ; DATA XREF: sub_4F5720+D8↑r
+flt_50A948      dd 0.00390625           ; DATA XREF: sub_4F5720+102↑r
+dbl_50A94C      dq 2.0                  ; DATA XREF: sub_4F5A57+B2↑r
+flt_50A954      dd 0.1                  ; DATA XREF: sub_4F5A57+D8↑r
+flt_50A958      dd 0.00390625           ; DATA XREF: sub_4F5A57+102↑r
+dbl_50A95C      dq 2.0                  ; DATA XREF: sub_4F5D37+6E↑r
+flt_50A964      dd 0.1                  ; DATA XREF: sub_4F5D37+94↑r
+flt_50A968      dd 2.0                  ; DATA XREF: sub_4F5ECC+3B↑r
+flt_50A96C      dd 2.0                  ; DATA XREF: sub_4F608A+39↑r
+flt_50A970      dd 0.00390625           ; DATA XREF: sub_4F608A+87↑r
+flt_50A974      dd 0.0022               ; DATA XREF: sub_4F608A+8D↑r
+flt_50A978      dd -0.0022              ; DATA XREF: sub_4F608A+121↑r
+flt_50A97C      dd 2.0                  ; DATA XREF: sub_4F62DF+3F↑r
+flt_50A980      dd 2.0                  ; DATA XREF: sub_4F65A2+33↑r
+flt_50A984      dd 2.0                  ; DATA XREF: sub_4F6788+42↑r
+flt_50A988      dd 2.0                  ; DATA XREF: sub_4F69FF+35↑r
+flt_50A98C      dd 2.0                  ; DATA XREF: sub_4F6C05+54↑r
+flt_50A990      dd 2.0                  ; DATA XREF: sub_4F6DF9+33↑r
+flt_50A994      dd 2.0                  ; DATA XREF: sub_4F6FC8+5D↑r
+flt_50A998      dd 2.0                  ; DATA XREF: sub_4F71D6+35↑r
+flt_50AA94      dd 127.0                ; DATA XREF: sub_4FA436+11↑r
+flt_50AA98      dd 10000.0              ; DATA XREF: sub_4FA436+17↑r
 flt_50AA9C      dd -10000.0             ; DATA XREF: sub_4FA436+1D↑r
                 db 'g point',0Ah
                 db 'exception.',0Ah,0
@@ -94,6 +266,9 @@ dword_50B1B9    dd 0F30000FFh           ; DATA XREF: sub_401010+107↑r
                 db    5
                 db    4
                 db    0
+dword_50B1FA    dd 0EB00050Ch           ; DATA XREF: sub_402A68+D5↑r
+dword_50B1FE    dd 2100FFFFh            ; DATA XREF: sub_402A68+E8↑r
+dword_50B202    dd 4000064h             ; DATA XREF: sub_40176C+112↑r
 dword_50B206    dd 2100FFFFh            ; DATA XREF: sub_402A68+185↑r
                 db    0
                 db    0
@@ -224,11 +399,13 @@ funcs_405A64    dd offset sub_405C5F    ; DATA XREF: sub_405A2D+37↑r
                 dd offset sub_4071CD
                 dd offset sub_406DC9
                 dd offset sub_4073A4
+dword_50B35A    dd 1C000004h            ; DATA XREF: sub_405E5E+38↑r
 dword_50B35E    dd 1000FC00h            ; DATA XREF: sub_405E5E+58↑r
                 db    0
                 db  0Ah
                 db    0
                 db    0
+dword_50B366    dd 1E000005h            ; DATA XREF: sub_405E5E+1CB↑r
 dword_50B36A    dd 0A00F800h            ; DATA XREF: sub_405E5E+1E9↑r
                 db    0
                 db    4
@@ -266,16 +443,20 @@ dword_50B396    dd 1CE00003h            ; DATA XREF: sub_406647+A8↑r
 off_50B39A      dd offset loc_40F9DC+4  ; DATA XREF: sub_406647:loc_4066E5↑r
                 db  40h ; @
                 db    0
+dword_50B3D2    dd 1C000006h            ; DATA XREF: sub_405E5E+88↑r
 dword_50B3D6    dd 1000F800h            ; DATA XREF: sub_405E5E+A9↑r
                 db    0
                 db    4
                 db    0
                 db    0
+dword_50B3DE    dd 1C000007h            ; DATA XREF: sub_4073A4+38↑r
 dword_50B3E2    dd 800F800h             ; DATA XREF: sub_4073A4+58↑r
                 db    0
                 db    9
                 db    0
                 db    0
+dword_50B3EA    dd 1C000008h            ; DATA XREF: sub_4073A4+A8↑r
+dword_50B3EE    dd 8000100h             ; DATA XREF: sub_4073A4+C6↑r
 dword_50B3F2    dd 2EE00900h            ; DATA XREF: sub_406084+197↑r
                 db 0F0h
                 db  23h ; #
@@ -329,6 +510,9 @@ funcs_4083CE    dd offset sub_4084C8    ; DATA XREF: sub_40831A+B4↑r
                 dd offset sub_408FE5
                 dd offset sub_409078
                 dd offset sub_409196
+dword_50B4AA    dd 0F4000000h           ; DATA XREF: sub_40831A+5D↑r
+dword_50B4AE    dd 3582C00h             ; DATA XREF: sub_40831A+87↑r
+dword_50B4B2    dd 0F4800C00h           ; DATA XREF: sub_409196+41↑r
 dword_50B4B6    dd 1003080h             ; DATA XREF: sub_409196+37↑r
                 db    0
                 db    1
@@ -1171,6 +1355,7 @@ funcs_411502    dd offset sub_41152F    ; DATA XREF: sub_4114F7+B↑r
                 dd offset sub_41185F
                 dd offset sub_41194F
                 dd offset sub_411AD9
+dword_50DCC8    dd 7                    ; DATA XREF: sub_41152F+92↑r
 dword_50DCCC    dd 13h                  ; DATA XREF: sub_41152F+82↑r
                 db    7
                 db    0
@@ -1732,6 +1917,8 @@ off_50ED67      dd offset unk_50ECB2    ; DATA XREF: sub_415B6E:loc_415BAE↑r
 off_50ED73      dd offset unk_50ECDD    ; DATA XREF: sub_415B6E+49↑r
                 dd offset unk_50ECBC
                 dd offset unk_50ECBE
+word_50ED7F     dw 14h                  ; DATA XREF: sub_415C9F+39↑r
+word_50ED81     dw 0FF68h               ; DATA XREF: sub_415C9F+44↑r
 word_50ED83     dw 28h                  ; DATA XREF: sub_415C9F+4F↑r
                 db    0
                 db    0
@@ -2291,9 +2478,19 @@ funcs_41A5A2    dd offset sub_41B41C    ; DATA XREF: sub_41A40A+198↑r
                 dd offset sub_41B435
 funcs_41A58A    dd offset sub_41B4E1    ; DATA XREF: sub_41A40A+180↑r
                 dd offset sub_41B535
+dword_510558    dd 0FF200100h           ; DATA XREF: sub_41A40A+2CE↑r
+dword_51055C    dd 0FEAFh               ; DATA XREF: sub_41A40A+2B6↑r
+dword_510560    dd 18000000h            ; DATA XREF: sub_41AE4D+88↑r
+word_510566     dw 0BC00h               ; DATA XREF: sub_41AE4D+7E↑r
+word_510568     dw 0C00h                ; DATA XREF: sub_41AE4D+B2↑r
+word_5105AA     dw 1                    ; DATA XREF: sub_41AE4D+1EF↑r
+dword_5105D0    dd 0A010F4h             ; DATA XREF: sub_41B1BB+1C7↑r
+dword_5105D4    dd 0FFC0h               ; DATA XREF: sub_41B1BB+1AF↑r
+dword_5105D8    dd 0FEC00000h           ; DATA XREF: sub_41B535+DE↑r
 dword_5105DC    dd 0FE70h               ; DATA XREF: sub_41B535+C4↑r
                 db    0
                 db    0
+dword_5105E5    dd 0C00708h             ; DATA XREF: sub_41BA5E+97↑r
 dword_5105E9    dd 40FF10h              ; DATA XREF: sub_41BA5E+73↑r
                 align 10h
 funcs_41BDF8    dd offset sub_41BE10    ; DATA XREF: sub_41BDE8+10↑r
@@ -2312,6 +2509,7 @@ funcs_41C410    dd offset sub_41C6C4    ; DATA XREF: sub_41C377+99↑r
                 dd offset sub_41CBCE
                 dd offset sub_41CCC7
                 dd offset sub_41CEB4
+dword_51065A    dd 0FFF50000h           ; DATA XREF: sub_41D1E1+B↑r
 dword_51065E    dd 1BFFFAh              ; DATA XREF: sub_41D1E1+29↑r
                 db  10h
                 db    0
@@ -2481,6 +2679,8 @@ funcs_41FD36    dd offset sub_41FF74    ; DATA XREF: sub_41FD11+25↑r
                 dd offset sub_4203E1
                 dd offset sub_420528
                 dd offset sub_420635
+word_51086C     dw 0FA10h               ; DATA XREF: sub_41FA79+12F↑r
+word_51086E     dw 578h                 ; DATA XREF: sub_41FA79+149↑r
 dword_510870    dd 400FD44h             ; DATA XREF: sub_41FA79+164↑r
                 db 0F0h
                 db    5
@@ -2600,8 +2800,12 @@ dword_510870    dd 400FD44h             ; DATA XREF: sub_41FA79+164↑r
                 db  0Ah
                 db    0
                 db 0FEh
+dword_5108EA    dd 0FED40000h           ; DATA XREF: sub_4213F7+4F↑r
+word_5108EE     dw 300h                 ; DATA XREF: sub_4213F7+82↑r
 word_5108F0     dw 0F200h               ; DATA XREF: sub_4213F7+93↑r
                 align 4
+word_5108F4     dw 0C8h                 ; DATA XREF: sub_4214A8+37↑r
+word_5108F6     dw 0FB00h               ; DATA XREF: sub_420635+89↑r
 dword_5108F9    dd 60000EDh             ; DATA XREF: sub_420E01+8F↑r
                 db    7
                 db    9
@@ -2960,6 +3164,8 @@ funcs_4252A2    dd offset sub_425B97    ; DATA XREF: sub_42522F+73↑r
                 dd offset sub_426089
 funcs_4252B5    dd offset sub_4252FF    ; DATA XREF: sub_42522F+86↑r
 off_510D78      dd offset sub_425853    ; DATA XREF: sub_4252FF+125↑r
+dword_510D7C    dd 8000200h             ; DATA XREF: sub_4252FF+A5↑r
+word_510D80     dw 0A00h                ; DATA XREF: sub_42654C+65↑r
 word_510D82     dw 0                    ; DATA XREF: sub_42654C+82↑r
 funcs_4266CF    dd offset sub_426715    ; DATA XREF: sub_4266C4+B↑r
                 dd offset sub_426768
@@ -3094,6 +3300,21 @@ word_511070     dw 2                    ; DATA XREF: sub_4293FF+59↑r
                 db    0
                 db    0
                 db    0
+dword_511078    dd 0                    ; DATA XREF: sub_4299F3+156↑w
+dword_51107C    dd 200h                 ; DATA XREF: sub_4299F3+175↑w
+dword_511080    dd 30h                  ; DATA XREF: sub_4299F3+17B↑w
+dword_511084    dd 200h                 ; DATA XREF: sub_4299F3+185↑w
+dword_511088    dd 300h                 ; DATA XREF: sub_4299F3+18B↑w
+dword_51108C    dd 0Ah                  ; DATA XREF: sub_4299F3+195↑w
+dword_511090    dd 14h                  ; DATA XREF: sub_4299F3+19F↑w
+dword_511094    dd 3                    ; DATA XREF: sub_4299F3+1A9↑w
+dword_511098    dd 3Ch                  ; DATA XREF: sub_4299F3+1B3↑w
+dword_51109C    dd 1                    ; DATA XREF: sub_4299F3+1C2↑w
+dword_5110A0    dd 1                    ; DATA XREF: sub_4299F3+1C8↑w
+dword_5110A4    dd 4B0h                 ; DATA XREF: sub_4299F3+1CE↑w
+dword_5110BC    dd 0                    ; DATA XREF: sub_42A778:loc_42A78E↑r
+dword_5110C0    dd 0                    ; DATA XREF: sub_42A778+5↑r
+dword_511164    dd 0                    ; DATA XREF: sub_42BEB2:loc_42C00A↑r
                 dd offset unk_70F1AC
                 dd offset unk_7097AC
                 dd offset unk_574364
@@ -4483,6 +4704,12 @@ word_511D86     dw 8                    ; DATA XREF: sub_4363B5+E7↑r
                 db    0
                 db  0Dh
                 db    0
+dword_511D90    dd 0                    ; DATA XREF: sub_436B37+7↑w
+dword_511D94    dd 0                    ; DATA XREF: sub_435882+3C↑w
+dword_511D98    dd 0                    ; DATA XREF: sub_435882+28↑w
+dword_511D9C    dd 0                    ; DATA XREF: sub_4358E8:def_435969↑w
+dword_511DA0    dd 8                    ; DATA XREF: sub_4358E8+12C↑w
+dword_511DA4    dd 60h                  ; DATA XREF: sub_4358E8+136↑w
 dword_511DA8    dd 0                    ; DATA XREF: sub_435882+44↑w
 funcs_435CD7    dd offset sub_435CE0    ; DATA XREF: sub_435CD1+6↑r
                 dd offset nullsub_11
@@ -4502,6 +4729,9 @@ dword_511DF1    dd 6                    ; DATA XREF: sub_436BA0:loc_436BE3↑w
                 db    0
                 db    1
                 db    0
+dword_511E01    dd 0FF0000h             ; DATA XREF: sub_43770B+25↑r
+dword_511E05    dd 0FF0000h             ; DATA XREF: sub_43770B+34↑r
+dword_511E09    dd 0                    ; DATA XREF: sub_43770B+3D↑r
 dword_511E0D    dd 0                    ; DATA XREF: sub_43770B+46↑r
                 db    0
                 db    0
@@ -4522,6 +4752,7 @@ dword_511E0D    dd 0                    ; DATA XREF: sub_43770B+46↑r
                 db    0
                 db    0
                 db    0
+word_511E24     dw 0                    ; DATA XREF: sub_4377CA+5B↑r
 word_511E26     dw 0F0h                 ; DATA XREF: sub_4377CA+50↑r
                 db  80h
                 db    0
@@ -5112,6 +5343,8 @@ funcs_43AD41    dd offset sub_43ADD9    ; DATA XREF: sub_43AD27+1A↑r
                 dd offset sub_43B1E9
 funcs_43B249    dd offset sub_43B260    ; DATA XREF: sub_43B23D+C↑r
 funcs_43B257    dd offset sub_43B302    ; DATA XREF: sub_43B23D+1A↑r
+word_513854     dw 406h                 ; DATA XREF: sub_43B260+22↑r
+word_513856     dw 0F3E4h               ; DATA XREF: sub_43B260+4E↑r
 word_513858     dw 0E10h                ; DATA XREF: sub_43B260+72↑r
                 align 4
                 db 0B4h
@@ -5323,6 +5556,7 @@ funcs_43D072    dd offset sub_43CCCB    ; DATA XREF: sub_43D06C+6↑r
 funcs_43D3AF    dd offset sub_43CCCB    ; DATA XREF: sub_43D3A9+6↑r
                 dd offset sub_43D3B8
                 dd offset sub_43CE2E
+word_513F5C     dw 28h                  ; DATA XREF: sub_43D6AF+33↑r
 word_513F5E     dw 5Fh                  ; DATA XREF: sub_43D6AF+24↑r
 a27:
                 text "UTF-16LE", '__27'
@@ -5449,6 +5683,8 @@ funcs_43E07F    dd offset sub_43E088    ; DATA XREF: sub_43E079+6↑r
                 dd offset sub_43E0C9
                 dd offset sub_43E28E
                 dd offset sub_43E31E
+word_514086     dw 1E0h                 ; DATA XREF: sub_43E5BA+34↑r
+word_514088     dw 0FFFFh               ; DATA XREF: sub_43E5BA+4D↑r
 word_51408A     dw 2A8h                 ; DATA XREF: sub_43E5BA+66↑r
                 db 0A8h
                 db 0FDh
@@ -5506,6 +5742,8 @@ funcs_43E5B1    dd offset sub_43E5BA    ; DATA XREF: sub_43E5AB+6↑r
 funcs_43E81D    dd offset sub_43E826    ; DATA XREF: sub_43E817+6↑r
                 dd offset sub_43E8DA
                 dd offset sub_43E8F9
+word_51419C     dw 32h                  ; DATA XREF: sub_43E936+4B↑r
+word_51419E     dw 0                    ; DATA XREF: sub_43E936+6C↑r
 word_5141A0     dw 0FFF6h               ; DATA XREF: sub_43E936+8D↑r
                 db  32h ; 2
                 db    0
@@ -5537,6 +5775,8 @@ word_5141A0     dw 0FFF6h               ; DATA XREF: sub_43E936+8D↑r
                 db    0
                 db 0F6h
                 db 0FFh
+word_5141C0     dw 0                    ; DATA XREF: sub_43EBBA+53↑r
+word_5141C2     dw 0FFB0h               ; DATA XREF: sub_43EBBA+74↑r
 word_5141C4     dw 0Ah                  ; DATA XREF: sub_43EBBA+95↑r
                 db  46h ; F
                 db    0
@@ -5596,6 +5836,7 @@ word_51424E     dw 0Ah                  ; DATA XREF: sub_43EF38+14B↑r
                 db    0
                 db    0
                 db    0
+dword_51425E    dd 1180030h             ; DATA XREF: sub_43EF38+63↑r
 word_514262     dw 64h                  ; DATA XREF: sub_43EF38+8C↑r
                 db  10h
                 db    0
@@ -5633,6 +5874,7 @@ word_514262     dw 64h                  ; DATA XREF: sub_43EF38+8C↑r
                 db    1
                 db    0
                 db    0
+word_514288     dw 37h                  ; DATA XREF: sub_43F0C6+2B↑r
 word_51428A     dw 0FFFBh               ; DATA XREF: sub_43F0C6+42↑r
                 db  46h ; F
                 db    0
@@ -5740,6 +5982,7 @@ word_51428A     dw 0FFFBh               ; DATA XREF: sub_43F0C6+42↑r
                 db    0
                 db  18h
                 db    1
+dword_5142F6    dd 0C80000h             ; DATA XREF: sub_43F25B+3D↑r
 dword_5142FA    dd 0FFFFF6h             ; DATA XREF: sub_43F25B+6B↑r
                 db  9Ch
                 db 0FFh
@@ -5803,9 +6046,12 @@ funcs_43F600    dd offset sub_43F617    ; DATA XREF: sub_43F5F4+C↑r
                 dd offset sub_43F6D6
 funcs_43F60E    dd offset sub_43F6DB    ; DATA XREF: sub_43F5F4+1A↑r
                 dd offset sub_43F6D6
+word_5143D0     dw 0F79Ah               ; DATA XREF: sub_43F617+66↑r
+word_5143D2     dw 0FD44h               ; DATA XREF: sub_43F617+8A↑r
 word_5143D4     dw 0F5E8h               ; DATA XREF: sub_43F617+7D↑r
                 align 4
 off_514888      dd offset unk_514464    ; DATA XREF: sub_43F774+2D↑r
+dword_51488C    dd 18h                  ; DATA XREF: sub_43F774+3B↑r
                 dd offset unk_514644
                 db    5
                 db    0
@@ -5903,6 +6149,8 @@ funcs_4436E4    dd offset sub_44374A    ; DATA XREF: sub_443697+4D↑r
                 dd offset sub_4437D5
                 dd offset sub_443845
                 dd offset sub_443817
+dword_51500A    dd 0E83D0000h           ; DATA XREF: sub_443845+F6↑r
+dword_51500E    dd 0FCF3FFFFh           ; DATA XREF: sub_443845+10A↑r
 word_515012     dw 20h                  ; DATA XREF: sub_443845+39↑r
                 db  7Bh ; {
                 db    6
@@ -6091,6 +6339,7 @@ funcs_44ACED    dd offset sub_44AD62    ; DATA XREF: sub_44ACA0+4D↑r
                 dd offset sub_44AE21
                 dd offset sub_44AF45
                 dd offset sub_44B04D
+dword_5159EE    dd 18010000h            ; DATA XREF: sub_44AF45+98↑r
 dword_5159F2    dd 5F9AFFFFh            ; DATA XREF: sub_44AF45+AB↑r
                 align 4
 funcs_44B1D1    dd offset sub_44B1DA    ; DATA XREF: sub_44B1CB+6↑r
@@ -6136,6 +6385,7 @@ dword_515A3C    dd 7FFFFFFFh            ; DATA XREF: sub_44B60C+A3↑r
                 db 0FFh
                 db 0FFh
                 db  7Fh ; 
+dword_515A68    dd 7FFFFFFFh            ; DATA XREF: sub_44B60C+CA↑r
                 dd offset unk_515A50
                 db 0FFh
                 db 0FFh
@@ -6317,6 +6567,7 @@ funcs_452418    dd offset sub_45251A    ; DATA XREF: sub_4523C3+55↑r
                 dd offset sub_45275C
 dword_515DB5    dd 2B0020FFh            ; DATA XREF: sub_45251A+6F↑r
                 db  0Eh
+dword_515DBA    dd 504h                 ; DATA XREF: sub_45251A+80↑r
 dword_515DBE    dd 0FF80h               ; DATA XREF: sub_45275C+163↑r
                 db    0
                 db    0
@@ -6390,6 +6641,7 @@ funcs_4548FF    dd offset sub_454A31    ; DATA XREF: sub_4548E0+1F↑r
                 dd offset sub_454C10
                 dd offset sub_455089
                 dd offset sub_454CB8
+dword_515F42    dd 0F4000020h           ; DATA XREF: sub_454A74+40↑r
 dword_515F46    dd 2000A00h             ; DATA XREF: sub_454A74+34↑r
                 db    0
                 db    2
@@ -6509,6 +6761,12 @@ off_5163EF      dd offset unk_803020    ; DATA XREF: sub_459863+101↑r
                 db  80h
                 db  78h ; x
                 db  30h ; 0
+dword_5163FA    dd 6400000h             ; DATA XREF: sub_459B4B+27↑r
+dword_5163FE    dd 0E2B4h               ; DATA XREF: sub_459B4B+55↑r
+word_516402     dw 0                    ; DATA XREF: sub_459B4B+96↑r
+word_516404     dw 154h                 ; DATA XREF: sub_459B4B+77↑r
+word_516406     dw 8                    ; DATA XREF: sub_459B4B+139↑r
+word_516408     dw 3Ch                  ; DATA XREF: sub_459B4B+123↑r
 word_51640A     dw 3Ch                  ; DATA XREF: sub_459B4B+F1↑r
                 db 0D0h
                 db    7
@@ -6701,6 +6959,8 @@ funcs_45C6A0    dd offset sub_45C730    ; DATA XREF: sub_45C647+59↑r
                 dd offset sub_45C746
                 dd offset sub_45C794
                 dd offset sub_45C81F
+dword_51669A    dd 1FB0020h             ; DATA XREF: sub_45C81F+A9↑r
+dword_51669E    dd 0A6FFCFFh            ; DATA XREF: sub_45C81F+BD↑r
 word_5166A2     dw 20h                  ; DATA XREF: sub_45C81F+34↑r
                 db  58h ; X
                 db    2
@@ -7002,6 +7262,7 @@ funcs_46002B    dd offset sub_460091    ; DATA XREF: sub_45FFDE+4D↑r
                 dd offset sub_4600A7
                 dd offset sub_460116
                 dd offset sub_460192
+dword_5169A6    dd 67B0000h             ; DATA XREF: sub_460192+C0↑r
 dword_5169AA    dd 0FEC5FFFFh           ; DATA XREF: sub_460192+D3↑r
                 align 10h
 funcs_4602BB    dd offset sub_4602F9    ; DATA XREF: sub_460294+27↑r
@@ -7020,6 +7281,7 @@ funcs_46080A    dd offset sub_460844    ; DATA XREF: sub_4607DA+30↑r
                 dd offset sub_4611AF
                 dd offset sub_4613D3
                 dd offset sub_4614B7
+dword_516A08    dd 10h                  ; DATA XREF: sub_460844+B6↑r
 dword_516A0C    dd 1Eh                  ; DATA XREF: sub_460844+A6↑r
                 db  11h
                 db    0
@@ -7563,6 +7825,7 @@ dword_516FDC    dd 10028h               ; DATA XREF: sub_46D1A4+CB↑r
                 db    0
                 db  27h ; '
                 db    0
+dword_516FE8    dd 100130h              ; DATA XREF: sub_46D329+BA↑r
 dword_516FEC    dd 0FFFFFFFBh           ; DATA XREF: sub_46D329+B3↑r
 funcs_46D71B    dd offset sub_46D761    ; DATA XREF: sub_46D710+B↑r
                 dd offset sub_46D7D3
@@ -7570,6 +7833,7 @@ funcs_46D71B    dd offset sub_46D761    ; DATA XREF: sub_46D710+B↑r
                 dd offset sub_46D817
                 dd offset sub_46D82B
                 dd offset sub_46D854
+word_517064     dw 0F60Ch               ; DATA XREF: sub_46E653+2D↑r
 word_517066     dw 0F5ECh               ; DATA XREF: sub_46E653+3E↑r
                 db  0Ch
                 db 0F6h
@@ -7611,6 +7875,7 @@ word_517066     dw 0F5ECh               ; DATA XREF: sub_46E653+3E↑r
                 db 0F6h
                 db 0EAh
                 db    6
+dword_5170BC    dd 100130h              ; DATA XREF: sub_46EAD2+CE↑r
 dword_5170C0    dd 0FFFFFFFBh           ; DATA XREF: sub_46EAD2+C7↑r
 funcs_46D8D9    dd offset sub_46D8E5    ; DATA XREF: sub_46D884+55↑r
                 dd offset sub_46DB32
@@ -7800,6 +8065,8 @@ off_517501      dd offset unk_5173BF    ; DATA XREF: sub_47404E+E↑r
                 dd offset unk_51742E
                 dd offset unk_51745F
                 dd offset unk_5174A0
+word_517531     dw 10h                  ; DATA XREF: sub_474144+2D↑r
+word_517533     dw 0FFF8h               ; DATA XREF: sub_474144+45↑r
 word_517535     dw 8                    ; DATA XREF: sub_474144+5D↑r
                 db    0
                 db    0
@@ -7932,6 +8199,8 @@ off_51782E      dd offset unk_517794    ; DATA XREF: sub_475B6E+73↑o
                 dd offset unk_51781D
                 dd offset unk_51781D
 off_51785A      dd offset unk_51781D    ; DATA XREF: sub_47667E+100↑r
+dword_51785E    dd 13881388h            ; DATA XREF: sub_47667E+F6↑r
+dword_517862    dd 7D007D0h             ; DATA XREF: sub_4767D8+B7↑r
                 dd offset unk_517794
                 dd offset unk_517794
                 dd offset unk_517794
@@ -8105,6 +8374,7 @@ funcs_476086    dd offset sub_476178    ; DATA XREF: sub_47601C+6A↑r
                 dd offset sub_47651A
                 dd offset sub_476641
                 dd offset sub_47667E
+dword_517A8A    dd 0FFFF0000h           ; DATA XREF: sub_476A32+39↑r
 dword_517A8E    dd 480h                 ; DATA XREF: sub_476A32+32↑r
                 align 4
 funcs_476C5C    dd offset sub_476CE4    ; DATA XREF: sub_476C02+5A↑r
@@ -8496,6 +8766,9 @@ dword_518750    dd 0                    ; DATA XREF: sub_478927+1B↑r
                 db    2
                 db    0
                 db    0
+dword_51875C    dd 10000h               ; DATA XREF: sub_478A43+D8↑r
+dword_518760    dd 0                    ; DATA XREF: sub_478A43+D2↑r
+dword_518764    dd 1                    ; DATA XREF: sub_478A43+CC↑r
 dword_518768    dd 5                    ; DATA XREF: sub_478A43+F1↑r
                 db    0
                 db    1
@@ -8552,6 +8825,7 @@ off_518820      dd offset unk_5187C0    ; DATA XREF: sub_478D06+9↑r
                 dd offset unk_5187DC
                 dd offset unk_5187F0
                 dd offset unk_518808
+word_518830     dw 3000h                ; DATA XREF: sub_478DDE+12↑r
 word_518832     dw 1                    ; DATA XREF: sub_478DDE+1E↑r
                 db    0
                 db  30h ; 0
@@ -8595,6 +8869,8 @@ off_518A04      dd offset unk_51884C    ; DATA XREF: sub_478F8C+9↑r
                 dd offset unk_5189E4
                 dd offset unk_5189EC
                 dd offset unk_5189FC
+word_518A70     dw 3080h                ; DATA XREF: sub_479010+17↑r
+word_518A72     dw 10h                  ; DATA XREF: sub_479010+31↑r
 word_518A74     dw 1                    ; DATA XREF: sub_479010+3D↑r
                 db  80h
                 db  31h ; 1
@@ -8825,6 +9101,8 @@ funcs_47BC9E    dd offset sub_47BCA7    ; DATA XREF: sub_47BC98+6↑r
                 dd offset sub_47BCBF
 funcs_47BF90    dd offset sub_47BFB2    ; DATA XREF: sub_47BF8A+6↑r
                 dd offset sub_47C0BE
+dword_518EE4    dd 1400200h             ; DATA XREF: sub_47C1E3+4B↑r
+dword_518EE8    dd 1200210h             ; DATA XREF: sub_47C1E3+130↑r
 word_518EEE     dw 60Fh                 ; DATA XREF: sub_47C1E3+24↑r
                 db  70h ; p
                 db    1
@@ -9001,6 +9279,9 @@ funcs_47D1EB    dd offset sub_47D1F4    ; DATA XREF: sub_47D1E5+6↑r
 funcs_47D3BD    dd offset sub_47D3C6    ; DATA XREF: sub_47D3B7+6↑r
                 dd offset sub_47D3E0
                 dd offset sub_47D427
+dword_519416    dd 0EF3D0000h           ; DATA XREF: sub_47D4E8+8↑r
+dword_51941A    dd 159BFFFFh            ; DATA XREF: sub_47D4E8+48↑r
+dword_51941E    dd 0EE750000h           ; DATA XREF: sub_47D4E8+15↑r
 dword_519422    dd 1265FFCEh            ; DATA XREF: sub_47D4E8+55↑r
                 align 4
 funcs_47D55A    dd offset sub_47D563    ; DATA XREF: sub_47D554+6↑r
@@ -9018,6 +9299,7 @@ funcs_47D675    dd offset sub_47D80A    ; DATA XREF: sub_47D62D+48↑r
 funcs_47D974    dd offset sub_47D97D    ; DATA XREF: sub_47D96E+6↑r
                 dd offset sub_47DA53
                 dd offset sub_47DCA6
+word_519490     dw 100h                 ; DATA XREF: sub_47D97D+55↑r
 word_519492     dw 0B29h                ; DATA XREF: sub_47D97D+67↑r
                 db    0
                 db 0FCh
@@ -10027,6 +10309,7 @@ dword_51B44A    dd 0                    ; DATA XREF: sub_4814FE+11B↑r
                 db 0FFh
                 db    0
                 db    0
+dword_51B452    dd 10004h               ; DATA XREF: sub_4814FE+13E↑r
 dword_51B456    dd 101FFFFh             ; DATA XREF: sub_481B87+43↑r
                 db    2
                 db    1
@@ -10035,6 +10318,7 @@ dword_51B456    dd 101FFFFh             ; DATA XREF: sub_481B87+43↑r
                 db    4
 dword_51B45F    dd 7030502h             ; DATA XREF: sub_4818B0+98↑r
                 db    6
+word_51B464     dw 4                    ; DATA XREF: sub_4818B0:loc_4819EE↑r
                 dd offset sub_4816E1
                 db    1
                 db    0
@@ -11014,6 +11298,7 @@ funcs_48519B    dd offset sub_4851A4    ; DATA XREF: sub_485195+6↑r
                 db    0
                 db    0
                 db    0
+word_51EF58     dw 0FF80h               ; DATA XREF: sub_4851A4+7C↑r
 word_51EF5A     dw 0                    ; DATA XREF: sub_4851A4+8B↑r
                 db    0
                 db    0
@@ -11569,6 +11854,10 @@ funcs_488758    dd offset sub_488772    ; DATA XREF: sub_488752+6↑r
                 db    0
                 db    0
                 db    0
+word_521A5E     dw 0F800h               ; DATA XREF: sub_488772+5A↑r
+word_521A60     dw 0                    ; DATA XREF: sub_488772+66↑r
+word_521A64     dw 0                    ; DATA XREF: sub_488A03+3C↑r
+word_521A66     dw 0                    ; DATA XREF: sub_488A03+4A↑r
                 dd offset nullsub_68
                 db    0
                 db    1
@@ -12050,6 +12339,8 @@ funcs_48CE57    dd offset sub_48CE60    ; DATA XREF: sub_48CE51+6↑r
 funcs_48CFC2    dd offset sub_48CFFC    ; DATA XREF: sub_48CFBC+6↑r
                 dd offset sub_48D562
                 dd offset sub_48D62D
+word_523290     dw 0DDC0h               ; DATA XREF: sub_48CFFC+21A↑r
+word_523292     dw 0FFFFh               ; DATA XREF: sub_48CFFC+226↑r
 word_523294     dw 0F471h               ; DATA XREF: sub_48CFFC+232↑r
                 align 4
                 db    1
@@ -12112,6 +12403,8 @@ word_523294     dw 0F471h               ; DATA XREF: sub_48CFFC+232↑r
                 db    6
                 db    0
                 db    0
+word_5232E0     dw 0DA9h                ; DATA XREF: sub_48CFFC+141↑r
+word_5232E2     dw 0FFFFh               ; DATA XREF: sub_48CFFC+14D↑r
 word_5232E4     dw 1BEh                 ; DATA XREF: sub_48CFFC+159↑r
                 align 4
                 db    1
@@ -12412,6 +12705,8 @@ dword_524AC2    dd 0                    ; DATA XREF: sub_48ED4A+6C↑r
                 db 0FFh
                 db    0
                 db    0
+dword_524ACA    dd 8                    ; DATA XREF: sub_48EDE6+5D↑r
+word_524ACE     dw 0FFFEh               ; DATA XREF: sub_48F27E+101↑r
 word_524AD0     dw 0                    ; DATA XREF: sub_48F27E+11D↑r
                 db    2
                 db    0
@@ -12902,6 +13197,8 @@ off_5265CE      dd offset unk_5265A8    ; DATA XREF: sub_491FBF+18↑r
 off_5265DA      dd offset unk_5265A8    ; DATA XREF: sub_491FBF+39↑r
                 dd offset unk_5265AC
                 dd offset unk_5265B5
+word_5265E6     dw 140h                 ; DATA XREF: sub_492095+15↑r
+word_5265E8     dw 8Ch                  ; DATA XREF: sub_492095+50↑r
 word_5265EA     dw 0                    ; DATA XREF: sub_492095+5F↑r
                 db    0
                 db    0
@@ -14524,6 +14821,7 @@ word_52B643     dw 0                    ; DATA XREF: sub_4990F8+7F↑r
                 db  2Bh ; +
                 db  1Fh
                 db    0
+dword_52C42C    dd 64h                  ; DATA XREF: sub_49B06C+2A↑r
                 dd offset nullsub_70
                 db 0FFh
                 db    0
@@ -14608,6 +14906,9 @@ funcs_49C3DB    dd offset sub_49BD8F    ; DATA XREF: sub_49C3D5+6↑r
                 db    0
                 db    0
                 db    0
+dword_52C628    dd 200h                 ; DATA XREF: sub_49C6F1+34↑r
+dword_52C62C    dd 0FFFFFCFFh           ; DATA XREF: sub_49C6F1+49↑r
+dword_52C630    dd 700h                 ; DATA XREF: sub_49C6F1+5E↑r
 word_52C634     dw 800h                 ; DATA XREF: sub_49C6F1+B5↑r
                 db    0
                 db    0
@@ -14641,6 +14942,7 @@ word_52C634     dw 800h                 ; DATA XREF: sub_49C6F1+B5↑r
                 db 0FFh
                 db  18h
                 db  0Eh
+dword_52C656    dd 0C0000h              ; DATA XREF: sub_49CC30+9↑r
 dword_52C65A    dd 0D000Eh              ; DATA XREF: sub_49CC30+2F↑r
 off_52C802      dd offset unk_52C69A    ; DATA XREF: sub_49C6F1+D6↑r
                 dd offset unk_52C712
@@ -14896,6 +15198,7 @@ funcs_49E4B5    dd offset sub_49E4C8    ; DATA XREF: sub_49E494+21↑r
                 dd offset sub_49F20F
                 dd offset sub_49E57A
                 dd offset sub_49E71A
+dword_52CC7C    dd 2EA8A8A8h            ; DATA XREF: sub_49E7FF+46↑r
 dword_52CC80    dd 2E787878h            ; DATA XREF: sub_49E7FF:loc_49E84D↑r
                 db 0A8h
                 db 0A8h
@@ -15361,6 +15664,7 @@ word_52DE44     dw 3E8h                 ; DATA XREF: sub_4A1364+17B7↑r
                 db    2
                 db 0E8h
                 db    3
+word_52DE62     dw 7D0h                 ; DATA XREF: sub_4A1364+17FA↑r
 funcs_4A1083    dd 30200h               ; DATA XREF: sub_4A0EF8+18B↑r
                 db    0
                 db    0
@@ -15663,6 +15967,7 @@ funcs_4A13AB    dd offset sub_4A5170    ; DATA XREF: sub_4A1364+47↑r
                 dd offset sub_4A541F
                 dd offset sub_4A5D85
                 align 8
+funcs_4A11FB    dd 0                    ; DATA XREF: sub_4A0EF8+303↑r
                 dd offset sub_4A541F
                 dd offset sub_4A5170
 funcs_4A1287    dd offset sub_4A553E    ; DATA XREF: sub_4A0EF8+38F↑r
@@ -16344,6 +16649,7 @@ off_530075      dd offset unk_52FBC7    ; DATA XREF: sub_4E3DF2:loc_4E3E50↑r
                 dd offset unk_52FC06
                 dd offset unk_52FC5B
 off_530081      dd offset unk_52FC98    ; DATA XREF: sub_49A86A+B3↑r
+dword_53022A    dd 15001Ch              ; DATA XREF: sub_4A0BC3+1F↑r
 dword_53022E    dd 8D0022h              ; DATA XREF: sub_4A0BC3+2C↑r
                 db  21h ; !
                 db    0
@@ -16409,6 +16715,7 @@ dword_53022E    dd 8D0022h              ; DATA XREF: sub_4A0BC3+2C↑r
                 db    0
                 db  8Dh
                 db    0
+dword_530272    dd 15001Bh              ; DATA XREF: sub_4A0BC3+68↑r
 dword_530276    dd 8D0009h              ; DATA XREF: sub_4A0BC3+75↑r
                 db  25h ; %
                 db    0
@@ -16426,6 +16733,7 @@ dword_530276    dd 8D0009h              ; DATA XREF: sub_4A0BC3+75↑r
                 db    0
                 db  8Dh
                 db    0
+dword_53028A    dd 29002Dh              ; DATA XREF: sub_4A0BC3+82↑r
 dword_53028E    dd 8D001Eh              ; DATA XREF: sub_4A0BC3+8F↑r
                 db  21h ; !
                 db    0
@@ -16510,11 +16818,18 @@ off_5303E0      dd offset unk_578364    ; DATA XREF: WinMain(x,x,x,x)+501↑r
                 dd offset unk_585364
                 dd offset unk_578364
                 dd offset unk_588364
+bMenu           dd 1                    ; DATA XREF: sub_4A650B+4A↑w
+dword_5303FC    dd 1                    ; DATA XREF: sub_4A650B+5A↑w
+dword_530400    dd 0                    ; DATA XREF: sub_4A6A5E+29F↑r
+dword_530404    dd 1                    ; DATA XREF: sub_4A67C5+C↑r
+dword_530408    dd 0                    ; DATA XREF: sub_4A6A5E+2CD↑w
 dword_53040C    dd 0                    ; DATA XREF: sub_4A6A5E+2DC↑w
                 db    1
                 db    0
                 db    0
                 db    0
+dword_530414    dd 0                    ; DATA XREF: AUTO:004A72D0↑r
+dword_53041B    dd 0                    ; DATA XREF: sub_4A6A5E+BF↑r
 dword_53041F    dd 0                    ; DATA XREF: AUTO:004A72E2↑r
                 align 4
                 db 0FFh
@@ -16610,15 +16925,30 @@ dword_530444    dd 8FFF0402h            ; DATA XREF: sub_4A7B2D+71↑r
                 db    1
                 db 0FFh
                 db  0Fh
+dword_530484    dd 40000h               ; DATA XREF: sub_4A8141+40↑r
+dword_530488    dd 81000000h            ; DATA XREF: sub_4A8141+6F↑r
+dword_53048C    dd 40000h               ; DATA XREF: sub_4A8141+109↑r
+dword_530490    dd 20000h               ; DATA XREF: sub_4A8141+128↑r
+dword_530494    dd 30000h               ; DATA XREF: sub_4A8141+147↑r
+dword_530498    dd 81000000h            ; DATA XREF: sub_4A8141+176↑r
+dword_5304B8    dd 40000h               ; DATA XREF: sub_4A8561+1F↑r
+dword_5304BC    dd 81000000h            ; DATA XREF: sub_4A8561+2F↑r
+dword_5304C0    dd 40000h               ; DATA XREF: sub_4A8561+4D↑r
+dword_5304C4    dd 20000h               ; DATA XREF: sub_4A8561+5D↑r
+dword_5304C8    dd 30000h               ; DATA XREF: sub_4A8561+6D↑r
+dword_5304CC    dd 81000000h            ; DATA XREF: sub_4A8561+7D↑r
 word_5304F0     dw 6582h                ; DATA XREF: sub_4A8EFF+F↑w
                 db  81h
                 db  6Eh ; n
+word_5304F4     dw 6582h                ; DATA XREF: sub_4A8EFF+8D↑w
 word_5304F6     dw 6582h                ; DATA XREF: sub_4A8EFF+78↑w
                 db  81h
                 db  46h ; F
+word_5304FA     dw 6582h                ; DATA XREF: sub_4A8EFF+63↑w
 word_5304FC     dw 6582h                ; DATA XREF: sub_4A8EFF+4E↑w
                 db  81h
                 db  46h ; F
+word_530500     dw 6582h                ; DATA XREF: sub_4A8EFF+39↑w
 word_530502     dw 6582h                ; DATA XREF: sub_4A8EFF+24↑w
                 db  81h
                 db  40h ; @
@@ -16632,6 +16962,7 @@ word_530502     dw 6582h                ; DATA XREF: sub_4A8EFF+24↑w
                 db  40h ; @
                 db  81h
                 db  40h ; @
+word_530510     dw 4F82h                ; DATA XREF: sub_4A8EFF+1C↑r
 word_530512     dw 5082h                ; DATA XREF: sub_4A8EFF+7↑r
                 db  82h
                 db  51h ; Q
@@ -16791,6 +17122,7 @@ funcs_4A9B42    dd offset sub_4ABCDF    ; DATA XREF: sub_4A9A31+111↑r
                 db    1
                 db    0
                 db    0
+word_53066C     dw 37h                  ; DATA XREF: sub_4ADC8D+48↑r
 word_53066E     dw 0FFFBh               ; DATA XREF: sub_4ADC8D+62↑r
                 db  46h ; F
                 db    0
@@ -16898,6 +17230,7 @@ word_53066E     dw 0FFFBh               ; DATA XREF: sub_4ADC8D+62↑r
                 db    0
                 db  18h
                 db    1
+dword_5306DA    dd 0C80000h             ; DATA XREF: sub_4ADFEE+3D↑r
 dword_5306DE    dd 0FFFFF6h             ; DATA XREF: sub_4ADFEE+6B↑r
                 db  9Ch
                 db 0FFh
@@ -16975,6 +17308,7 @@ funcs_4AE420    dd offset sub_4AE43A    ; DATA XREF: sub_4AE41A+6↑r
 funcs_4AE5D9    dd offset sub_4AE5E2    ; DATA XREF: sub_4AE5D3+6↑r
                 dd offset sub_4AE64E
                 align 4
+dword_5307D8    dd 3D08002Eh            ; DATA XREF: sub_4AE6C5+40↑r
 dword_5307DC    dd 2E808080h            ; DATA XREF: sub_4AE6C5+4A↑r
 funcs_4AE6BC    dd offset sub_4AE6C5    ; DATA XREF: sub_4AE6B6+6↑r
                 dd offset sub_4AE73F
@@ -17686,6 +18020,9 @@ dword_530B90    dd 1482h                ; DATA XREF: sub_4AF8A2:loc_4AF9D8↑r
                 db  96h
                 db  0Ah
                 db    0
+word_530BC0     dw 65C5h                ; DATA XREF: sub_4AEF67+60↑r
+word_530BC2     dw 65DAh                ; DATA XREF: sub_4AEF67+6A↑r
+word_530BC4     dw 7DC5h                ; DATA XREF: sub_4AEF67+72↑r
 word_530BC6     dw 7DDAh                ; DATA XREF: sub_4AEF67+7C↑r
                 db 0D0h
                 db  60h ; `
@@ -18015,6 +18352,7 @@ word_530F48     dw 64h                  ; DATA XREF: sub_4B2D6F+16C↑r
                 db    0
 funcs_4B2B78    dd offset sub_4B2B89    ; DATA XREF: sub_4B2B6F+9↑r
                 dd offset sub_4B2D6F
+dword_530F68    dd 0FF40FFh             ; DATA XREF: sub_4B305F+2D↑r
 dword_530F6C    dd 0C030C0h             ; DATA XREF: sub_4B305F+15↑r
 off_530F70      dd offset unk_802080    ; DATA XREF: sub_4B305F+76↑r
                 db  40h ; @
@@ -18162,6 +18500,7 @@ dword_531024    dd 20h                  ; DATA XREF: sub_4B3565+1CA↑r
                 db    0
                 db    0
                 db    0
+dword_531044    dd 400h                 ; DATA XREF: sub_4B3565+187↑r
 dword_531048    dd 0                    ; DATA XREF: sub_4B3565+173↑r
                 db    0
                 db    8
@@ -18531,6 +18870,7 @@ funcs_4B62EE    dd offset sub_4B62F7    ; DATA XREF: sub_4B62DF+F↑r
                 dd offset nullsub_16
                 dd offset nullsub_16
                 dd offset nullsub_16
+dword_5312A5    dd 0FB0000FFh           ; DATA XREF: sub_4B6490+132↑r
 dword_5312A9    dd 1602020Bh            ; DATA XREF: sub_4B68A2+71↑r
                 db  3Dh ; =
 off_5312B0      dd offset sub_4B6468    ; DATA XREF: DGROUP:off_531460↓o
@@ -18666,6 +19006,22 @@ funcs_4B642D    dd offset sub_4B6BFA    ; DATA XREF: sub_4B6410+1D↑r
                 dd offset sub_4B6C76
                 dd offset sub_4B6C4E
                 dd offset sub_4B6C99
+dword_5314CC    dd 414h                 ; DATA XREF: sub_4B6CB0+2B↑r
+dword_5314D0    dd 0FFFFFFF4h           ; DATA XREF: sub_4B6CB0+24↑r
+dword_5314DC    dd 40Ch                 ; DATA XREF: sub_4B6CB0+5B↑r
+dword_5314E0    dd 0FFFFFFF4h           ; DATA XREF: sub_4B6CB0+55↑r
+dword_5314EC    dd 100118h              ; DATA XREF: sub_4B6CB0+8C↑r
+dword_5314F0    dd 0FFFFFFFBh           ; DATA XREF: sub_4B6CB0+85↑r
+dword_5314FC    dd 100210h              ; DATA XREF: sub_4B6CB0+BD↑r
+dword_531500    dd 0FFFFFFFBh           ; DATA XREF: sub_4B6CB0+B6↑r
+dword_53150C    dd 110h                 ; DATA XREF: sub_4B6CB0+E9↑r
+dword_531510    dd 0FFFFFFFAh           ; DATA XREF: sub_4B6CB0+E2↑r
+dword_53151C    dd 10Ah                 ; DATA XREF: sub_4B6CB0+11A↑r
+dword_531520    dd 0FFFFFFFAh           ; DATA XREF: sub_4B6CB0+113↑r
+dword_53152C    dd 101h                 ; DATA XREF: sub_4B6CB0+14B↑r
+dword_531530    dd 0FFFFFFFBh           ; DATA XREF: sub_4B6CB0+144↑r
+dword_53153C    dd 101h                 ; DATA XREF: sub_4B6CB0+17C↑r
+dword_531540    dd 0FFFFFFFBh           ; DATA XREF: sub_4B6CB0+175↑r
 dword_53165C    dd 0                    ; DATA XREF: sub_4B6381+76↑r
 off_5316E8      dd offset sub_4B702F    ; DATA XREF: DGROUP:off_531820↓o
                 dd offset sub_4B72BD
@@ -20328,6 +20684,8 @@ funcs_4BC9F3    dd offset sub_4BCBE7    ; DATA XREF: sub_4BC9E0+13↑r
                 dd offset sub_4BCDC9
                 dd offset sub_4BCE8D
                 dd offset sub_4BCEF6
+word_536D20     dw 300h                 ; DATA XREF: sub_4BCF15+2B↑r
+word_536D22     dw 0E400h               ; DATA XREF: sub_4BCF15+43↑r
 word_536D24     dw 160h                 ; DATA XREF: sub_4BCF15+5B↑r
                 db    0
                 db    1
@@ -20409,6 +20767,8 @@ dword_536EDC    dd 8000h                ; DATA XREF: sub_4BDA21+8D↑r
                 db  20h
                 db    0
                 db    0
+dword_536EE4    dd 1000h                ; DATA XREF: sub_4BDAD5+EF↑r
+dword_536EE8    dd 1000h                ; DATA XREF: sub_4BDAD5+103↑w
 dword_536EEC    dd 1000h                ; DATA XREF: sub_4BDAD5+FD↑w
                 db    0
                 db    0
@@ -20435,6 +20795,7 @@ funcs_4BDCEE    dd offset sub_4BDD03    ; DATA XREF: sub_4BDCA9+45↑r
                 dd offset sub_4BE5E5
                 dd offset sub_4BE68C
                 dd offset sub_4BE77B
+dword_537078    dd 0                    ; DATA XREF: sub_4BDC66+18↑r
                 dd offset unk_536F48
                 dd offset unk_536FE8
                 align 8
@@ -20739,6 +21100,7 @@ funcs_4C2AE7    dd offset sub_4C2AF0    ; DATA XREF: sub_4C2AE1+6↑r
 funcs_4C3474    dd offset sub_4C3485    ; DATA XREF: sub_4C346B+9↑r
                 dd offset sub_4C3504
                 dd offset sub_4C3596
+dword_53755E    dd 0FA00000h            ; DATA XREF: sub_4C3596+E8↑r
 dword_537562    dd 4000100h             ; DATA XREF: sub_4C3596+128↑r
                 align 20h
                 db 0C0h
@@ -20923,6 +21285,7 @@ off_53766C      dd offset unk_537618    ; DATA XREF: sub_4C4066+43↑r
                 db    0
                 db    0
                 dd offset unk_537618
+word_5376B8     dw 80h                  ; DATA XREF: sub_4C4066+19F↑r
 word_5376BA     dw 0                    ; DATA XREF: sub_4C4066+1CB↑r
                 db  80h
                 db 0FFh
@@ -20958,6 +21321,9 @@ funcs_4C3C95    dd offset sub_4C3E5F    ; DATA XREF: sub_4C3C69+2C↑r
                 dd offset sub_4C3F1E
                 dd offset sub_4C3FE2
                 dd offset sub_4C4047
+word_5376F0     dw 0FD44h               ; DATA XREF: sub_4C42C3+5A↑r
+word_5376F2     dw 0FF9Fh               ; DATA XREF: sub_4C42C3+6C↑r
+word_5376F4     dw 64h                  ; DATA XREF: sub_4C42C3+7E↑r
 word_5376F6     dw 0C00h                ; DATA XREF: sub_4C42C3+A1↑r
                 db 0BCh
                 db    2
@@ -21123,6 +21489,7 @@ dword_537884    dd 555h                 ; DATA XREF: sub_4C5508+B8↑r
                 db    5
                 db    0
                 db    0
+dword_53791E    dd 0                    ; DATA XREF: sub_4C596C+10↑r
                 dd offset unk_5378D8
                 dd offset unk_5378F6
                 db    0
@@ -21365,6 +21732,7 @@ off_537C6C      dd offset unk_537A88    ; DATA XREF: sub_4C646C+43↑r
                 db    0
                 db    0
                 dd offset unk_537AB8
+word_537DA8     dw 0FF00h               ; DATA XREF: sub_4C646C+18C↑r
 word_537DAA     dw 0                    ; DATA XREF: sub_4C646C+1AE↑r
                 db    0
                 db    0
@@ -21416,6 +21784,8 @@ dword_537F1C    dd 64h                  ; DATA XREF: sub_4C6AE3+4F↑r
                 db    0
                 db    0
                 db    0
+word_537F30     dw 1CFFh                ; DATA XREF: sub_4C68BE+2B↑r
+word_537F32     dw 2105h                ; DATA XREF: sub_4C68BE+54↑r
 word_537F34     dw 400h                 ; DATA XREF: sub_4C68BE+A7↑r
                 align 4
                 dd offset unk_537E30
@@ -21522,6 +21892,7 @@ funcs_4C74BB    dd offset sub_4C6D26    ; DATA XREF: sub_4C74B2+9↑r
 funcs_4C75AD    dd offset sub_4C6C6E    ; DATA XREF: sub_4C75A3+A↑r
                 dd offset sub_4C74B2
                 dd offset sub_4C74CD
+dword_537FD0    dd 64h                  ; DATA XREF: sub_4C77BF+30↑r
 dword_537FD4    dd 294h                 ; DATA XREF: sub_4C77BF+1A↑r
                 db 0C8h
                 db    0
@@ -21586,6 +21957,7 @@ off_538160      dd offset unk_53813C    ; DATA XREF: sub_4C7D5E+9↑r
                 db    0
                 db    0
                 dd offset unk_53813C
+word_53817C     dw 0FF40h               ; DATA XREF: sub_4C7D5E+18F↑r
 word_53817E     dw 110h                 ; DATA XREF: sub_4C7D5E+1B1↑r
                 db    0
                 db    0
@@ -21638,6 +22010,9 @@ off_5383B0      dd offset unk_5381CC    ; DATA XREF: sub_4C8364+43↑r
                 db    0
                 db    0
                 dd offset unk_5381AC
+word_5383E4     dw 0                    ; DATA XREF: sub_4C82A3+2D↑r
+word_5383E6     dw 0FFFFh               ; DATA XREF: sub_4C82A3+3C↑r
+word_5383E8     dw 0FCCDh               ; DATA XREF: sub_4C82A3+4B↑r
 word_5383EA     dw 800h                 ; DATA XREF: sub_4C82A3+5A↑r
 funcs_4C8719    dd offset sub_4C8737    ; DATA XREF: sub_4C8710+9↑r
                 dd offset sub_4C8956
@@ -21681,6 +22056,9 @@ funcs_4C98BD    dd offset sub_4C991F    ; DATA XREF: AUTO:004C98BD↑r
                 dd offset sub_4C9961
 funcs_4C996D    dd offset sub_4C9977    ; DATA XREF: sub_4C9961+C↑r
                 dd offset sub_4C99A3
+dword_538542    dd 32h                  ; DATA XREF: sub_4C99F5+BF↑r
+word_538546     dw 32h                  ; DATA XREF: sub_4C9C83+221↑r
+dword_538548    dd 165h                 ; DATA XREF: sub_4C9C83+19B↑r
 dword_53854C    dd 0FF069DAh            ; DATA XREF: sub_4C9C83+194↑r
                 db 0F0h
                 db 0FFh
@@ -21994,6 +22372,7 @@ funcs_4CA4D5    dd offset sub_4CA4DE    ; DATA XREF: sub_4CA4CF+6↑r
                 dd offset sub_4CA595
                 dd offset sub_4CA601
 off_5386E8      dd offset sub_4CA8CF    ; DATA XREF: sub_4CAA65+D1↑r
+dword_5386EC    dd 1900010h             ; DATA XREF: sub_4CAA65+144↑r
 dword_5386F0    dd 0FED40000h           ; DATA XREF: sub_4CAA65+155↑r
                 db  0Ah
                 db    0
@@ -22349,6 +22728,11 @@ funcs_4CEA01    dd offset sub_4CEA53    ; DATA XREF: sub_4CE9EE+13↑r
                 dd offset nullsub_107
                 dd offset sub_4CEB14
                 dd offset sub_4CEC0D
+word_538D48     dw 1F40h                ; DATA XREF: sub_4CEB14+45↑r
+word_538D4A     dw 0F8F8h               ; DATA XREF: sub_4CEB14+59↑r
+word_538D4C     dw 75AEh                ; DATA XREF: sub_4CEB14+6D↑r
+word_538D4E     dw 600h                 ; DATA XREF: sub_4CEB14+31↑r
+dword_538D50    dd 45C480h              ; DATA XREF: sub_4CEB14+E5↑r
 dword_538D54    dd 20h                  ; DATA XREF: sub_4CEB14+81↑r
                 db  40h ; @
                 db  1Fh
@@ -22428,6 +22812,7 @@ funcs_4CF18B    dd offset sub_4CF1DB    ; DATA XREF: sub_4CF150+3B↑r
                 dd offset sub_4CF30F
 funcs_4CF2E2    dd offset sub_4CF314    ; DATA XREF: sub_4CF2BD+25↑r
                 dd offset sub_4CF35B
+dword_538E3E    dd 5000080h             ; DATA XREF: sub_4CF35B+28D↑r
 dword_538E42    dd 4C0FF80h             ; DATA XREF: sub_4CF35B+279↑r
                 db    0
                 db    0
@@ -22876,6 +23261,8 @@ funcs_4D43A2    dd offset sub_4D403E    ; DATA XREF: sub_4D438C+16↑r
                 dd offset sub_4D4107
                 dd offset sub_4D4245
                 dd offset sub_4D4315
+word_5396CA     dw 1B00h                ; DATA XREF: sub_4D43E6+1C↑r
+word_5396CC     dw 0FFFFh               ; DATA XREF: sub_4D43E6+2D↑r
 word_5396CE     dw 700h                 ; DATA XREF: sub_4D43E6+3E↑r
                 db    0
                 db    0
@@ -22887,6 +23274,7 @@ word_5396CE     dw 700h                 ; DATA XREF: sub_4D43E6+3E↑r
                 db  11h
                 db    0
                 db    0
+word_53973E     dw 20h                  ; DATA XREF: sub_4D4500+15D↑r
                 text "UTF-16LE", '@ ',0
                 db 0E0h
                 db 0FFh
@@ -22947,6 +23335,8 @@ funcs_4D631F    dd offset sub_4D6330    ; DATA XREF: sub_4D6316+9↑r
                 dd offset sub_4D6611
 funcs_4D6878    dd offset sub_4D6881    ; DATA XREF: sub_4D6872+6↑r
                 dd offset sub_4D68E0
+word_539864     dw 0                    ; DATA XREF: sub_4D6EEA+71↑r
+dword_539866    dd 0C80000h             ; DATA XREF: sub_4D6EEA+152↑r
 word_53986A     dw 0FF00h               ; DATA XREF: sub_4D6EEA+8E↑r
                 db    0
                 db    1
@@ -22960,6 +23350,7 @@ funcs_4D6EE1    dd offset sub_4D6EEA    ; DATA XREF: sub_4D6EDB+6↑r
                 dd offset sub_4D7290
                 dd offset sub_4D73C1
                 align 4
+dword_539898    dd 40000h               ; DATA XREF: sub_4D75E4+111↑r
 word_53989C     dw 78h                  ; DATA XREF: sub_4D7770+184↑r
 funcs_4D749F    dd offset sub_4D74A8    ; DATA XREF: sub_4D7499+6↑r
                 dd offset sub_4D75E4
@@ -23048,6 +23439,7 @@ dword_539FAC    dd 0FFFFFFFFh           ; DATA XREF: sub_4D85CF:loc_4D85EB↑w
                 db    0
                 db    0
                 db  80h
+dword_53A038    dd 0FFFFFFFFh           ; DATA XREF: sub_4D861D+9↑w
 dword_53A03C    dd 0FFFFFFFFh           ; DATA XREF: sub_4D863C+23↑w
                 db 0FFh
                 db 0FFh
@@ -23108,6 +23500,7 @@ dword_53A0F0    dd 0FFFFFFFFh           ; DATA XREF: sub_4D86BF+E↑w
                 db    0
                 db    0
                 db  80h
+dword_53A124    dd 0FFFFFFFFh           ; DATA XREF: sub_4D86E3+15↑w
 dword_53A128    dd 0FFFFFFFFh           ; DATA XREF: sub_4D86E3+1B↑w
                 db  2Ch ; ,
                 db    0
@@ -23297,6 +23690,7 @@ dword_53A200    dd 0                    ; DATA XREF: sub_4D87EE+17↑r
                 db    0
                 db    0
                 db    0
+dword_53A724    dd 0                    ; DATA XREF: sub_4D91A5+13E↑r
                 dd offset unk_53A27C
                 dd offset unk_53A444
                 db    0
@@ -40729,6 +41123,8 @@ dword_54FE44    dd 0                    ; DATA XREF: sub_4DBA0D+BE↑r
                 db    0
                 db    0
                 db    0
+dword_54FE5E    dd 0B90000h             ; DATA XREF: sub_4DBD14+9↑r
+dword_54FE62    dd 0BA00B8h             ; DATA XREF: sub_4DBD14+35↑r
 dword_54FE66    dd 0A800BBh             ; DATA XREF: sub_4DBD14+68↑r
                 db 0ACh
                 db    0
@@ -41675,9 +42071,13 @@ funcs_4DBDB5    dd offset nullsub_18    ; DATA XREF: sub_4DBDA0+15↑r
                 dd offset nullsub_18
                 dd offset nullsub_18
                 align 4
+dword_5505DC    dd 200h                 ; DATA XREF: sub_4DF5EE+131↑r
 dword_5505E8    dd 0                    ; DATA XREF: sub_4AB7D4:loc_4AB812↑r
                 db    0
                 db    5
+word_5505EE     dw 82h                  ; DATA XREF: sub_4E0AF0+230↑r
+word_5505F0     dw 0BEh                 ; DATA XREF: sub_4E0AF0+242↑r
+word_5505F2     dw 0                    ; DATA XREF: sub_4E0AF0+254↑r
 word_5505F4     dw 0F0h                 ; DATA XREF: sub_4E0AF0+267↑r
                 align 4
                 db  80h
@@ -42310,6 +42710,7 @@ word_5509F6     dw 0                    ; DATA XREF: sub_4E2656+115↑r
                 db    0
                 db  0Ch
                 db    0
+dword_550A12    dd 0C5000Dh             ; DATA XREF: sub_4E4D5E+F5↑r
 dword_550A16    dd 0C700C6h             ; DATA XREF: sub_4E4D5E+106↑r
                 db 0C8h
                 db    0
@@ -42447,6 +42848,7 @@ funcs_4E252D    dd offset sub_4E2536    ; DATA XREF: sub_4E2519+14↑r
                 dd offset sub_4E3EB3
                 dd offset sub_4E3B97
                 align 4
+dword_550AC4    dd 83FFFF59h            ; DATA XREF: sub_4E7283+7↑r
 dword_550AC8    dd 0                    ; DATA XREF: sub_4E7283+E1↑r
                 db  5Ah ; Z
                 db 0FFh
@@ -42708,6 +43110,9 @@ word_550CF8     dw 0                    ; DATA XREF: sub_4E5C98+6E↑r
                 db    0
                 db  0Eh
                 db    0
+funcs_4A90CA    dd 0F3E0000Fh           ; DATA XREF: sub_4A903C+30↑r
+word_550D18     dw 0FFFFh               ; DATA XREF: sub_4E7831+54↑r
+word_550D1A     dw 680h                 ; DATA XREF: sub_4E7831+70↑r
 word_550D1C     dw 0C00h                ; DATA XREF: sub_4E7831+9A↑r
                 db  60h ; `
                 db    0
@@ -42829,6 +43234,7 @@ funcs_4E52A0    dd offset sub_4E52A9    ; DATA XREF: sub_4E5292+E↑r
 funcs_4E535E    dd offset sub_4E5367    ; DATA XREF: sub_4E5350+E↑r
                 dd offset sub_4E540D
                 dd offset nullsub_20
+dword_550DE0    dd 0FF6A0040h           ; DATA XREF: sub_4E5720+4C↑r
 dword_550DE4    dd 1800000h             ; DATA XREF: sub_4E5720+6C↑r
 off_550DE8      dd offset unk_800000    ; DATA XREF: sub_4E5720+8C↑r
                 db  40h ; @
@@ -42970,6 +43376,7 @@ off_550EB4      dd offset unk_6FE2AC    ; DATA XREF: sub_4EAA29+84↑r
                 dd offset sub_4AFAE8
                 dd offset sub_4B00F9
                 dd offset sub_4B0515
+dword_55115E    dd 100000h              ; DATA XREF: sub_4B1A37+53↑r
 dword_551162    dd 2D0018h              ; DATA XREF: sub_4B1B05+AB↑r
                 align 4
 aC:
@@ -43131,12 +43538,14 @@ dword_5513E7    dd 0FF0100FFh           ; DATA XREF: sub_4EEADF+78↑r
                 db 0FFh
                 db    0
                 db    0
+dword_5513EF    dd 10101h               ; DATA XREF: sub_4EEADF:loc_4EEBEB↑r
 dword_5513F3    dd 0FF0001FFh           ; DATA XREF: sub_4EEADF+119↑r
                 db    0
                 db    0
                 db    1
                 db    0
                 db    0
+dword_5513FC    dd 0                    ; DATA XREF: sub_4EED08+13↑r
 dword_551400    dd 0                    ; DATA XREF: sub_4EED08:loc_4EED4B↑r
                 db    0
                 db    0
@@ -43146,6 +43555,9 @@ dword_551400    dd 0                    ; DATA XREF: sub_4EED08:loc_4EED4B↑r
                 db    0
                 db    0
                 db    0
+dword_55140C    dd 0                    ; DATA XREF: sub_4EED08:loc_4EED15↑w
+dword_551410    dd 0                    ; DATA XREF: sub_4EED08+5↑w
+dword_551414    dd 0                    ; DATA XREF: sub_4EED6C+7↑w
 word_55143C     dw 0                    ; DATA XREF: sub_4EF008-29↑r
                 db    6
                 db    0
@@ -45196,6 +45608,10 @@ dword_551B50    dd 0FBE0FBDh            ; DATA XREF: sub_4F8674:loc_4F8688↑r
                 db    0
 dword_551C40    dd 0                    ; DATA XREF: sub_4F09B5:loc_4F09BE↑r
                 align 40h
+dword_551C84    dd 0                    ; DATA XREF: _nmalloc_+59↑r
+dword_551C88    dd 0                    ; DATA XREF: _nmalloc_+45↑r
+dword_551C8C    dd 0                    ; DATA XREF: _nmalloc_:loc_4F0B4E↑r
+dword_551C90    dd 0                    ; DATA XREF: sub_4F8674+C↑r
                 dd offset aDirectdrawInit ; "DirectDraw Initial Error!"
                 dd offset aDirectdraw4Que ; "DirectDraw4 QueryInterface Error!"
                 dd offset aDirect3d3Query ; "Direct3D3 QueryInterface Error!"
@@ -45219,6 +45635,32 @@ dword_551C40    dd 0                    ; DATA XREF: sub_4F09B5:loc_4F09BE↑r
                 dd offset aDirectsoundSet ; "DirectSound SetCooperativeLevel Error!"
                 dd offset aDirectsoundCre ; "DirectSound CreateSoundPrimaryBuffer Er"...
                 dd offset aDirectsoundSet_0 ; "DirectSound SetFormat Error!"
+dword_551CF0    dd 0                    ; DATA XREF: sub_4F134B+40↑r
+dword_551CF4    dd 0                    ; DATA XREF: sub_4F1B45+42↑r
+dword_551CF8    dd 0                    ; DATA XREF: sub_4F134B:loc_4F13AA↑r
+dword_551CFC    dd 0                    ; DATA XREF: sub_4F134B+49↑o
+dword_551D00    dd 0                    ; DATA XREF: sub_4F20B9+163↑r
+dword_551D04    dd 0                    ; DATA XREF: sub_4F25C2+2D0↑r
+dword_551D08    dd 0                    ; DATA XREF: sub_4F7BBA+4A5↑o
+dword_551D0C    dd 0                    ; DATA XREF: sub_4F134B+26↑r
+dword_551D10    dd 0                    ; DATA XREF: sub_4F1499+EC↑r
+dword_551D14    dd 0                    ; DATA XREF: sub_4F7680+59↑r
+dword_551D18    dd 0                    ; DATA XREF: sub_4F7BBA+6B2↑o
+dword_551D1C    dd 0                    ; DATA XREF: Callback:loc_4F10E6↑r
+dword_551D20    dd 0FFFFFFFFh           ; DATA XREF: sub_4F2941:loc_4F29DB↑r
+dword_551D34    dd 1                    ; DATA XREF: sub_4F387C+19↑r
+dword_551D38    dd 0                    ; DATA XREF: sub_4F16F3+F↑r
+dword_551D3C    dd 0                    ; DATA XREF: sub_4F1499+1F6↑w
+dword_551D40    dd 0                    ; DATA XREF: sub_4F16F3+1C↑r
+flt_551D44      dd 0.0                  ; DATA XREF: sub_4F16F3+AA↑r
+flt_551D48      dd 0.0                  ; DATA XREF: sub_4F16F3+9E↑r
+dword_551F38    dd 0                    ; DATA XREF: AUTO:loc_4F8BBD↑r
+dword_551F3C    dd 0                    ; DATA XREF: sub_4F8C23+130↑o
+dword_551F40    dd 0                    ; DATA XREF: AUTO:004F8BC6↑o
+dword_551F44    dd 0                    ; DATA XREF: AUTO:004F8BEA↑o
+word_551F84     dw 10h                  ; DATA XREF: sub_4F8E15+C2↑r
+word_551F86     dw 40h                  ; DATA XREF: sub_4F8E15+A6↑r
+word_551F88     dw 80h                  ; DATA XREF: sub_4F8E15+8A↑r
 word_551F8A     dw 20h                  ; DATA XREF: sub_4F8E15+6F↑r
                 db    0
                 db  10h
@@ -45240,8 +45682,11 @@ word_551F8A     dw 20h                  ; DATA XREF: sub_4F8E15+6F↑r
                 db    0
                 db    1
                 db    0
+dword_551FA0    dd 0                    ; DATA XREF: AUTO:004F8C0E↑w
 lpDD            dd 0                    ; DATA XREF: sub_4F97E5+1B↑o
                 align 10h
+pUnkOuter       dd 0                    ; DATA XREF: sub_4F9DEF+AC↑r
+dword_551FB4    dd 0                    ; DATA XREF: sub_4F9F7D+A8↑o
 nCount          dd 0                    ; DATA XREF: sub_4F9AD6+F↑r
                 align 10h
 dwTlsIndex      dd 0FFFFFFFFh           ; DATA XREF: sub_50005C+B↑r
@@ -45263,6 +45708,29 @@ off_551FFC      dd offset nullsub_4     ; DATA XREF: __NTAddFileHandle_+2A↑r
 off_552000      dd offset nullsub_4     ; DATA XREF: sub_50235C-7703↑r
 off_552004      dd offset nullsub_4     ; DATA XREF: sub_4FABD3+3D↑r
 off_552008      dd offset nullsub_4     ; DATA XREF: AUTO:00502CA4↑w
+dword_55200C    dd 0                    ; DATA XREF: sub_50235C-772C↑r
+dword_552010    dd 0                    ; DATA XREF: sub_4FBDB2+9↑w
+dword_552014    dd 0                    ; DATA XREF: sub_4FBDB2+4↑w
+dword_552018    dd 0                    ; DATA XREF: sub_4FC2A9+6B↑w
+dword_55201C    dd 0                    ; DATA XREF: sub_4FC2A9+73↑w
+dword_552020    dd 0                    ; DATA XREF: sub_4FC2A9+C6↑w
+dword_552024    dd 0                    ; DATA XREF: sub_4FBDB2+14F↑w
+dword_552028    dd 0                    ; DATA XREF: sub_4FBDB2+163↑w
+dword_55202C    dd 0                    ; DATA XREF: sub_4FC2A9+D1↑w
+dword_552030    dd 0                    ; DATA XREF: sub_4FC516+8A↑w
+dword_552034    dd 0                    ; DATA XREF: sub_4FC516+7A↑w
+dword_552038    dd 0                    ; DATA XREF: sub_4FC516+75↑w
+dword_55203C    dd 0                    ; DATA XREF: sub_4FC0CB+FA↑w
+dword_552040    dd 0                    ; DATA XREF: sub_4FC0CB+10E↑w
+dword_552044    dd 0                    ; DATA XREF: sub_4FC0CB+122↑w
+dword_552048    dd 0                    ; DATA XREF: sub_4FC2A9:loc_4FC3CA↑w
+dword_55204C    dd 0                    ; DATA XREF: sub_4FB690+8↑w
+dword_552050    dd 0                    ; DATA XREF: sub_4FBF87+22↑w
+dword_552054    dd 0                    ; DATA XREF: sub_4FBF87+39↑w
+dword_552058    dd 0                    ; DATA XREF: sub_4FBDB2+20↑w
+dword_55205C    dd 0                    ; DATA XREF: sub_4FBC14:loc_4FBC58↑w
+dword_552060    dd 0                    ; DATA XREF: sub_4FBC14+49↑w
+dword_552064    dd 0                    ; DATA XREF: sub_4FBC14:loc_4FBCB1↑w
 dword_552068    dd 7FFF0000h            ; DATA XREF: sub_4FB690+6B↑r
                 db    0
                 db    0
@@ -66456,6 +66924,12 @@ off_557B8C      dd offset sub_4FD742    ; DATA XREF: sub_4FC0CB+17↑r
                 dd offset sub_4FDF2E
                 dd offset sub_4FDF78
                 align 8
+dword_557C08    dd 0                    ; DATA XREF: __CreateNewNHeap_:loc_4FB56A↑r
+lpCmdLine       dd 0                    ; DATA XREF: sub_4FA9A8+14C↑w
+dword_557C10    dd 0                    ; DATA XREF: sub_4FA9A8+DD↑w
+dword_557C14    dd 0                    ; DATA XREF: sub_4FA9A8+1FF↑w
+dword_557C18    dd 0                    ; DATA XREF: sub_4FA9A8:loc_4FAB71↑w
+dword_557C1C    dd 0                    ; DATA XREF: sub_4FA9A8+F0↑w
 dword_557C20    dd 0                    ; DATA XREF: sub_4FA9A8+217↑w
                 db    0
                 db    0
@@ -66465,6 +66939,8 @@ dword_557C20    dd 0                    ; DATA XREF: sub_4FA9A8+217↑w
                 db    0
                 db    0
                 db    0
+dword_557C30    dd 0                    ; DATA XREF: sub_4FFB41+45↑r
+dword_557C34    dd 0                    ; DATA XREF: sub_4FFB41+7A↑w
 dword_557C38    dd 0                    ; DATA XREF: getche_+2↑r
                 db    0
                 db    0
@@ -66477,10 +66953,19 @@ dword_557C38    dd 0                    ; DATA XREF: getche_+2↑r
 dword_557C49    dd 0                    ; DATA XREF: sub_4FA9A8+42↑w
                 db    0
                 db    0
+word_557C51     dw 0                    ; DATA XREF: sub_4FA9A8+65↑w
+dword_557C53    dd 0                    ; DATA XREF: sub_4FA9A8+79↑w
+dword_557C57    dd 0                    ; DATA XREF: sub_4FA9A8+8B↑w
+dword_557C5B    dd 0                    ; DATA XREF: sub_4FA9A8+9A↑w
+dword_557C5F    dd 0                    ; DATA XREF: sub_4FA9A8+B4↑w
 off_557C63      dd offset nullsub_5     ; DATA XREF: sub_50644A↑r
                 align 4
+dword_557C68    dd 0                    ; DATA XREF: sub_4F917C+1C↑r
 dword_557E75    dd 100h                 ; DATA XREF: sub_4F917C+FD↑r
                 align 4
+dword_557E7C    dd 0                    ; DATA XREF: __close_+3C↑r
+dword_557E80    dd 0                    ; DATA XREF: sub_4F9445+25↑r
+dword_557E84    dd 0                    ; DATA XREF: sub_4FE278+72↑r
 dword_557E88    dd 0                    ; DATA XREF: __close_+2B↑r
                 db    0
                 db    0
@@ -66506,10 +66991,12 @@ dword_557E88    dd 0                    ; DATA XREF: __close_+2B↑r
                 db    0
                 db    0
                 db    0
+dword_557EA4    dd 0                    ; DATA XREF: sub_500B5A+2A↑r
 dword_557EA8    dd 0                    ; DATA XREF: __qwrite_:loc_500CCA↑r
                 align 10h
 dword_557EB0    dd 0                    ; DATA XREF: getch_:loc_50313C↑r
                 align 8
+dword_557EB8    dd 0                    ; DATA XREF: putch_+8↑r
 dword_557EBC    dd 0                    ; DATA XREF: sub_50235C+F↑r
                 public _IsTable
                 db    1,   1,   3,   3,   3,   3,   3,   1
@@ -66552,12 +67039,17 @@ off_557FCC      dd offset unk_50AAA8    ; DATA XREF: __GetTmpPath_+12↑o
                 dd offset aTmpdir       ; "TMPDIR"
                 dd offset aTempdir      ; "TEMPDIR"
                 dd offset unk_50AAC0
+dword_5580E4    dd 0                    ; DATA XREF: lseek_+48↑r
+dword_5580E8    dd 0                    ; DATA XREF: __NTAtMaxFiles_+9↑r
 dword_5580EC    dd 80000000h            ; DATA XREF: __NTGetFakeHandle_+17↑r
 off_5580F0      dd offset nullsub_47    ; DATA XREF: sub_500201+79↑w
 off_5580F4      dd offset nullsub_47    ; DATA XREF: sub_500201+7F↑w
 off_5580F8      dd offset nullsub_47    ; DATA XREF: sub_500201+85↑w
+dword_5580FC    dd 0                    ; DATA XREF: sub_500745+15D↑r
+dword_558100    dd 0                    ; DATA XREF: sub_500745:def_50076D↑r
 dword_55811C    dd 14h                  ; DATA XREF: sub_4FAF1A+B↑r
 off_558170      dd offset unk_558120    ; DATA XREF: __IOMode_+1A↑r
+dword_558174    dd 1                    ; DATA XREF: __CreateNewNHeap_+6↑r
 dword_558178    dd 10000h               ; DATA XREF: __AdjustAmount_:loc_4FB614↑r
 off_55817C      dd offset nullsub_27    ; DATA XREF: __init_8087_+15↑w
 off_558180      dd offset nullsub_27    ; DATA XREF: __init_8087_+1B↑w
@@ -66589,6 +67081,9 @@ off_5581A4      dd offset W?_no_support_loaded$n__v
 dword_5581A8    dd 0F4h                 ; DATA XREF: sub_4FFB41+13↑r
 off_5581C0      dd offset nullsub_7     ; DATA XREF: sub_502330+4↑r
 off_5581C4      dd offset nullsub_7     ; DATA XREF: sub_50235C+9↑r
+dword_5581C8    dd 0FFFFFFFFh           ; DATA XREF: initConsoleHandles_+A↑r
+dword_5581CC    dd 0FFFFFFFFh           ; DATA XREF: initConsoleHandles_:loc_5028ED↑r
+dword_5581D0    dd 1                    ; DATA XREF: __SetSignalFunc_:loc_50294D↑r
 dword_5581D4    dd 0FFFFFFFFh           ; DATA XREF: __GetSignalOSCode_:loc_5029A8↑r
                 db    2
                 db    0
@@ -66686,6 +67181,7 @@ dword_5581D4    dd 0FFFFFFFFh           ; DATA XREF: __GetSignalOSCode_:loc_5029
                 db    0
                 db    0
                 db 0C0h
+dword_558238    dd 0                    ; DATA XREF: StartCtrlHandler_+2↑r
                 dd offset aAcos         ; "acos"
                 dd offset aAsin         ; "asin"
                 dd offset aSqrt         ; "sqrt"
@@ -66709,11 +67205,13 @@ dword_5581D4    dd 0FFFFFFFFh           ; DATA XREF: __GetSignalOSCode_:loc_5029
                 dd offset aYn           ; "yn"
                 dd offset aMod          ; "mod"
                 dd offset aCotan        ; "cotan"
+dword_558298    dd 0                    ; DATA XREF: do_getch_+9↑r
 CodePage        dd 1                    ; DATA XREF: sub_501297+69↑r
 off_5583A8      dd offset sub_505744    ; DATA XREF: AUTO:_beginthread_↑r
 off_5583AC      dd offset sub_50581D    ; DATA XREF: _endthread_↑r
 off_5583B0      dd offset __CInitThread_
 off_5583B4      dd offset __terminate_  ; DATA XREF: sub_502B4B:loc_502B6F↑w
+dword_5583B8    dd 0                    ; DATA XREF: __rterrmsg_+17↑r
                 dd offset aDomainError  ; "Domain error"
                 dd offset aArgumentSingul ; "Argument singularity"
                 dd offset aOverflowRangeE ; "Overflow range error"
@@ -66911,6 +67409,16 @@ jpt_502E89      dd offset loc_502E90    ; DATA XREF: __fpatan_chk+159↑r
                 dd offset loc_502EE3
                 dd offset loc_502EF8
                 dd offset loc_502F0B
+tbyte_5585E0    dt 3.141592653589793239 ; DATA XREF: __fpatan_chk:loc_502EA8↑r
+tbyte_5585EA    dt 1.570796326794896619 ; DATA XREF: __fpatan_chk:loc_502ED0↑r
+flt_5585F4      dd 16.0                 ; DATA XREF: __fpatan_chk+9C↑r
+flt_5585F8      dd 0.0625               ; DATA XREF: __fpatan_chk+B3↑r
+tbyte_5585FC    dt -0.3333333333333333333
+tbyte_558606    dt 0.1999999999999994471
+tbyte_558610    dt -0.142857142855512794
+tbyte_55861A    dt 0.1111111089064621512
+tbyte_558624    dt -0.09090758475228815823
+tbyte_55862E    dt 0.07641690805844016167
 tbyte_558638    dt 0.0                  ; DATA XREF: __fpatan_chk+151↑r
                 align 8
                 db  37h ; 7
@@ -67169,6 +67677,8 @@ tbyte_558638    dt 0.0                  ; DATA XREF: __fpatan_chk+151↑r
                 db    0
                 db    0
                 db    0
+flt_558758      dd 0.9375               ; DATA XREF: fdiv_main_routine+6C↑r
+flt_55875C      dd 1.0625               ; DATA XREF: fdiv_main_routine:loc_504CEF↑r
 flt_558760      dd 9.223372e18          ; DATA XREF: fdiv_main_routine+F6↑r
 jpt_504D86      dd offset loc_504D8D, offset loc_504D93, offset loc_504D98
                 dd offset loc_504D9E, offset loc_504DA3, offset loc_504DA9 ; jump table for switch statement

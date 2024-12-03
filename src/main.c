@@ -1,36 +1,25 @@
 #pragma region includes
 #include <stdio.h>
-
-#define mciSendStringA MyMciSendStringA
-#define DirectSoundCreate MyDirectSoundCreate
-#define DirectDrawCreate MyDirectDrawCreate
-#define DirectDrawEnumerateA MyDirectDrawEnumerateA
-#include <windows.h> // Inclui o cabeçalho do Windows sem redefinições conflitantes
+#include <windows.h>
 #include <dsound.h>
 #include <ddraw.h>
-#undef mciSendStringA
-#undef DirectSoundCreate
-#undef DirectDrawCreate
-#undef DirectDrawEnumerateA
 #include <string.h>
 #include <stdint.h>
-
 #pragma endregion
 
 #pragma region funcoes externas
-
-// WINMM.dll
-extern MCIERROR(__stdcall* mciSendStringA)(LPCSTR lpstrCommand, LPSTR lpstrReturnString, UINT uReturnLength, HWND hwndCallback);
-
-// DSOUND.dll
-extern HRESULT(__stdcall* DirectSoundCreate)(LPCGUID pcGuidDevice, LPDIRECTSOUND* ppDS, LPUNKNOWN pUnkOuter);
-
-// DINPUT.dll
-extern HRESULT(__stdcall* DirectInputCreateA)();
-
-// DDRAW.dll
-extern HRESULT(__stdcall* DirectDrawCreate)(GUID* lpGUID, LPDIRECTDRAW* lplpDD, IUnknown* pUnkOuter);
-extern HRESULT(__stdcall* DirectDrawEnumerateA)(LPDDENUMCALLBACKA lpCallback, LPVOID lpContext);
+// Ponteiros para funções externas
+extern DWORD(__stdcall* MyGetModuleFileNameA)(HMODULE hModule, LPSTR lpFilename, DWORD nSize);
+extern MCIERROR(__stdcall* MyMciSendStringA)(LPCSTR lpstrCommand, LPSTR lpstrReturnString, UINT uReturnLength, HWND hwndCallback);
+extern HRESULT(__stdcall* MyDirectSoundCreate)(LPCGUID pcGuidDevice, LPDIRECTSOUND* ppDS, LPUNKNOWN pUnkOuter);
+extern HRESULT(__stdcall* MyDirectDrawCreate)(GUID* lpGUID, LPDIRECTDRAW* lplpDD, IUnknown* pUnkOuter);
+extern HRESULT(__stdcall* MyDirectDrawEnumerateA)(LPDDENUMCALLBACKA lpCallback, LPVOID lpContext);
+// Redefina os ponteiros de função com nomes diferentes
+void(__stdcall* MyExitProcess)(UINT uExitCode);
+LPCH(__stdcall* MyGetEnvironmentStrings)();
+DWORD(__stdcall* MyGetVersion)();
+LPWSTR(__stdcall* MyGetCommandLineW)();
+LPSTR(__stdcall* MyGetCommandLineA)();
 
 #pragma endregion
 
@@ -6528,6 +6517,514 @@ __declspec(align(4)) unsigned char byte_50B450[] = {
     0x80, '`', '@', '@', '@', '@', '@', '@', '@', '@', '@', '@', '@', '@', '@', 0
 };
 __declspec(align(4)) unsigned int dword_557E75 = 0x100;
+
+double dbl_50A2DC = -802816.0;
+double dbl_50A2E4 = 3223552.0;
+double dbl_50A2EC = -43690.88512;
+double dbl_50A2F4 = 16.66;
+double dbl_50A2FC = 16.66;
+float flt_50A304 = 15.0f;
+double dbl_50A390 = 16.67;
+double dbl_50A398 = 16.667;
+double dbl_50A3A0 = 0.000244140625;
+double dbl_50A3A8 = 0.000244140625;
+double dbl_50A3B0 = 0.000244140625;
+double dbl_50A3B8 = 0.000244140625;
+double dbl_50A3C0 = 0.000244140625;
+double dbl_50A3C8 = 0.000244140625;
+double dbl_50A3D0 = 0.000244140625;
+double dbl_50A3D8 = 0.000244140625;
+double dbl_50A3E0 = 0.000244140625;
+double dbl_50A3E8 = 0.000244140625;
+float flt_50A3F0 = 0.0625f;
+float flt_50A3F4 = 0.0625f;
+float flt_50A3F8 = 100.0f;
+float flt_50A3FC = 0.125f;
+float flt_50A400 = 0.015625f;
+float flt_50A404 = 0.0625f;
+float flt_50A408 = 24.0f;
+float flt_50A40C = 24.0f;
+float flt_50A410 = 0.0625f;
+float flt_50A414 = 0.0625f;
+float flt_50A418 = 0.0625f;
+float flt_50A41C = 0.0625f;
+float flt_50A420 = 0.0625f;
+double dbl_50A424 = 0.0078125;
+double dbl_50A42C = 127.0;
+double dbl_50A434 = 10000.0;
+double dbl_50A43C = -10000.0;
+double dbl_50A444 = 0.0078125;
+double dbl_50A44C = 127.0;
+double dbl_50A454 = -10000.0;
+double dbl_50A45C = 10000.0;
+double dbl_50A464 = 3000.0;
+double dbl_50A46C = 64.0;
+double dbl_50A474 = 63.0;
+double dbl_50A47C = 0.000244140625;
+float flt_50A484 = 160.0f;
+float flt_50A488 = 3.0f;
+float flt_50A48C = 0.5f;
+float flt_50A490 = -16.0f;
+float flt_50A494 = 0.25f;
+float flt_50A498 = 0.5f;
+float flt_50A49C = -16.0f;
+float flt_50A4A0 = 0.000061035156f;
+float flt_50A4A4 = 0.000061035156f;
+float flt_50A4A8 = 0.000061035156f;
+float flt_50A4AC = 0.000061035156f;
+float flt_50A4B0 = 352.0f;
+float flt_50A4B4 = 136.0f;
+float flt_50A4B8 = 352.0f;
+float flt_50A4BC = 136.0f;
+double dbl_50A4C0 = 2.0;
+float flt_50A4C8 = 352.0f;
+float flt_50A4CC = 136.0f;
+float flt_50A4D0 = 0.000061035156f;
+float flt_50A4D4 = 0.0625f;
+float flt_50A4D8 = 12.0f;
+float flt_50A4DC = 352.0f;
+float flt_50A4E0 = 136.0f;
+float flt_50A4E4 = 0.000061035156f;
+double dbl_50A4F0 = 0.000244140625;
+double dbl_50A4F8 = 2048.0;
+double dbl_50A500 = 3.14;
+double dbl_50A508 = 2048.0;
+double dbl_50A510 = 3.14;
+float flt_50A518 = 0.5f;
+float flt_50A51C = 1000.0f;
+double dbl_50A528 = 0.000244140625;
+double dbl_50A530 = 0.000244140625;
+double dbl_50A538 = 0.000244140625;
+double dbl_50A540 = 0.000244140625;
+float flt_50A548 = 0.00024414062f;
+float flt_50A54C = 4096.0f;
+double dbl_50A550 = 4096.0;
+double dbl_50A558 = 4096.0;
+double dbl_50A560 = 0.000244140625;
+double dbl_50A568 = 0.000244140625;
+float flt_50A570 = 0.000061035156f;
+float flt_50A574 = 0.000061035156f;
+float flt_50A578 = 0.000061035156f;
+float flt_50A57C = 0.000061035156f;
+float flt_50A580 = 0.000061035156f;
+float flt_50A584 = 0.000061035156f;
+float flt_50A588 = 0.000061035156f;
+float flt_50A58C = 0.000061035156f;
+double dbl_50A598 = 2.0;
+float flt_50A86C = 10.0f;
+float flt_50A870 = 255.0f;
+double dbl_50A874 = 3.0;
+float flt_50A87C = 0.0020000001f;
+float flt_50A880 = -0.0020000001f;
+double dbl_50A884 = 0.25;
+float flt_50A88C = 0.0020000001f;
+float flt_50A890 = -0.0020000001f;
+float flt_50A894 = 0.0078125f;
+float flt_50A898 = 0.0078125f;
+float flt_50A89C = 10.0f;
+float flt_50A8A0 = 2.0f;
+float flt_50A8A4 = 0.1f;
+float flt_50A8A8 = 0.00390625f;
+double dbl_50A8AC = 2.0;
+float flt_50A8B4 = 0.1f;
+float flt_50A8B8 = 0.00390625f;
+float flt_50A8BC = 2.0f;
+float flt_50A8C0 = 0.1f;
+double dbl_50A8C4 = 2.0;
+float flt_50A8CC = 0.1f;
+float flt_50A8D0 = 0.1f;
+double dbl_50A8DC = 2.0;
+float flt_50A8E4 = 0.1f;
+float flt_50A8E8 = 0.00390625f;
+double dbl_50A8EC = 0.001;
+double dbl_50A8F4 = 0.003;
+float flt_50A8FC = 2.0f;
+float flt_50A900 = 0.1f;
+double dbl_50A904 = 2.0;
+float flt_50A90C = 0.1f;
+float flt_50A910 = 2.0f;
+float flt_50A914 = 0.1f;
+float flt_50A918 = 0.00390625f;
+double dbl_50A91C = 2.0;
+float flt_50A924 = 0.1f;
+float flt_50A928 = 0.00390625f;
+float flt_50A92C = 2.0f;
+float flt_50A930 = 0.1f;
+double dbl_50A934 = 2.0;
+float flt_50A93C = 0.1f;
+float flt_50A940 = 2.0f;
+float flt_50A944 = 0.1f;
+float flt_50A948 = 0.00390625f;
+double dbl_50A94C = 2.0;
+float flt_50A954 = 0.1f;
+float flt_50A958 = 0.00390625f;
+double dbl_50A95C = 2.0;
+float flt_50A964 = 0.1f;
+float flt_50A968 = 2.0f;
+float flt_50A96C = 2.0f;
+float flt_50A970 = 0.00390625f;
+float flt_50A974 = 0.0022f;
+float flt_50A978 = -0.0022f;
+float flt_50A97C = 2.0f;
+float flt_50A980 = 2.0f;
+float flt_50A984 = 2.0f;
+float flt_50A988 = 2.0f;
+float flt_50A98C = 2.0f;
+float flt_50A990 = 2.0f;
+float flt_50A994 = 2.0f;
+float flt_50A998 = 2.0f;
+float flt_50AA94 = 127.0f;
+float flt_50AA98 = 10000.0f;
+uint32_t dword_50B1FA = 0xEB00050C;
+uint32_t dword_50B1FE = 0x2100FFFF;
+uint32_t dword_50B202 = 0x4000064;
+uint32_t dword_50B35A = 0x1C000004;
+uint32_t dword_50B366 = 0x1E000005;
+uint32_t dword_50B3D2 = 0x1C000006;
+uint32_t dword_50B3DE = 0x1C000007;
+uint32_t dword_50B3EA = 0x1C000008;
+uint32_t dword_50B3EE = 0x8000100;
+uint32_t dword_50B4AA = 0xF4000000;
+uint32_t dword_50B4AE = 0x3582C00;
+uint32_t dword_50B4B2 = 0xF4800C00;
+float dword_50DCC8 = 7.0f;
+unsigned short word_50ED7F = 0x14;
+unsigned short word_50ED81 = 0xFF68;
+uint32_t dword_510558 = 0xFF200100;
+uint32_t dword_51055C = 0xFEAF;
+uint32_t dword_510560 = 0x18000000;
+unsigned short word_510566 = 0xBC00;
+unsigned short word_510568 = 0xC00;
+unsigned short word_5105AA = 1;
+uint32_t dword_5105D0 = 0xA010F4;
+uint32_t dword_5105D4 = 0xFFC0;
+uint32_t dword_5105D8 = 0xFEC00000;
+uint32_t dword_5105E5 = 0xC00708;
+uint32_t dword_51065A = 0xFFF50000;
+unsigned short word_51086C = 0xFA10;
+unsigned short word_51086E = 0x578;
+uint32_t dword_5108EA = 0xFED40000;
+unsigned short word_5108EE = 0x300;
+unsigned short word_5108F4 = 0xC8;
+unsigned short word_5108F6 = 0xFB00;
+uint32_t dword_510D7C = 0x8000200;
+unsigned short word_510D80 = 0xA00;
+float dword_511078 = 0.0f;
+uint32_t dword_51107C = 0x200;
+uint32_t dword_511080 = 0x30;
+uint32_t dword_511084 = 0x200;
+uint32_t dword_511088 = 0x300;
+uint32_t dword_51108C = 0xA;
+uint32_t dword_511090 = 0x14;
+float dword_511094 = 3.0f;
+uint32_t dword_511098 = 0x3C;
+float dword_51109C = 1.0f;
+float dword_5110A0 = 1.0f;
+uint32_t dword_5110A4 = 0x4B0;
+float dword_5110BC = 0.0f;
+float dword_5110C0 = 0.0f;
+float dword_511164 = 0.0f;
+float dword_511D90 = 0.0f;
+float dword_511D94 = 0.0f;
+float dword_511D98 = 0.0f;
+float dword_511D9C = 0.0f;
+float dword_511DA0 = 8.0f;
+uint32_t dword_511DA4 = 0x60;
+uint32_t dword_511E01 = 0xFF0000;
+uint32_t dword_511E05 = 0xFF0000;
+float dword_511E09 = 0.0f;
+unsigned short word_511E24 = 0;
+unsigned short word_513854 = 0x406;
+unsigned short word_513856 = 0xF3E4;
+unsigned short word_513F5C = 0x28;
+unsigned short word_514086 = 0x1E0;
+unsigned short word_514088 = 0xFFFF;
+unsigned short word_51419C = 0x32;
+unsigned short word_51419E = 0;
+unsigned short word_5141C0 = 0;
+unsigned short word_5141C2 = 0xFFB0;
+uint32_t dword_51425E = 0x1180030;
+unsigned short word_514288 = 0x37;
+uint32_t dword_5142F6 = 0xC80000;
+unsigned short word_5143D0 = 0xF79A;
+unsigned short word_5143D2 = 0xFD44;
+uint32_t dword_51488C = 0x18;
+uint32_t dword_51500A = 0xE83D0000;
+uint32_t dword_51500E = 0xFCF3FFFF;
+uint32_t dword_5159EE = 0x18010000;
+uint32_t dword_515A68 = 0x7FFFFFFF;
+uint32_t dword_515DBA = 0x504;
+uint32_t dword_515F42 = 0xF4000020;
+uint32_t dword_5163FA = 0x6400000;
+uint32_t dword_5163FE = 0xE2B4;
+unsigned short word_516402 = 0;
+unsigned short word_516404 = 0x154;
+unsigned short word_516406 = 8;
+unsigned short word_516408 = 0x3C;
+uint32_t dword_51669A = 0x1FB0020;
+uint32_t dword_51669E = 0xA6FFCFF;
+uint32_t dword_5169A6 = 0x67B0000;
+uint32_t dword_516A08 = 0x10;
+uint32_t dword_516FE8 = 0x100130;
+unsigned short word_517064 = 0xF60C;
+uint32_t dword_5170BC = 0x100130;
+unsigned short word_517531 = 0x10;
+unsigned short word_517533 = 0xFFF8;
+uint32_t dword_51785E = 0x13881388;
+uint32_t dword_517862 = 0x7D007D0;
+uint32_t dword_517A8A = 0xFFFF0000;
+uint32_t dword_51875C = 0x10000;
+float dword_518760 = 0.0f;
+float dword_518764 = 1.0f;
+unsigned short word_518830 = 0x3000;
+unsigned short word_518A70 = 0x3080;
+unsigned short word_518A72 = 0x10;
+uint32_t dword_518EE4 = 0x1400200;
+uint32_t dword_518EE8 = 0x1200210;
+uint32_t dword_519416 = 0xEF3D0000;
+uint32_t dword_51941A = 0x159BFFFF;
+uint32_t dword_51941E = 0xEE750000;
+unsigned short word_519490 = 0x100;
+uint32_t dword_51B452 = 0x10004;
+unsigned short word_51B464 = 4;
+unsigned short word_51EF58 = 0xFF80;
+unsigned short word_521A5E = 0xF800;
+unsigned short word_521A60 = 0;
+unsigned short word_521A64 = 0;
+unsigned short word_521A66 = 0;
+unsigned short word_523290 = 0xDDC0;
+unsigned short word_523292 = 0xFFFF;
+unsigned short word_5232E0 = 0xDA9;
+unsigned short word_5232E2 = 0xFFFF;
+float dword_524ACA = 8.0f;
+unsigned short word_524ACE = 0xFFFE;
+unsigned short word_5265E6 = 0x140;
+unsigned short word_5265E8 = 0x8C;
+uint32_t dword_52C42C = 0x64;
+uint32_t dword_52C628 = 0x200;
+uint32_t dword_52C62C = 0xFFFFFCFF;
+uint32_t dword_52C630 = 0x700;
+uint32_t dword_52C656 = 0xC0000;
+uint32_t dword_52CC7C = 0x2EA8A8A8;
+unsigned short word_52DE62 = 0x7D0;
+float funcs_4A11FB = 0.0f;
+uint32_t dword_53022A = 0x15001C;
+uint32_t dword_530272 = 0x15001B;
+uint32_t dword_53028A = 0x29002D;
+float bMenu = 1.0f;
+float dword_5303FC = 1.0f;
+float dword_530400 = 0.0f;
+float dword_530404 = 1.0f;
+float dword_530408 = 0.0f;
+float dword_530414 = 0.0f;
+float dword_53041B = 0.0f;
+uint32_t dword_530484 = 0x40000;
+uint32_t dword_530488 = 0x81000000;
+uint32_t dword_53048C = 0x40000;
+uint32_t dword_530490 = 0x20000;
+uint32_t dword_530494 = 0x30000;
+uint32_t dword_530498 = 0x81000000;
+uint32_t dword_5304B8 = 0x40000;
+uint32_t dword_5304BC = 0x81000000;
+uint32_t dword_5304C0 = 0x40000;
+uint32_t dword_5304C4 = 0x20000;
+uint32_t dword_5304C8 = 0x30000;
+uint32_t dword_5304CC = 0x81000000;
+unsigned short word_5304F4 = 0x6582;
+unsigned short word_5304FA = 0x6582;
+unsigned short word_530500 = 0x6582;
+unsigned short word_530510 = 0x4F82;
+unsigned short word_53066C = 0x37;
+uint32_t dword_5306DA = 0xC80000;
+uint32_t dword_5307D8 = 0x3D08002E;
+unsigned short word_530BC0 = 0x65C5;
+unsigned short word_530BC2 = 0x65DA;
+unsigned short word_530BC4 = 0x7DC5;
+uint32_t dword_530F68 = 0xFF40FF;
+uint32_t dword_531044 = 0x400;
+uint32_t dword_5312A5 = 0xFB0000FF;
+uint32_t dword_5314CC = 0x414;
+uint32_t dword_5314D0 = 0xFFFFFFF4;
+uint32_t dword_5314DC = 0x40C;
+uint32_t dword_5314E0 = 0xFFFFFFF4;
+uint32_t dword_5314EC = 0x100118;
+uint32_t dword_5314F0 = 0xFFFFFFFB;
+uint32_t dword_5314FC = 0x100210;
+uint32_t dword_531500 = 0xFFFFFFFB;
+uint32_t dword_53150C = 0x110;
+uint32_t dword_531510 = 0xFFFFFFFA;
+uint32_t dword_53151C = 0x10A;
+uint32_t dword_531520 = 0xFFFFFFFA;
+uint32_t dword_53152C = 0x101;
+uint32_t dword_531530 = 0xFFFFFFFB;
+uint32_t dword_53153C = 0x101;
+uint32_t dword_531540 = 0xFFFFFFFB;
+unsigned short word_536D20 = 0x300;
+unsigned short word_536D22 = 0xE400;
+uint32_t dword_536EE4 = 0x1000;
+uint32_t dword_536EE8 = 0x1000;
+float dword_537078 = 0.0f;
+uint32_t dword_53755E = 0xFA00000;
+unsigned short word_5376B8 = 0x80;
+unsigned short word_5376F0 = 0xFD44;
+unsigned short word_5376F2 = 0xFF9F;
+unsigned short word_5376F4 = 0x64;
+float dword_53791E = 0.0f;
+unsigned short word_537DA8 = 0xFF00;
+unsigned short word_537F30 = 0x1CFF;
+unsigned short word_537F32 = 0x2105;
+uint32_t dword_537FD0 = 0x64;
+unsigned short word_53817C = 0xFF40;
+unsigned short word_5383E4 = 0;
+unsigned short word_5383E6 = 0xFFFF;
+unsigned short word_5383E8 = 0xFCCD;
+uint32_t dword_538542 = 0x32;
+unsigned short word_538546 = 0x32;
+uint32_t dword_538548 = 0x165;
+uint32_t dword_5386EC = 0x1900010;
+unsigned short word_538D48 = 0x1F40;
+unsigned short word_538D4A = 0xF8F8;
+unsigned short word_538D4C = 0x75AE;
+unsigned short word_538D4E = 0x600;
+uint32_t dword_538D50 = 0x45C480;
+uint32_t dword_538E3E = 0x5000080;
+unsigned short word_5396CA = 0x1B00;
+unsigned short word_5396CC = 0xFFFF;
+unsigned short word_53973E = 0x20;
+unsigned short word_539864 = 0;
+uint32_t dword_539866 = 0xC80000;
+uint32_t dword_539898 = 0x40000;
+uint32_t dword_53A038 = 0xFFFFFFFF;
+uint32_t dword_53A124 = 0xFFFFFFFF;
+float dword_53A724 = 0.0f;
+uint32_t dword_54FE5E = 0xB90000;
+uint32_t dword_54FE62 = 0xBA00B8;
+uint32_t dword_5505DC = 0x200;
+unsigned short word_5505EE = 0x82;
+unsigned short word_5505F0 = 0xBE;
+unsigned short word_5505F2 = 0;
+uint32_t dword_550A12 = 0xC5000D;
+uint32_t dword_550AC4 = 0x83FFFF59;
+uint32_t funcs_4A90CA = 0xF3E0000F;
+unsigned short word_550D18 = 0xFFFF;
+unsigned short word_550D1A = 0x680;
+uint32_t dword_550DE0 = 0xFF6A0040;
+uint32_t dword_55115E = 0x100000;
+uint32_t dword_5513EF = 0x10101;
+float dword_5513FC = 0.0f;
+float dword_55140C = 0.0f;
+float dword_551410 = 0.0f;
+float dword_551414 = 0.0f;
+float dword_551C84 = 0.0f;
+float dword_551C88 = 0.0f;
+float dword_551C8C = 0.0f;
+float dword_551C90 = 0.0f;
+float dword_551CF0 = 0.0f;
+float dword_551CF4 = 0.0f;
+float dword_551CF8 = 0.0f;
+float dword_551CFC = 0.0f;
+float dword_551D00 = 0.0f;
+float dword_551D04 = 0.0f;
+float dword_551D08 = 0.0f;
+float dword_551D0C = 0.0f;
+float dword_551D10 = 0.0f;
+float dword_551D14 = 0.0f;
+float dword_551D18 = 0.0f;
+float dword_551D1C = 0.0f;
+uint32_t dword_551D20 = 0xFFFFFFFF;
+float dword_551D34 = 1.0f;
+float dword_551D38 = 0.0f;
+float dword_551D3C = 0.0f;
+float dword_551D40 = 0.0f;
+float flt_551D44 = 0.0f;
+float flt_551D48 = 0.0f;
+float dword_551F38 = 0.0f;
+float dword_551F3C = 0.0f;
+float dword_551F40 = 0.0f;
+float dword_551F44 = 0.0f;
+unsigned short word_551F84 = 0x10;
+unsigned short word_551F86 = 0x40;
+unsigned short word_551F88 = 0x80;
+unsigned int  dword_551FA0 = 0.0f;
+unsigned int  pUnkOuter = 0.0f;
+unsigned int  dword_551FB4 = 0;
+unsigned int  dword_55200C = 0;
+unsigned int  dword_552010 = 0;
+unsigned int  dword_552014 = 0;
+unsigned int  dword_552018 = 0;
+unsigned int  dword_55201C = 0;
+unsigned int  dword_552020 = 0;
+unsigned int  dword_552024 = 0;
+unsigned int  dword_552028 = 0;
+unsigned int  dword_55202C = 0;
+unsigned int  dword_552030 = 0;
+unsigned int  dword_552034 = 0;
+unsigned int  dword_552038 = 0;
+unsigned int  dword_55203C = 0;
+unsigned int  dword_552040 = 0;
+unsigned int  dword_552044 = 0;
+unsigned int  dword_552048 = 0;
+unsigned int  dword_55204C = 0;
+unsigned int  dword_552050 = 0;
+unsigned int  dword_552054 = 0;
+unsigned int  dword_552058 = 0;
+unsigned int  dword_55205C = 0;
+unsigned int  dword_552060 = 0;
+unsigned int  dword_552064 = 0;
+unsigned int  dword_557C08 = 0;
+unsigned int  lpCmdLine = 0;
+unsigned int  dword_557C10 = 0;
+unsigned int  dword_557C14 = 0;
+unsigned int  dword_557C18 = 0;
+unsigned int  dword_557C1C = 0;
+unsigned int  dword_557C30 = 0;
+unsigned int  dword_557C34 = 0;
+unsigned short word_557C51 = 0;
+unsigned int  dword_557C53 = 0;
+unsigned int  dword_557C57 = 0;
+unsigned int  dword_557C5B = 0;
+unsigned int  dword_557C68 = 0;
+unsigned int  dword_557E7C = 0;
+unsigned int  dword_557E80 = 0;
+unsigned int  dword_557E84 = 0;
+unsigned int  dword_557EA4 = 0;
+unsigned int  dword_557EB8 = 0;
+unsigned int  dword_5580E4 = 0;
+unsigned int  dword_5580E8 = 0;
+unsigned int  dword_5580FC = 0;
+unsigned int  dword_558100 = 0;
+unsigned int  dword_558174 = 1.0f;
+uint32_t dword_5581C8 = 0xFFFFFFFF;
+uint32_t dword_5581CC = 0xFFFFFFFF;
+float dword_5581D0 = 1.0f;
+float dword_558238 = 0.0f;
+float dword_558298 = 0.0f;
+float dword_5583B8 = 0.0f;
+long double tbyte_5585E0 = 3.141592653589793239L;
+long double tbyte_5585EA = 1.570796326794896619L;
+float flt_5585F4 = 16.0f;
+float flt_5585F8 = 0.0625f;
+long double tbyte_5585FC = -0.3333333333333333333L;
+long double tbyte_558606 = 0.1999999999999994471L;
+long double tbyte_558610 = -0.142857142855512794L;
+long double tbyte_55861A = 0.1111111089064621512L;
+long double tbyte_558624 = -0.09090758475228815823L;
+long double tbyte_55862E = 0.07641690805844016167L;
+float flt_558758 = 0.9375f;
+unsigned int dword_557C5F = 0;
+unsigned int dword_557C49 = 0;
+unsigned char byte_557C4D = 0;
+unsigned char byte_557C4E = 0;
+unsigned int dword_557C20 = 0;
+unsigned char byte_557C24 = 0;
+unsigned char byte_557C25 = 0;
+unsigned char byte_557C26 = 0;
+unsigned char byte_557C27 = 0;
+unsigned char byte_557C28 = 0;
+unsigned char byte_557C29 = 0;
+unsigned char byte_557C2A = 0;
+unsigned char byte_557C2B = 0;
+
 #pragma endregion
 
 
@@ -6551,15 +7048,12 @@ unsigned char byte_4A64FB[16] = {
 
 extern DWORD nWidth;
 extern DWORD cy;
-extern DWORD bMenu;
-extern DWORD dword_530400;
-extern DWORD dword_5303FC;
-extern DWORD dword_530408;
 extern DWORD dword_53040C;
-extern DWORD dword_77EA74;
-extern DWORD dword_77E738;
-extern DWORD dbl_50A390;
 extern DWORD flt_55BDB4;
+
+// Variáveis externas
+void* dword_5581A8;  // Variável global desconhecida
+
 
 // Protótipos das funções externas
 void __InitRtns(int param);
@@ -6577,11 +7071,7 @@ void sub_502330() {
 
 }
 
-// Variáveis externas
-void* dword_5581A8;  // Variável global desconhecida
-void* dword_557C30;  // Variável global desconhecida
-void* dword_557C34;  // Variável global desconhecida
-char* lpCmdLine;     // Variável global representando o comando da linha de execução
+
 
 // Protótipos das funções externas
 void __InitRtns(int param);
@@ -6596,11 +7086,6 @@ void memset_() {
 void __imp_GetModuleHandleA() {
 
 }
-// Variáveis externas
-void* dword_5581A8; // Variável global desconhecida
-void* dword_557C30; // Variável global desconhecida
-void* dword_557C34; // Variável global desconhecida
-char* lpCmdLine;    // Variável global representando o comando da linha de execução
 
 
 // Funções mockadas para as chamadas externas
@@ -6624,109 +7109,200 @@ void strdup_() {
     // Mock: Simula a lógica da função strdup_
 }
 
-// Função convertida
 void sub_4FA9A8() {
-    // Prologue: mov dword_897BB8, edi
+    // Declaração de variáveis locais para representar deslocamentos na pilha
+    unsigned char var_41C[0x41C];
+    unsigned char Filename[0x214];
+    unsigned char var_110[0x110];
+
     __asm {
-        mov dword ptr dword_897BB8, edi
-    }
+        // Inicialização e alocação de pilha
+        push ecx
+        push esi
+        push edi
+        sub esp, 0x618
 
-    // Chamada de sub_5000A0
-    sub_5000A0();
-
-    // Captura o retorno da função
-    __asm {
-        mov lpTlsValue, eax
-    }
-
-    // Verificação e possível saída do programa
-    __asm {
-        mov eax, lpTlsValue       // Carrega o valor de lpTlsValue em eax
-        test eax, eax             // Testa o valor de eax
-        jnz skip_exit             // Salta se lpTlsValue não for nulo
-        test edi, edi             // Testa o valor de edi
-        jnz skip_exit             // Salta se edi não for nulo
-        push 1                    // Prepara o argumento para ExitProcess
-        call ExitProcess          // Chama ExitProcess com uExitCode = 1
-        skip_exit :
-    }
-
-
-    // Inicializa os manipuladores de arquivo
-    __NTInitFileHandles_();
-
-    // Captura as strings do ambiente
-    __asm {
-        call cs : __imp_GetEnvironmentStrings
-        mov dword ptr dword_557C49, eax
-    }
-
-    // Captura a versão do sistema
-    DWORD version;
-    __asm {
-        call cs : __imp_GetVersion
-        mov version, eax
-    }
-
-    // Processa os valores obtidos
-    byte_557C4F = (unsigned char)version;
-    word_557C51 = (unsigned short)((version >> 16) & 0xFFFF);
-    dword_557C53 = word_557C51;
-    dword_557C57 = (version & 0xFF) | ((version >> 8) & 0xFF) << 8;
-    byte_557C50 = (unsigned char)((version >> 8) & 0xFF);
-    dword_557C5B = byte_557C50;
-    dword_557C5F = dword_557C57 << 8 | dword_557C5B;
-
-    // Obtém o nome do módulo e duplica a string
-    __asm {
-        push 104h
-        lea eax, [esp + 0x628]
-        push eax
-        push 0
-        call cs : __imp_GetModuleFileNameA
-    }
-    __asm {
-        call strdup_
-        mov dword ptr dword_557C10, eax
-    }
-
-    // Mock para WideChar filename
-    __lib_GetModuleFileNameW_();
-    __asm {
-        call sub_50045B
-        mov dword ptr dword_557C1C, eax
-    }
-
-    // Obtém a linha de comando
-    lpCmdLine = GetCommandLineA();
-
-    // Processa o nome do módulo, se necessário
-    __asm {
+        // Configuração de registradores e variáveis
+        mov edi, eax
+        mov esi, ebx
+        mov eax, edx
+        mov ds : dword ptr[0x897BB8], edi
+        call sub_5000A0
+        mov ds : dword ptr[lpTlsValue], eax
+        test eax, eax
+        jnz short loc_4FA9DC
         test edi, edi
-        jz skip_module
-        push 104h
-        lea eax, [esp + 0x624]
-        push eax
-        push ebx
-        call cs : __imp_GetModuleFileNameA
-    }
-    __asm {
-        call strdup_
-        mov dword ptr dword_557C14, eax
-    }
+        jnz loc_4FABC9
+        push 1; uExitCode
+        call cs : ExitProcess
 
-    __lib_GetModuleFileNameW_();
-    __asm {
-        call sub_50045B
-        mov dword ptr dword_557C20, eax
-    }
+        loc_4FA9DC :
+        call __NTInitFileHandles_
+            call cs : GetEnvironmentStrings
+            xor edx, edx
+            mov ds : dword ptr[0x557C49], eax
+            mov ds : dword ptr[0x898334], edx
+            call cs : GetVersion
+            mov edx, eax
+            mov ebx, eax
+            mov ds : byte ptr[0x557C4F], al
+            shr eax, 16
+            and eax, 0xFFFF
+            mov ds : word ptr[0x557C51], ax
+            xor eax, eax
+            mov ax, ds : word ptr[0x557C51]
+            and edx, 0xFFFF
+            mov ds : dword ptr[0x557C53], eax
+            xor eax, eax
+            sar edx, 8
+            mov al, bl
+            and edx, 0xFF
+            mov ds : dword ptr[0x557C57], eax
+            xor eax, eax
+            mov al, dl
+            mov ds : byte ptr[0x557C50], dl
+            mov ds : dword ptr[0x557C5B], eax
+            mov eax, ds : dword ptr[0x557C57]
+            mov edx, ds : dword ptr[0x557C5B]
+            shl eax, 8
+            or eax, edx
+            push 0x104; nSize
+            mov ds : dword ptr[0x557C5F], eax
+            lea eax, [esp + 0x628]
+            push eax; lpFilename
+            push 0; hModule
+            mov ebx, 0x208
+            call cs : GetModuleFileNameA
+            lea eax, [Filename]
+            mov edx, esp
+            call strdup_
+            mov ds : dword ptr[0x557C10], eax
+            xor eax, eax
+            call __lib_GetModuleFileNameW_
+            mov eax, esp
+            call sub_50045B
+            mov ds : dword ptr[0x557C1C], eax
+            call cs : GetCommandLineA
+            call strdup_
+            mov bl, [eax]
+            mov edx, eax
+            cmp bl, 0x22; '"'
+            jnz short loc_4FAAC6
 
-skip_module:
-    // Epilogue
-    __asm {
+            loc_4FAAB2 :
+        inc eax
+            mov ch, [eax]
+            cmp ch, 0x22; '"'
+            jz short loc_4FAABE
+            test ch, ch
+            jnz short loc_4FAAB2
+
+            loc_4FAABE :
+        cmp byte ptr[eax], 0
+            jz short loc_4FAAE1
+
+            loc_4FAAC3 :
+        inc eax
+            jmp short loc_4FAAE1
+
+            loc_4FAAC6 :
+        mov dl, [eax]
+            inc dl
+            and edx, 0xFF
+            test ds : _IsTable[edx], 2
+            jnz short loc_4FAAE1
+            cmp byte ptr[eax], 0
+            jz short loc_4FAAE1
+            inc eax
+            jmp short loc_4FAAC6
+
+            loc_4FAAE1 :
+        mov dl, [eax]
+            inc dl
+            and edx, 0xFF
+            test ds : _IsTable[edx], 2
+            jnz short loc_4FAAC3
+            mov ds : lpCmdLine, eax
+            call cs : GetCommandLineW
+            test eax, eax
+            jz loc_4FAB67
+            call sub_50045B
+            mov bx, [eax]
+            mov edx, eax
+            cmp bx, 0x22; '"'
+            jnz short loc_4FAB34
+
+            loc_4FAB18 :
+        add eax, 2
+            mov dx, [eax]
+            cmp dx, 0x22; '"'
+            jz short loc_4FAB29
+            test dx, dx
+            jnz short loc_4FAB18
+
+            loc_4FAB29 :
+        cmp word ptr[eax], 0
+            jz short loc_4FAB52
+
+            loc_4FAB2F :
+        add eax, 2
+            jmp short loc_4FAB52
+
+            loc_4FAB34 :
+        mov dl, [eax]
+            inc dl
+            and edx, 0xFF
+            test ds : _IsTable[edx], 2
+            jnz short loc_4FAB52
+            cmp word ptr[eax], 0
+            jz short loc_4FAB52
+            add eax, 2
+            jmp short loc_4FAB34
+
+            loc_4FAB52 :
+        mov dl, [eax]
+            inc dl
+            and edx, 0xFF
+            test ds : _IsTable[edx], 2
+            jz short loc_4FAB71
+            jmp short loc_4FAB2F
+
+            loc_4FAB67 :
+        mov eax, offset unk_50AAA0
+            call sub_50045B
+
+            loc_4FAB71 :
+        mov ds : dword ptr[0x557C18], eax
+            test edi, edi
+            jz short loc_4FABC4
+            push 0x104; nSize
+            lea eax, [var_110]
+            push eax; lpFilename
+            push esi; hModule
+            mov ebx, 0x208
+            call cs : GetModuleFileNameA
+            lea eax, [var_110]
+            lea edx, [var_41C]
+            call strdup_
+            mov ds : dword ptr[0x557C14], eax
+            mov eax, esi
+            call __lib_GetModuleFileNameW_
+            lea eax, [var_41C]
+            call sub_50045B
+            mov ds : dword ptr[0x557C20], eax
+
+            loc_4FABC4 :
         mov eax, 1
+
+            loc_4FABC9 :
+            add esp, 0x618
+            pop edi
+            pop esi
+            pop ecx
+            retn
     }
 }
+
 
 void sub_500909() {
     printf("Mock: sub_500909 called.\n");
