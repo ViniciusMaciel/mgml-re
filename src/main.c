@@ -24,6 +24,7 @@ LPSTR(__stdcall* MyGetCommandLineA)();
 #pragma endregion
 
 #pragma region variaveis nao iniciadas
+void* lpTlsValue;
 uint16_t word_559010;
 uint16_t word_559012;
 uint16_t word_559014;
@@ -2095,6 +2096,7 @@ uint32_t dword_898458;
 #pragma endregion
 
 #pragma region variaveis iniciadas
+uint32_t dword_5581A8 = 0xF4;
 char aDatInitDatBin[] = "DAT\\INIT_DAT.BIN";
 char aDatDemoDatBin[] = "DAT\\DEMO_DAT.BIN";
 char aDatGameoverBin[] = "DAT\\GAMEOVER.BIN";
@@ -6504,17 +6506,17 @@ unsigned char unk_5585AE[] = { 0,0 };
 unsigned char byte_558748[] = { 0,1,0,0,4,0,0,7,0,0,0xA,0,0,0xD,0,0 };
 //Valores Adicionais
 __declspec(align(4)) unsigned char byte_515D74[] = {
-    0x80, '`', '@', '@', '@', '@', '@', '@', '@', '@', '@', '@', '@', '@', '@', '@', 0
+	0x80, '`', '@', '@', '@', '@', '@', '@', '@', '@', '@', '@', '@', '@', '@', '@', 0
 };
 __declspec(align(16)) unsigned char byte_51904D[] = {
-    0x2F,            // Primeiro valor
-    '/', '/', '/', '/', 0,  // String '////' com terminador nulo
-    '/', '/', 0,         // String '//' com terminador nulo
-    0x2F,                // Valor hexadecimal correspondente a '/'
-    0x2F                 // Outro valor hexadecimal correspondente a '/'
+	0x2F,            // Primeiro valor
+	'/', '/', '/', '/', 0,  // String '////' com terminador nulo
+	'/', '/', 0,         // String '//' com terminador nulo
+	0x2F,                // Valor hexadecimal correspondente a '/'
+	0x2F                 // Outro valor hexadecimal correspondente a '/'
 };
 __declspec(align(4)) unsigned char byte_50B450[] = {
-    0x80, '`', '@', '@', '@', '@', '@', '@', '@', '@', '@', '@', '@', '@', '@', 0
+	0x80, '`', '@', '@', '@', '@', '@', '@', '@', '@', '@', '@', '@', '@', '@', 0
 };
 __declspec(align(4)) unsigned int dword_557E75 = 0x100;
 
@@ -7024,36 +7026,71 @@ unsigned char byte_557C28 = 0;
 unsigned char byte_557C29 = 0;
 unsigned char byte_557C2A = 0;
 unsigned char byte_557C2B = 0;
+unsigned char _IsTable[] = {
+	0,   1,   1,   1,   1,   1,   1,   1,
+	1,   1,   3,   3,   3,   3,   3,   1,
+	1,   1,   1,   1,   1,   1,   1,   1,
+	1,   1,   1,   1,   1,   1,   1,   1,
+	1,  10,  12,  12,  12,  12,  12,  12,
+   12,  12,  12,  12,  12,  12,  12,  12,
+   12,  56,  56,  56,  56,  56,  56,  56,
+   56,  56,  56,  12,  12,  12,  12,  12,
+   12,  12,  88,  88,  88,  88,  88,  88,
+   72,  72,  72,  72,  72,  72,  72,  72,
+   72,  72,  72,  72,  72,  72,  72,  72,
+   72,  72,  72,  72,  12,  12,  12,  12,
+   12,  12, 152, 152, 152, 152, 152, 152,
+  136, 136, 136, 136, 136, 136, 136, 136,
+  136, 136, 136, 136, 136, 136, 136, 136,
+  136, 136, 136, 136,  12,  12,  12,  12,
+	1,   0,   0,   0,   0,   0,   0,   0,
+	0,   0,   0,   0,   0,   0,   0,   0,
+	0,   0,   0,   0,   0,   0,   0,   0,
+	0,   0,   0,   0,   0,   0,   0,   0,
+	0,   0,   0,   0,   0,   0,   0,   0,
+	0,   0,   0,   0,   0,   0,   0,   0,
+	0,   0,   0,   0,   0,   0,   0,   0,
+	0,   0,   0,   0,   0,   0,   0,   0,
+	0,   0,   0,   0,   0,   0,   0,   0,
+	0,   0,   0,   0,   0,   0,   0,   0,
+	0,   0,   0,   0,   0,   0,   0,   0,
+	0,   0,   0,   0,   0,   0,   0,   0,
+	0,   0,   0,   0,   0,   0,   0,   0,
+	0,   0,   0,   0,   0,   0,   0,   0,
+	0
+};
 
 #pragma endregion
 
+#pragma region registradores
+uint32_t eax, ebx, ecx, edx, ch; // Registradores de propósito geral
+uint32_t esi, edi, ebp, esp; // Registradores de índice, base e pilha
+uint16_t es, ds, cs, ss;     // Registradores de segmento
+uint8_t al, dh, dl;
+#pragma endregion
 
 #pragma region variaveis fakes
 
 void* hWnd = NULL;
 
 unsigned char byte_4A64AB[0x14] = {
-    0, // Primeiro byte inicializado com 0
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 // 19 valores restantes
+	0, // Primeiro byte inicializado com 0
+	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 // 19 valores restantes
 };
 
 
 unsigned char byte_4A64FB[16] = {
-    0,                   // Primeiro byte inicializado com 0
-    0, 0, 0, 0,          // Quatro bytes inicializados com 0
-    0x00, 0x00, 0x00, 0x80, // 0x80000000 em formato little-endian
-    0x02, 0x00, 0x00, 0xE0, // 0xE0000002 em formato little-endian
-    1, 0, 0               // Últimos bytes inicializados
+	0,                   // Primeiro byte inicializado com 0
+	0, 0, 0, 0,          // Quatro bytes inicializados com 0
+	0x00, 0x00, 0x00, 0x80, // 0x80000000 em formato little-endian
+	0x02, 0x00, 0x00, 0xE0, // 0xE0000002 em formato little-endian
+	1, 0, 0               // Últimos bytes inicializados
 };
 
 extern DWORD nWidth;
 extern DWORD cy;
 extern DWORD dword_53040C;
 extern DWORD flt_55BDB4;
-
-// Variáveis externas
-void* dword_5581A8;  // Variável global desconhecida
-
 
 // Protótipos das funções externas
 void __InitRtns(int param);
@@ -7080,343 +7117,694 @@ void* stackavail_();
 void sub_5022FA(); // Nome original do Assembly (__GRO)
 void nullsub_6();
 void sub_502330();
-void memset_() {
 
+void __STOSD() {
+	if (ecx == 0) {
+		goto locret_4FFC92;
+	}
+
+loc_4FFC2B:
+	if ((al & 0x1F) == 0) {
+		goto loc_4FFC37;
+	}
+
+	*(uint32_t*)eax = edx;
+	eax += 4;
+	ecx--;
+
+	if (ecx != 0) {
+		goto loc_4FFC2B;
+	}
+
+loc_4FFC37:
+	{
+		uint32_t saved_ecx = ecx;
+		ecx >>= 2; // Dividir ecx por 4
+		if (ecx == 0) {
+			goto loc_4FFC77;
+		}
+		ecx--;
+		if (ecx == 0) {
+			goto loc_4FFC69;
+		}
+	}
+
+loc_4FFC40:
+	*(uint32_t*)eax = edx;
+	*(uint32_t*)(eax + 4) = edx;
+	ecx--;
+	*(uint32_t*)(eax + 8) = edx;
+	*(uint32_t*)(eax + 0xC) = edx;
+
+	if (ecx == 0) {
+		goto loc_4FFC66;
+	}
+
+	if (*(uint8_t*)(eax + 0x20) == dl) {
+		*(uint32_t*)(eax + 0x10) = edx;
+		*(uint32_t*)(eax + 0x14) = edx;
+		ecx--;
+		*(uint32_t*)(eax + 0x18) = edx;
+		*(uint32_t*)(eax + 0x1C) = edx;
+		eax += 0x20;
+
+		if (ecx != 0) {
+			goto loc_4FFC40;
+		}
+
+		eax -= 0x10;
+	}
+
+loc_4FFC66:
+	eax += 0x10;
+
+loc_4FFC69:
+	*(uint32_t*)eax = edx;
+	*(uint32_t*)(eax + 4) = edx;
+	*(uint32_t*)(eax + 8) = edx;
+	*(uint32_t*)(eax + 0xC) = edx;
+	eax += 0x10;
+
+loc_4FFC77:
+	ecx = ecx & 3; // Restaura os bits finais de ecx
+	if (ecx == 0) {
+		goto locret_4FFC92;
+	}
+
+	*(uint32_t*)eax = edx;
+	eax += 4;
+	ecx--;
+
+	if (ecx == 0) {
+		goto locret_4FFC92;
+	}
+
+	*(uint32_t*)eax = edx;
+	eax += 4;
+	ecx--;
+
+	if (ecx == 0) {
+		goto locret_4FFC92;
+	}
+
+	*(uint32_t*)eax = edx;
+	eax += 4;
+
+locret_4FFC92:
+	return;
 }
+
+
+void __STOSB() {
+	if (ecx == 0) {
+		goto locret_4FFC20;
+	}
+
+	if (*(uint8_t*)eax == dl) {
+		goto loc_4FFBF6;
+	}
+
+loc_4FFBF6:
+	if ((al & 3) == 0) {
+		goto loc_4FFC03;
+	}
+
+	*(uint8_t*)eax = dl;
+	eax++;
+	edx = (edx >> 8) | (edx << 24); // ROR edx, 8
+	ecx--;
+
+	if (ecx != 0) {
+		goto loc_4FFBF6;
+	}
+
+loc_4FFC03:
+	{
+		uint32_t saved_ecx = ecx;
+		ecx >>= 2; // Dividir ecx por 4
+		__STOSD(); // Chamar __STOSD
+		ecx = saved_ecx & 3; // Restaura os 2 bits finais de ecx
+	}
+
+	if (ecx == 0) {
+		goto locret_4FFC20;
+	}
+
+	*(uint8_t*)eax = dl;
+	ecx--;
+
+	if (ecx == 0) {
+		goto locret_4FFC20;
+	}
+
+	*((uint8_t*)eax + 1) = dh;
+	ecx--;
+
+	if (ecx == 0) {
+		goto locret_4FFC20;
+	}
+
+	*((uint8_t*)eax + 2) = dl;
+
+locret_4FFC20:
+	return;
+}
+
+
+void memset_() {
+	uint32_t saved_ecx = ecx; // Salvar o valor original de ecx
+	uint32_t saved_eax = eax; // Salvar o valor original de eax
+
+	ecx = ebx;                // Copiar ebx para ecx
+	uint8_t saved_dh = dh;    // Salvar o valor original de dh
+	dh = dl;                  // Copiar dl para dh
+
+	edx <<= 8;                // Deslocar edx 8 bits à esquerda
+	dl = dh;                  // Copiar dh para dl
+	edx <<= 8;                // Deslocar edx 8 bits à esquerda novamente
+	dl = dh;                  // Copiar dh para dl
+
+	__STOSB();                // Chamar a função __STOSB
+
+	eax = saved_eax;          // Restaurar o valor original de eax
+	ecx = saved_ecx;          // Restaurar o valor original de ecx
+}
+
 void __imp_GetModuleHandleA() {
 
 }
 
 
-// Funções mockadas para as chamadas externas
-void sub_5000A0() {
-    // Mock: Simula a lógica da função sub_5000A0
+#include <stdlib.h>
+#include <stdint.h>
+
+#include <windows.h> // Para VirtualQuery
+
+void __init_stack_limits_() {
+	__asm {
+		push ebx; Salva registrador
+		push ecx
+		push esi
+		sub esp, 0x20; Reserva espaço na stack
+		mov     ebx, eax
+		mov     esi, edx
+		push 0x1C; Tamanho do buffer
+		lea eax, [esp + 0x30]; Endereço do buffer
+		push eax; Passa lpBuffer
+		lea eax, [esp + 0x34]; Endereço para consulta
+		push eax; Passa lpAddress
+		call VirtualQuery
+
+		; Ajusta limites da stack
+		mov edx, [esp + 0x2C]; BaseAddress
+		add edx, [esp + 0x2C + 8]; RegionSize
+		mov cx, word ptr ds : [0x557C51]
+		mov eax, [esp + 0x2C]; AllocationBase
+		cmp cx, 0x8000
+		jnb _large_stack
+
+		add eax, 0x3000
+		jmp _finalize
+
+		_large_stack :
+		jb _default_stack
+			cmp byte ptr ds : [0x557C4F] , 4
+			jnb _default_stack
+			add eax, 0x12000
+			jmp _finalize
+
+			_default_stack :
+		add eax, 0x13000
+
+			_finalize :
+			test ebx, ebx
+			jz _skip_start
+			mov[ebx], eax
+
+			_skip_start :
+		test esi, esi
+			jz _skip_end
+			mov[esi], edx
+
+			_skip_end :
+		add esp, 0x20; Restaura stack
+			pop esi
+			pop ecx
+			pop ebx
+			ret
+	}
 }
 
+
+void __InitThreadData_(void* pThreadData) {
+	__asm {
+		push    ebx
+		push    ecx
+		push    edx
+		mov     ebx, eax
+		test    eax, eax
+		jz null_exit
+		xor edx, edx
+		mov     dword ptr[eax + 0Ch], 1
+		call    __init_stack_limits_
+		call    cs : GetCurrentThreadId
+		mov[ebx + 0DAh], eax
+
+		null_exit :
+		// Restaura os registradores
+		pop edx
+			pop ecx
+			pop ebx
+	}
+}
+
+void* sub_5000A0(void* input) {
+	void* result;
+	__asm {
+		push ebx
+		push edx
+
+		mov edx, input
+		test edx, edx; Verifica se edx(input) é nulo
+		jnz not_null; Se não for nulo, pula para not_null
+
+		; Aloca memória usando calloc
+		mov eax, dword_5581A8
+		push eax; Tamanho do bloco(ds_dword_5581A8)
+		push 1; Número de elementos
+		call calloc
+		mov edx, eax; Armazena o resultado de calloc em edx
+		test edx, edx; Verifica se a alocação foi bem - sucedida
+		jz exit; Se falhou, sai da função
+
+		; Inicializa os campos na memória alocada
+		mov ebx, dword_5581A8
+		mov byte ptr[edx + 0x52], 1
+		mov[edx + 0xF0], ebx
+
+		not_null :
+		mov eax, edx; Armazena edx em eax para retorno
+			call __InitThreadData_; Chama __InitThreadData_
+
+			exit :
+		mov result, edx; Armazena o resultado final em result
+
+			pop edx
+			pop ebx
+	}
+	return result;
+}
+
+
+
 void __NTInitFileHandles_() {
-    // Mock: Simula a lógica da função __NTInitFileHandles_
+	// Mock: Simula a lógica da função __NTInitFileHandles_
 }
 
 void sub_50045B() {
-    // Mock: Simula a lógica da função sub_50045B
+	// Mock: Simula a lógica da função sub_50045B
 }
 
 void __lib_GetModuleFileNameW_() {
-    // Mock: Simula a lógica da função __lib_GetModuleFileNameW_
+	// Mock: Simula a lógica da função __lib_GetModuleFileNameW_
 }
 
 void strdup_() {
-    // Mock: Simula a lógica da função strdup_
+	// Mock: Simula a lógica da função strdup_
 }
 
 void sub_4FA9A8() {
-    // Declaração de variáveis locais para representar deslocamentos na pilha
-    unsigned char var_41C[0x41C];
-    unsigned char Filename[0x214];
-    unsigned char var_110[0x110];
+	// Declaração de variáveis locais para representar deslocamentos na pilha
+	unsigned char var_41C[0x41C];
+	unsigned char Filename[0x214];
+	unsigned char var_110[0x110];
 
-    __asm {
-        // Inicialização e alocação de pilha
-        push ecx
-        push esi
-        push edi
-        sub esp, 0x618
+	__asm {
+		// Inicialização e alocação de pilha
+		push ecx
+		push esi
+		push edi
+		sub esp, 0x618
 
-        // Configuração de registradores e variáveis
-        mov edi, eax
-        mov esi, ebx
-        mov eax, edx
-        mov ds : dword ptr[0x897BB8], edi
-        call sub_5000A0
-        mov ds : dword ptr[lpTlsValue], eax
-        test eax, eax
-        jnz short loc_4FA9DC
-        test edi, edi
-        jnz loc_4FABC9
-        push 1; uExitCode
-        call cs : ExitProcess
+		// Configuração de registradores e variáveis
+		mov edi, eax
+		mov esi, ebx
+		mov eax, edx
+		mov     ds : dword_897BB8, edi
+		call sub_5000A0
+		mov ds : dword ptr[lpTlsValue], eax
+		test eax, eax
+		jnz short loc_4FA9DC
+		test edi, edi
+		jnz loc_4FABC9
+		push 1; uExitCode
+		call cs : ExitProcess
 
-        loc_4FA9DC :
-        call __NTInitFileHandles_
-            call cs : GetEnvironmentStrings
-            xor edx, edx
-            mov ds : dword ptr[0x557C49], eax
-            mov ds : dword ptr[0x898334], edx
-            call cs : GetVersion
-            mov edx, eax
-            mov ebx, eax
-            mov ds : byte ptr[0x557C4F], al
-            shr eax, 16
-            and eax, 0xFFFF
-            mov ds : word ptr[0x557C51], ax
-            xor eax, eax
-            mov ax, ds : word ptr[0x557C51]
-            and edx, 0xFFFF
-            mov ds : dword ptr[0x557C53], eax
-            xor eax, eax
-            sar edx, 8
-            mov al, bl
-            and edx, 0xFF
-            mov ds : dword ptr[0x557C57], eax
-            xor eax, eax
-            mov al, dl
-            mov ds : byte ptr[0x557C50], dl
-            mov ds : dword ptr[0x557C5B], eax
-            mov eax, ds : dword ptr[0x557C57]
-            mov edx, ds : dword ptr[0x557C5B]
-            shl eax, 8
-            or eax, edx
-            push 0x104; nSize
-            mov ds : dword ptr[0x557C5F], eax
-            lea eax, [esp + 0x628]
-            push eax; lpFilename
-            push 0; hModule
-            mov ebx, 0x208
-            call cs : GetModuleFileNameA
-            lea eax, [Filename]
-            mov edx, esp
-            call strdup_
-            mov ds : dword ptr[0x557C10], eax
-            xor eax, eax
-            call __lib_GetModuleFileNameW_
-            mov eax, esp
-            call sub_50045B
-            mov ds : dword ptr[0x557C1C], eax
-            call cs : GetCommandLineA
-            call strdup_
-            mov bl, [eax]
-            mov edx, eax
-            cmp bl, 0x22; '"'
-            jnz short loc_4FAAC6
+		loc_4FA9DC :
+		call __NTInitFileHandles_
+			call cs : GetEnvironmentStrings
+			xor edx, edx
+			mov ds : dword ptr[0x557C49], eax
+			mov ds : dword ptr[0x898334], edx
+			call cs : GetVersion
+			mov edx, eax
+			mov ebx, eax
+			mov ds : byte ptr[0x557C4F], al
+			shr eax, 16
+			and eax, 0xFFFF
+			mov ds : word ptr[0x557C51], ax
+			xor eax, eax
+			mov ax, ds : word ptr[0x557C51]
+			and edx, 0xFFFF
+			mov ds : dword ptr[0x557C53], eax
+			xor eax, eax
+			sar edx, 8
+			mov al, bl
+			and edx, 0xFF
+			mov ds : dword ptr[0x557C57], eax
+			xor eax, eax
+			mov al, dl
+			mov ds : byte ptr[0x557C50], dl
+			mov ds : dword ptr[0x557C5B], eax
+			mov eax, ds : dword ptr[0x557C57]
+			mov edx, ds : dword ptr[0x557C5B]
+			shl eax, 8
+			or eax, edx
+			push 0x104; nSize
+			mov ds : dword ptr[0x557C5F], eax
+			lea eax, [esp + 0x628]
+			push eax; lpFilename
+			push 0; hModule
+			mov ebx, 0x208
+			call cs : GetModuleFileNameA
+			lea eax, [Filename]
+			mov edx, esp
+			call strdup_
+			mov ds : dword ptr[0x557C10], eax
+			xor eax, eax
+			call __lib_GetModuleFileNameW_
+			mov eax, esp
+			call sub_50045B
+			mov ds : dword ptr[0x557C1C], eax
+			call cs : GetCommandLineA
+			call strdup_
+			mov bl, [eax]
+			mov edx, eax
+			cmp bl, 0x22; '"'
+			jnz short loc_4FAAC6
 
-            loc_4FAAB2 :
-        inc eax
-            mov ch, [eax]
-            cmp ch, 0x22; '"'
-            jz short loc_4FAABE
-            test ch, ch
-            jnz short loc_4FAAB2
+			loc_4FAAB2 :
+		inc eax
+			mov ch, [eax]
+			cmp ch, 0x22; '"'
+			jz short loc_4FAABE
+			test ch, ch
+			jnz short loc_4FAAB2
 
-            loc_4FAABE :
-        cmp byte ptr[eax], 0
-            jz short loc_4FAAE1
+			loc_4FAABE :
+		cmp byte ptr[eax], 0
+			jz short loc_4FAAE1
 
-            loc_4FAAC3 :
-        inc eax
-            jmp short loc_4FAAE1
+			loc_4FAAC3 :
+		inc eax
+			jmp short loc_4FAAE1
 
-            loc_4FAAC6 :
-        mov dl, [eax]
-            inc dl
-            and edx, 0xFF
-            test ds : _IsTable[edx], 2
-            jnz short loc_4FAAE1
-            cmp byte ptr[eax], 0
-            jz short loc_4FAAE1
-            inc eax
-            jmp short loc_4FAAC6
+			loc_4FAAC6 :
+		mov dl, [eax]
+			inc dl
+			and edx, 0xFF
+			test ds : _IsTable[edx], 2
+			jnz short loc_4FAAE1
+			cmp byte ptr[eax], 0
+			jz short loc_4FAAE1
+			inc eax
+			jmp short loc_4FAAC6
 
-            loc_4FAAE1 :
-        mov dl, [eax]
-            inc dl
-            and edx, 0xFF
-            test ds : _IsTable[edx], 2
-            jnz short loc_4FAAC3
-            mov ds : lpCmdLine, eax
-            call cs : GetCommandLineW
-            test eax, eax
-            jz loc_4FAB67
-            call sub_50045B
-            mov bx, [eax]
-            mov edx, eax
-            cmp bx, 0x22; '"'
-            jnz short loc_4FAB34
+			loc_4FAAE1 :
+		mov dl, [eax]
+			inc dl
+			and edx, 0xFF
+			test ds : _IsTable[edx], 2
+			jnz short loc_4FAAC3
+			mov ds : lpCmdLine, eax
+			call cs : GetCommandLineW
+			test eax, eax
+			jz loc_4FAB67
+			call sub_50045B
+			mov bx, [eax]
+			mov edx, eax
+			cmp bx, 0x22; '"'
+			jnz short loc_4FAB34
 
-            loc_4FAB18 :
-        add eax, 2
-            mov dx, [eax]
-            cmp dx, 0x22; '"'
-            jz short loc_4FAB29
-            test dx, dx
-            jnz short loc_4FAB18
+			loc_4FAB18 :
+		add eax, 2
+			mov dx, [eax]
+			cmp dx, 0x22; '"'
+			jz short loc_4FAB29
+			test dx, dx
+			jnz short loc_4FAB18
 
-            loc_4FAB29 :
-        cmp word ptr[eax], 0
-            jz short loc_4FAB52
+			loc_4FAB29 :
+		cmp word ptr[eax], 0
+			jz short loc_4FAB52
 
-            loc_4FAB2F :
-        add eax, 2
-            jmp short loc_4FAB52
+			loc_4FAB2F :
+		add eax, 2
+			jmp short loc_4FAB52
 
-            loc_4FAB34 :
-        mov dl, [eax]
-            inc dl
-            and edx, 0xFF
-            test ds : _IsTable[edx], 2
-            jnz short loc_4FAB52
-            cmp word ptr[eax], 0
-            jz short loc_4FAB52
-            add eax, 2
-            jmp short loc_4FAB34
+			loc_4FAB34 :
+		mov dl, [eax]
+			inc dl
+			and edx, 0xFF
+			test ds : _IsTable[edx], 2
+			jnz short loc_4FAB52
+			cmp word ptr[eax], 0
+			jz short loc_4FAB52
+			add eax, 2
+			jmp short loc_4FAB34
 
-            loc_4FAB52 :
-        mov dl, [eax]
-            inc dl
-            and edx, 0xFF
-            test ds : _IsTable[edx], 2
-            jz short loc_4FAB71
-            jmp short loc_4FAB2F
+			loc_4FAB52 :
+		mov dl, [eax]
+			inc dl
+			and edx, 0xFF
+			test ds : _IsTable[edx], 2
+			jz short loc_4FAB71
+			jmp short loc_4FAB2F
 
-            loc_4FAB67 :
-        mov eax, offset unk_50AAA0
-            call sub_50045B
+			loc_4FAB67 :
+		mov eax, offset unk_50AAA0
+			call sub_50045B
 
-            loc_4FAB71 :
-        mov ds : dword ptr[0x557C18], eax
-            test edi, edi
-            jz short loc_4FABC4
-            push 0x104; nSize
-            lea eax, [var_110]
-            push eax; lpFilename
-            push esi; hModule
-            mov ebx, 0x208
-            call cs : GetModuleFileNameA
-            lea eax, [var_110]
-            lea edx, [var_41C]
-            call strdup_
-            mov ds : dword ptr[0x557C14], eax
-            mov eax, esi
-            call __lib_GetModuleFileNameW_
-            lea eax, [var_41C]
-            call sub_50045B
-            mov ds : dword ptr[0x557C20], eax
+			loc_4FAB71 :
+		mov ds : dword ptr[0x557C18], eax
+			test edi, edi
+			jz short loc_4FABC4
+			push 0x104; nSize
+			lea eax, [var_110]
+			push eax; lpFilename
+			push esi; hModule
+			mov ebx, 0x208
+			call cs : GetModuleFileNameA
+			lea eax, [var_110]
+			lea edx, [var_41C]
+			call strdup_
+			mov ds : dword ptr[0x557C14], eax
+			mov eax, esi
+			call __lib_GetModuleFileNameW_
+			lea eax, [var_41C]
+			call sub_50045B
+			mov ds : dword ptr[0x557C20], eax
 
-            loc_4FABC4 :
-        mov eax, 1
+			loc_4FABC4 :
+		mov eax, 1
 
-            loc_4FABC9 :
-            add esp, 0x618
-            pop edi
-            pop esi
-            pop ecx
-            retn
-    }
+			loc_4FABC9 :
+			add esp, 0x618
+			pop edi
+			pop esi
+			pop ecx
+			retn
+	}
 }
 
 
 void sub_500909() {
-    printf("Mock: sub_500909 called.\n");
+	printf("Mock: sub_500909 called.\n");
 }
 
 int sub_4F0927() {
-    printf("Mock: sub_4F0927 called.\n");
-    return 1; // Valor padrão para retorno
+	printf("Mock: sub_4F0927 called.\n");
+	return 1; // Valor padrão para retorno
 }
 
 void sub_4A650B() {
-    printf("Mock: sub_4A650B called.\n");
+	printf("Mock: sub_4A650B called.\n");
 }
 
 void sub_4F9933() {
-    printf("Mock: sub_4F9933 called.\n");
+	printf("Mock: sub_4F9933 called.\n");
 }
 
 void sub_4F7BBA() {
-    printf("Mock: sub_4F7BBA called.\n");
+	printf("Mock: sub_4F7BBA called.\n");
 }
 
 void sub_4A67C5() {
-    printf("Mock: sub_4A67C5 called.\n");
+	printf("Mock: sub_4A67C5 called.\n");
 }
 
 void sub_4F84A5() {
-    printf("Mock: sub_4F84A5 called.\n");
+	printf("Mock: sub_4F84A5 called.\n");
 }
 
 void sub_4F8674() {
-    printf("Mock: sub_4F8674 called.\n");
+	printf("Mock: sub_4F8674 called.\n");
 }
 
 void sub_4F9F7D() {
-    printf("Mock: sub_4F9F7D called.\n");
+	printf("Mock: sub_4F9F7D called.\n");
 }
 
 void sub_4A66A4() {
-    printf("Mock: sub_4A66A4 called.\n");
+	printf("Mock: sub_4A66A4 called.\n");
 }
 
 void sub_4A65EB() {
-    printf("Mock: sub_4A65EB called.\n");
+	printf("Mock: sub_4A65EB called.\n");
 }
 
 void sub_4D8F96() {
-    printf("Mock: sub_4D8F96 called.\n");
+	printf("Mock: sub_4D8F96 called.\n");
 }
 
 void sub_4A0EF8() {
-    printf("Mock: sub_4A0EF8 called.\n");
+	printf("Mock: sub_4A0EF8 called.\n");
 }
 
 void sub_4A065A() {
-    printf("Mock: sub_4A065A called.\n");
+	printf("Mock: sub_4A065A called.\n");
 }
 
 void sub_49E00B() {
-    printf("Mock: sub_49E00B called.\n");
+	printf("Mock: sub_49E00B called.\n");
 }
 
 void sub_4F88FC() {
-    printf("Mock: sub_4F88FC called.\n");
+	printf("Mock: sub_4F88FC called.\n");
 }
 
 void sub_4F8895() {
-    printf("Mock: sub_4F8895 called.\n");
+	printf("Mock: sub_4F8895 called.\n");
 }
 
 void sub_4F88C4() {
-    printf("Mock: sub_4F88C4 called.\n");
+	printf("Mock: sub_4F88C4 called.\n");
 }
 
 void sub_4F7680() {
-    printf("Mock: sub_4F7680 called.\n");
+	printf("Mock: sub_4F7680 called.\n");
 }
 
 void sub_4F85F2() {
-    printf("Mock: sub_4F85F2 called.\n");
+	printf("Mock: sub_4F85F2 called.\n");
 }
 
 void sub_4F860C() {
-    printf("Mock: sub_4F860C called.\n");
+	printf("Mock: sub_4F860C called.\n");
 }
 
 void sub_4EED08() {
-    printf("Mock: sub_4EED08 called.\n");
+	printf("Mock: sub_4EED08 called.\n");
 }
 
 void sub_4D89AF() {
-    printf("Mock: sub_4D89AF called.\n");
+	printf("Mock: sub_4D89AF called.\n");
 }
 
 void sub_4F8D91() {
-    printf("Mock: sub_4F8D91 called.\n");
+	printf("Mock: sub_4F8D91 called.\n");
 }
 
 void sub_4F383A() {
-    printf("Mock: sub_4F383A called.\n");
+	printf("Mock: sub_4F383A called.\n");
 }
 
 void sub_4A6A5E() {
-    printf("Mock: sub_4A6A5E called.\n");
+	printf("Mock: sub_4A6A5E called.\n");
 }
 
-// Mocks para funções faltantes
-void __init_stack_limits_() {
-    printf("Mock: __init_stack_limits_ called.\n");
+
+void callit_(int temp) {
+	__asm {
+		push    es
+		mov		eax, temp
+		cmp     dword ptr[eax], 0
+		jz      short loc_500983
+		push    ds
+		pop     es
+		call    dword ptr[eax]
+
+		loc_500983 :
+		pop     es
+			retn
+	}
 }
 
-void __InitRtns(int param) {
-    printf("Mock: __InitRtns called with param = %d.\n", param);
+void __InitRtns() {
+	// Salvar valores de registradores
+	uint32_t saved_ebx = ebx;
+	uint32_t saved_ecx = ecx;
+	uint32_t saved_edx = edx;
+	uint32_t saved_esi = esi;
+	uint16_t saved_es = es;
+
+	// Início da função
+	esi = (uint32_t)&unk_55859C;
+	dh = (uint8_t)al;
+
+loc_500991:
+	eax = (uint32_t)&unk_558566;
+	ebx = esi;
+	dl = dh;
+
+loc_50099A:
+	if (eax >= (uint32_t)&unk_55859C) {
+		goto loc_5009B6;
+	}
+	if (*(uint8_t*)eax == 2) {
+		goto loc_5009B1;
+	}
+	ch = *((uint8_t*)eax + 1);
+	if (dl < ch) {
+		goto loc_5009B1;
+	}
+	ebx = eax;
+	dl = ch;
+
+loc_5009B1:
+	eax += 6;
+	goto loc_50099A;
+
+loc_5009B6:
+	if (ebx == (uint32_t)&unk_55859C) {
+		goto loc_5009CB;
+	}
+	eax = ebx + 2;
+	callit_(eax);
+	*(uint8_t*)ebx = 2;
+	goto loc_500991;
+
+loc_5009CB:
+	// Restaurar valores dos registradores
+	es = saved_es;
+	esi = saved_esi;
+	edx = saved_edx;
+	ecx = saved_ecx;
+	ebx = saved_ebx;
 }
+
+
+
 
 void sub_4FA998() {
 
@@ -7437,194 +7825,149 @@ void (*off_552004)(void) = nullsub_4;
 #pragma warning(disable: 4996) // Suprimir warnings de funções não seguras
 
 void sub_4FABD3() {
-    __asm {
-        push ebx
-        push ecx
-        push esi
-        push edi
-        mov esi, eax // Copiando o valor de eax para esi
-        mov edi, edx // Copiando o valor de edx para edi
-    }
-    HMODULE moduleHandle = GetModuleHandleA(NULL);
+	__asm {
+		push ebx
+		push ecx
+		push esi
+		push edi
+		mov esi, eax // Copiando o valor de eax para esi
+		mov edi, edx // Copiando o valor de edx para edi
+	}
+	HMODULE moduleHandle = GetModuleHandleA(NULL);
 
-    __asm {
-        mov ebx, moduleHandle
-        mov edx, edi
-        xor eax, eax
-    }
-    sub_4FA9A8();
-    __asm {
-        mov edx, offset unk_557C2C
-    }
-    ((void(*)(void))off_551FC4)();
-    __init_stack_limits_();
-    __asm {
-        mov eax, esi
-    }
-    sub_500909();
-    __InitRtns(0x21);
-    ((void(*)(void))off_552004)();
-    __InitRtns(0xFF);
+	__asm {
+		mov ebx, moduleHandle
+		mov edx, edi
+		xor eax, eax
+	}
+	sub_4FA9A8();
+	__asm {
+		mov edx, offset unk_557C2C
+	}
+	((void(*)(void))off_551FC4)();
+	__init_stack_limits_();
+	__asm {
+		mov eax, esi
+	}
+	sub_500909();
+	__InitRtns(0x21);
+	((void(*)(void))off_552004)();
+	__InitRtns(0xFF);
 
-    __asm {
-        pop edi
-        pop esi
-        pop ecx
-        pop ebx
-        ret
-    }
+	__asm {
+		pop edi
+		pop esi
+		pop ecx
+		pop ebx
+		ret
+	}
 }
 
-int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd) {
-    WNDCLASSA WndClass = { 0 };
-    MSG Msg = { 0 };
-    RECT Rect = { 0 };
+int __stdcall _WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd) {
+	WNDCLASSA WndClass = { 0 };
+	MSG Msg = { 0 };
+	RECT Rect = { 0 };
 
-    DWORD ebp = 0; // Declaração movida para o início do bloco
-    DWORD dwStyle;
-    DWORD hInstanceLocal;
+	DWORD ebp = 0; // Declaração movida para o início do bloco
+	DWORD dwStyle;
+	DWORD hInstanceLocal;
 
-    __asm {
-        push ebx
-        push esi
-        push edi
-        push ebp
-    }
-    __asm {
-        sub esp, 0xB4
-    }
+	__asm {
+		push ebx
+		push esi
+		push edi
+		push ebp
+	}
+	__asm {
+		sub esp, 0xB4
+	}
 
-    memcpy(&WndClass, (void*)&byte_4A64AB, 0x14);
+	memcpy(&WndClass, (void*)&byte_4A64AB, 0x14);
 
-    __asm {
-        mov[esp + 0x18], ebp
-    }
+	__asm {
+		mov[esp + 0x18], ebp
+	}
 
-    memcpy(&Rect, (void*)&byte_4A64FB, sizeof(Rect));
+	memcpy(&Rect, (void*)&byte_4A64FB, sizeof(Rect));
 
-    if (sub_4F0927(aMegamanExe, aCapcomAvi) == 0) {
-        MessageBoxA(NULL, Text, Caption, 0x10);
-        goto loc_4A72BF;
-    }
+	if (sub_4F0927(aMegamanExe, aCapcomAvi) == 0) {
+		MessageBoxA(NULL, Text, Caption, 0x10);
+		goto loc_4A72BF;
+	}
 
 loc_4A6DC3:
-    dwStyle = 0xCE0000;
-    hInstanceLocal = (DWORD)hInstance;
+	dwStyle = 0xCE0000;
+	hInstanceLocal = (DWORD)hInstance;
 
-    WndClass.hInstance = hInstance;
-    WndClass.lpfnWndProc = (WNDPROC)sub_4A6A5E;
-    WndClass.hIcon = LoadIconA(hInstance, (LPCSTR)IconName);
-    WndClass.hCursor = LoadCursorA(NULL, MAKEINTRESOURCE(0x7F00));
-    WndClass.hbrBackground = (HBRUSH)GetStockObject(4);
-    WndClass.lpszClassName = (LPCSTR)WindowName;
+	WndClass.hInstance = hInstance;
+	WndClass.lpfnWndProc = (WNDPROC)sub_4A6A5E;
+	WndClass.hIcon = LoadIconA(hInstance, (LPCSTR)IconName);
+	WndClass.hCursor = LoadCursorA(NULL, MAKEINTRESOURCE(0x7F00));
+	WndClass.hbrBackground = (HBRUSH)GetStockObject(4);
+	WndClass.lpszClassName = (LPCSTR)WindowName;
 
-    if (!RegisterClassA(&WndClass)) {
-        return -1;
-    }
+	if (!RegisterClassA(&WndClass)) {
+		return -1;
+	}
 
-    sub_4A650B();
-    hWnd = CreateWindowExA(0, WindowName, WindowName, dwStyle, CW_USEDEFAULT, CW_USEDEFAULT,
-        CW_USEDEFAULT, CW_USEDEFAULT, NULL, NULL, hInstance, NULL);
-    ShowWindow(hWnd, 5);
-    UpdateWindow(hWnd);
+	sub_4A650B();
+	hWnd = CreateWindowExA(0, WindowName, WindowName, dwStyle, CW_USEDEFAULT, CW_USEDEFAULT,
+		CW_USEDEFAULT, CW_USEDEFAULT, NULL, NULL, hInstance, NULL);
+	ShowWindow(hWnd, 5);
+	UpdateWindow(hWnd);
 
 loc_4A72BF:
-    return 1;
+	return 1;
 
 loc_4A72C4:
-    __asm {
-        add esp, 0xB4
-    }
-    return 0;
+	__asm {
+		add esp, 0xB4
+	}
+	return 0;
 }
+
 
 void sub_4FFB41() {
-    __asm {
-        push ebx
-        push ecx
-        push edx
-        push ebp
-        mov ebp, esp
-        sub esp, 8 // Reserva espaço na pilha
-    }
+	unsigned char var_8;
 
-    __InitRtns(1); // Inicialização
-
-    __asm {
-        mov eax, dword ptr ds : [dword_5581A8] // Carrega dword_5581A8 em EAX
-        add eax, 3
-        and al, 0FCh
-        xor edx, edx
-        sub esp, eax // Ajusta ESP com base em EAX
-        mov ecx, esp // ECX aponta para a nova posição da pilha
-        mov ebx, dword ptr ds : [dword_5581A8] // Carrega dword_5581A8 em EBX
-        mov eax, ecx
-        call memset_ // Zera o espaço alocado
-        mov eax, dword ptr ds : [dword_5581A8]
-        mov edx, ecx
-        mov dword ptr[ecx + 0F0h], eax // Configura a estrutura na memória
-    }
-
-    // Chama sub_4FABD3 com um ponteiro para var_8
-    char var_8 = 0;
-    sub_4FABD3(&var_8);
-
-    __asm {
-        mov ecx, dword ptr ds : [dword_557C30] // Carrega dword_557C30 em ECX
-        add ecx, 3
-        and cl, 0FCh
-        call stackavail_ // Obtém o espaço restante na pilha
-        cmp ecx, eax // Compara o espaço necessário com o disponível
-        jnb no_stack_adjustment
-        push ecx
-        call sub_5022FA // Ajusta a pilha se necessário
-        mov eax, dword ptr ds : [dword_557C30]
-        add eax, 3
-        and al, 0FCh
-        sub esp, eax
-        mov eax, esp
-        jmp update_stack_pointer
-
-        no_stack_adjustment :
-        xor eax, eax
-
-            update_stack_pointer :
-        mov ebx, dword ptr ds : [dword_557C30]
-            add eax, ebx
-            mov dword ptr ds : [dword_557C34] , eax
-    }
-
-    nullsub_6(); // Função vazia (provavelmente um stub)
-
-    __asm {
-        push 0Ah            // nShowCmd
-        mov edx, lpCmdLine  // Ponteiro para linha de comando
-        push edx            // lpCmdLine
-        push 0              // hPrevInstance
-        push 0              // lpModuleName
-        call dword ptr cs : __imp_GetModuleHandleA // Obtém o módulo do executável
-        push eax            // hInstance
-    }
-
-    // Chama WinMain
-    WinMain(0, 0, lpCmdLine, 10);
-
-    // Chama sub_502330
-    sub_502330();
-
-    __asm {
-        mov esp, ebp // Restaura a pilha
-        pop ebp
-        pop edx
-        pop ecx
-        pop ebx
-        ret
-    }
+	ebp = esp;
+	esp -= 8;
+	eax = 1;
+	__InitRtns();
+	eax = dword_5581A8;
+	eax += 3;
+	eax &= 0xFC;
+	edx = 0;
+	esp -= eax;
+	ecx = esp;
+	ebx = dword_5581A8;
+	eax = ecx;
+	memset_((uint32_t*)ecx, 0, eax);
+	eax = dword_5581A8;
+	edx = ecx;
+	*(uint32_t*)(ecx + 0xF0) = eax;
+	eax = (uint32_t)&var_8;
+	sub_4FABD3((uint32_t*)eax);
+	ecx = dword_557C30;
+	ecx += 3;
+	ecx &= 0xFC;
+	stackavail_();
+	if (ecx >= eax) {
+		eax = 0;
+	}
+	else {
+		esp -= ecx;
+		eax = esp;
+	}
+	ebx = dword_557C30;
+	eax += ebx;
+	dword_557C34 = eax;
+	nullsub_6();
+	esp = ebp;
 }
 
-
 int main() {
-    sub_4FFB41();
+	sub_4FFB41();
 }
 
 #pragma warning(pop)
